@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": ""
+    "version": "3.3.7"
   },
   "dependencies": {
     "hexo": "^3.2.0",
@@ -14,6 +14,17 @@
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-renderer-marked": "^0.2.10",
-    "hexo-server": "^0.2.0"
+    "hexo-server": "^0.2.0",
+    "hexo-apidoc-generator": "^0.0.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "webpack": "^2.6.1"
+  },
+  "scripts": {
+    "generate-theme": "webpack",
+    "generate-site": "webpack && hexo generate"
   }
 }

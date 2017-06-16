@@ -3,5 +3,7 @@ Thumbs.db
 db.json
 *.log
 node_modules/
+!node_modules/hexo-apidoc-generator
 public/
 .deploy*/
+.idea/
