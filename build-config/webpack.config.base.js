@@ -14,6 +14,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ROOT_PATH = Utils.fullPath("../themes/zendapi");
 const SRC_PATH = ROOT_PATH + "/devel";
 const DIST_PATH = ROOT_PATH + "/source";
+const DIST_STATICS_PATH = DIST_PATH + "/statics";
 const NODE_MODULES_PATH = Utils.fullPath("../node_modules");
 const JS_PATH = SRC_PATH + "/js";
 const CACHE_DIR = Utils.fullPath("../cache");
@@ -35,11 +36,12 @@ const config = {
       index : LAYOUT_PATH + "/index.jsx",
       blog : LAYOUT_PATH + "/blog.jsx",
       manual : LAYOUT_PATH + "/manual.jsx",
-      about : LAYOUT_PATH + "/about.jsx"
+      about : LAYOUT_PATH + "/about.jsx",
+      layout: LAYOUT_PATH + "/layout.jsx"
    },
    output : {
-      path : DEPLOY_LAYOUT_PATH,
-      filename: "[name].ejs"
+      path : DIST_STATICS_PATH,
+      filename: "[name].js"
    },
    module: {},
    resolve: {
@@ -52,12 +54,12 @@ const config = {
       }),
       new webpack.optimize.CommonsChunkPlugin({
          name: "common",
-         filename: "../source/statics/js/common.js",
+         filename: "../statics/js/common.js",
          chunks: ["index", "blog", "manual", "about"]
       }),
       new webpack.optimize.CommonsChunkPlugin({
          name: "manifest",
-         filename: "../source/statics/js/manifest.js"
+         filename: "../statics/js/manifest.js"
       }),
       new webpack.DllReferencePlugin({
          context: SITE_STATIC_PATH,
@@ -100,7 +102,7 @@ config.module.rules.push({
 });
 config.plugins.push(
    new ExtractTextPlugin({
-      filename: "../source/statics/css/[name].css",
+      filename: "../statics/css/[name].css",
       allChunks: true
    })
 );
