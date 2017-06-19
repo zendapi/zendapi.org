@@ -6,5 +6,6 @@
  * @copyright Copyright (c) 2016-2017 QCoreTeam (http://www.qcoreteam.org)
  * @license   http://www.topjs.org/license/new-bsd New BSD License
  */
-function get_version()
-{}
+require("../base.js");
+require("../../scss/base.scss");
+require("../../scss/pages/blog.scss");

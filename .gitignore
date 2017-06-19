@@ -7,3 +7,5 @@ node_modules/
 public/
 .deploy*/
 .idea/
+cache/
+themes/zendapi/source/statics/
