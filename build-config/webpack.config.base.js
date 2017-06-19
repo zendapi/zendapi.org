@@ -77,7 +77,7 @@ config.module.rules.push({
    use: {
       loader: "babel-loader",
       options: {
-         presets: ["env"],
+         presets: ["env","react"],
          cacheDirectory: CACHE_DIR
       }
    }
