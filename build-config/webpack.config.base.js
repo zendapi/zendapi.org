@@ -19,6 +19,7 @@ const JS_PATH = SRC_PATH + "/js";
 const CACHE_DIR = Utils.fullPath("../cache");
 const DEPLOY_LAYOUT_PATH = Utils.fullPath("../themes/zendapi/layout");
 const LAYOUT_PATH = SRC_PATH + "/layout";
+const SITE_STATIC_PATH = "/statics";
 //const __DEVEL__ = process.env.NODE_ENV !== "production";
 
 const args = process.argv;
@@ -43,7 +44,7 @@ const config = {
    module: {},
    resolve: {
       alias: alias,
-      extensions: ['.js', 'jsx']
+      extensions: [".js", "jsx"]
    },
    plugins : [
       new webpack.DefinePlugin({
@@ -57,6 +58,11 @@ const config = {
       new webpack.optimize.CommonsChunkPlugin({
          name: "manifest",
          filename: "../source/statics/js/manifest.js"
+      }),
+      new webpack.DllReferencePlugin({
+         context: SITE_STATIC_PATH,
+         manifest: require(DIST_PATH+"/statics/manifest.json"),
+         name: "vendors", 
       })
    ]
 };
@@ -67,9 +73,9 @@ config.module.rules.push({
    test: /\.(js|jsx|ejs)$/,
    exclude: /(node_modules|bower_components)/,
    use: {
-      loader: 'babel-loader',
+      loader: "babel-loader",
       options: {
-         presets: ['env'],
+         presets: ["env"],
          cacheDirectory: CACHE_DIR
       }
    }
