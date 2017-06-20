@@ -66,7 +66,8 @@ const config = {
          manifest: require(DIST_PATH+"/statics/manifest.json"),
          name: "vendors", 
       })
-   ]
+   ],
+   devtool: "eval-source-map"
 };
 
 config.module.rules = [];
