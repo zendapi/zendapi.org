@@ -16,7 +16,8 @@ const SRC_PATH = ROOT_PATH + "/devel";
 const DIST_PATH = ROOT_PATH + "/source";
 const DIST_STATICS_PATH = DIST_PATH + "/statics";
 const NODE_MODULES_PATH = Utils.fullPath("../node_modules");
-const JS_PATH = SRC_PATH + "/js";
+const JS_LIB_PATH = SRC_PATH + "/libs";
+const DEPLOY_JS_PATH = DIST_STATICS_PATH + "/js";
 const CACHE_DIR = Utils.fullPath("../cache");
 const DEPLOY_LAYOUT_PATH = Utils.fullPath("../themes/zendapi/layout");
 const LAYOUT_PATH = SRC_PATH + "/layout";
@@ -27,7 +28,7 @@ const args = process.argv;
 const uglify = args.indexOf("--uglify") > -1;
 
 const alias = {
-   Js: JS_PATH
+   Js: JS_LIB_PATH
 };
 
 const config = {
@@ -40,8 +41,8 @@ const config = {
       layout: LAYOUT_PATH + "/layout.jsx"
    },
    output : {
-      path : DIST_STATICS_PATH,
-      filename: "[name].js"
+      path : DEPLOY_JS_PATH,
+      filename: "pages/[name].js"
    },
    module: {},
    resolve: {
@@ -54,12 +55,12 @@ const config = {
       }),
       new webpack.optimize.CommonsChunkPlugin({
          name: "common",
-         filename: "../statics/js/common.js",
+         filename: "../js/common.js",
          chunks: ["index", "blog", "manual", "about"]
       }),
       new webpack.optimize.CommonsChunkPlugin({
          name: "manifest",
-         filename: "../statics/js/manifest.js"
+         filename: "../js/manifest.js"
       }),
       new webpack.DllReferencePlugin({
          context: SITE_STATIC_PATH,
@@ -73,7 +74,7 @@ const config = {
 config.module.rules = [];
 
 config.module.rules.push({
-   test: /\.(js|jsx|ejs)$/,
+   test: /\.(js|jsx)$/,
    exclude: /(node_modules|bower_components)/,
    use: {
       loader: "babel-loader",
@@ -103,7 +104,7 @@ config.module.rules.push({
 });
 config.plugins.push(
    new ExtractTextPlugin({
-      filename: "../statics/css/[name].css",
+      filename: "../css/[name].css",
       allChunks: true
    })
 );

@@ -20,11 +20,11 @@ const config = {
    context : SRC_PATH,
    entry : {
       vendors : [
+         "jquery",
          "react",
          "react-dom",
          "react-router",
-         "uikit",
-         "jquery"
+         "uikit"
       ]
    },
    output : {
