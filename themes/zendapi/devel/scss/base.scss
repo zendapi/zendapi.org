@@ -32,9 +32,27 @@
 .hot-area {
   .zendapi {
     font-size: 60px;
-    padding-top: 50px;
+    padding-top: 30px;
   }
   .slogan {
     font-size: 30px;
+  }
+  .btn {
+    height: 35px;
+    button:nth-child(1) {
+      color: $site-base-color!important;
+      background: #ffffff;
+      border: none;
+      height: 35px;
+    }
+    button:nth-child(2) {
+      color: #dddddd!important;
+      height: 35px;
+      border-color: #dddddd;
+      &:hover {
+        color: #ffffff!important;
+        border-color: #ffffff;
+      }
+    }
   }
 }
