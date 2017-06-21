@@ -1,6 +1,16 @@
 "use strict";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+require("uikit");
+import React from "react";
+import ReactDOM from "react-dom";
+import Header from "Components/header/Header";
+import HotArea from "Components/hotarea/HotArea";
+import Footer from "Components/footer/Footer";
+import Index from "Js/pages/Index";
 
-ReactDOM.render(<h1>hi, guy, react is running!</h1>, document.getElementById("container"));
+
+$(function ()
+{
+   ReactDOM.render(<Header/>, document.getElementById("header-wrapper"));
+   ReactDOM.render(<HotArea/>, document.getElementById("container"));
+});

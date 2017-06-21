@@ -1,8 +1,40 @@
+@import "variables.scss";
+
 @import "~uikit/src/scss/variables-theme.scss";
 @import "~uikit/src/scss/mixins-theme.scss";
 @import "~uikit/src/scss/uikit-theme.scss";
 
-.head
-{
-  color:red;
+@font-face {
+  font-family: 'Gotham Rounded';
+  src: url('../fonts/GothamRoundedBook.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.site-header {
+  height: 50px;
+  background: $site-base-color;
+  .uk-navbar-container {
+    background: transparent;
+  }
+  .uk-navbar-nav > li > a{
+    color:#ffffff;
+  }
+}
+
+.hot-area {
+  background: $site-base-color;
+  height: 300px;
+  font-family: "Gotham Rounded";
+  color: #ffffff;
+  box-sizing: border-box!important;
+}
+.hot-area {
+  .zendapi {
+    font-size: 60px;
+    padding-top: 50px;
+  }
+  .slogan {
+    font-size: 30px;
+  }
 }

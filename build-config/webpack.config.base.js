@@ -28,7 +28,8 @@ const args = process.argv;
 const uglify = args.indexOf("--uglify") > -1;
 
 const alias = {
-   Js: JS_LIB_PATH
+   Js: JS_LIB_PATH,
+   Components: SRC_PATH + "/components"
 };
 
 const config = {
@@ -47,7 +48,7 @@ const config = {
    module: {},
    resolve: {
       alias: alias,
-      extensions: [".js", "jsx"]
+      extensions: [".js", ".jsx"]
    },
    plugins : [
       new webpack.DefinePlugin({
@@ -63,9 +64,15 @@ const config = {
          filename: "../js/manifest.js"
       }),
       new webpack.DllReferencePlugin({
-         context: SITE_STATIC_PATH,
+         context: DIST_PATH+"/statics",
          manifest: require(DIST_PATH+"/statics/manifest.json"),
          name: "vendors", 
+      }),
+      new webpack.ProvidePlugin({
+         $: "jquery",
+         jQuery: "jquery",
+         "window.jQuery": "jquery",
+         "window.$": "jquery"
       })
    ],
    devtool: "eval-source-map"
@@ -85,6 +92,20 @@ config.module.rules.push({
    }
 });
 
+
+config.module.rules.push({
+   test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+   use: [{
+      loader: 'file-loader',
+      options: {
+         name: '[name].[ext]',
+         path: "../fonts",
+         publicPath: "/statics/fonts/",
+         outputPath:  "../fonts/"
+      }
+   }]
+});
+
 config.module.rules.push({
    test: /\.scss$/,
    use: ExtractTextPlugin.extract({
@@ -102,12 +123,7 @@ config.module.rules.push({
       }]
    })
 });
-config.plugins.push(
-   new ExtractTextPlugin({
-      filename: "../css/[name].css",
-      allChunks: true
-   })
-);
+
 
 config.module.rules.push({
    test: /\.(?:jpg|gif|png|svg)$/,
@@ -117,6 +133,13 @@ config.module.rules.push({
       loader: "image-webpack"
    }]
 });
+
+config.plugins.push(
+   new ExtractTextPlugin({
+      filename: "../css/[name].css",
+      allChunks: true
+   })
+);
 
 if (uglify) {
    config.plugins.push(
