@@ -15,10 +15,15 @@
     height: 35px;
     line-height: 35px;
   }
-  .title-icon svg{
+  .title-icon {
     color: $site-base-color;
     width : 25px;
     height: 25px;
     margin-right: 10px;
+    margin-left: 10px;
+  }
+  .info-list li{
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

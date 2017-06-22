@@ -8,6 +8,7 @@ import HotArea from "Components/hotarea/HotArea";
 import Features from "Components/features/Features"
 import Footer from "Components/footer/Footer";
 import InfoList from "Components/infolist/InfoList";
+import Sponsor from "Components/sponsors/Sponsor";
 import "Scss/base.scss";
 import "Scss/pages/index.scss"
 
@@ -19,6 +20,7 @@ class IndexPage extends React.Component
          <HotArea/>
          <Features/>
          <InfoList/>
+         <Sponsor/>
          <Footer/>
       </div>;
    }

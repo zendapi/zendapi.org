@@ -43,8 +43,8 @@ const config = {
       layout: LAYOUT_PATH + "/layout.jsx"
    },
    output : {
-      path : DEPLOY_JS_PATH,
-      filename: "pages/[name].js"
+      path : DIST_PATH,
+      filename: "statics/js/pages/[name].js"
    },
    module: {},
    resolve: {
@@ -57,12 +57,12 @@ const config = {
       }),
       new webpack.optimize.CommonsChunkPlugin({
          name: "common",
-         filename: "../js/common.js",
+         filename: "statics/js/common.js",
          chunks: ["index", "blog", "manual", "about"]
       }),
       new webpack.optimize.CommonsChunkPlugin({
          name: "manifest",
-         filename: "../js/manifest.js"
+         filename: "statics/js/manifest.js"
       }),
       new webpack.DllReferencePlugin({
          context: DIST_PATH+"/statics",
@@ -95,14 +95,22 @@ config.module.rules.push({
 
 
 config.module.rules.push({
-   test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
+   test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
    use: [{
       loader: 'file-loader',
       options: {
-         name: '[name].[ext]',
-         path: "../fonts",
-         publicPath: "/statics/fonts/",
-         outputPath:  "../fonts/"
+         name: 'statics/fonts/[name].[ext]'
+      }
+   }]
+});
+
+config.module.rules.push({
+   test: /\.svg(\?[a-z0-9]+)?$/,
+   use: [{
+      loader: 'file-loader',
+      options: {
+         useRelativePath: false,
+         name: 'statics/images/[name].[ext]'
       }
    }]
 });
@@ -125,12 +133,12 @@ config.module.rules.push({
    })
 });
 
-config.module.rules.push({
-   test: /\.svg$/,
-   use: {
-      loader: 'svg-inline-loader'
-   }
-});
+// config.module.rules.push({
+//    test: /\.svg$/,
+//    use: {
+//       loader: 'svg-inline-loader'
+//    }
+// });
 
 
 config.module.rules.push({
@@ -144,7 +152,7 @@ config.module.rules.push({
 
 config.plugins.push(
    new ExtractTextPlugin({
-      filename: "../css/[name].css",
+      filename: "statics/css/[name].css",
       allChunks: true
    })
 );

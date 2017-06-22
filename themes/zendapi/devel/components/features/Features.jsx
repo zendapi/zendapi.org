@@ -17,7 +17,7 @@ export default class Features extends React.Component
             <div className="uk-grid-divider uk-child-width-expand@s grid" data-uk-grid>
                <div className="uk-width-1-3@s">
                   <div className="uk-flex uk-flex-column uk-width-1-1 feature-item">
-                     <div className="uk-text-center"><span className="icon" dangerouslySetInnerHTML={{__html: ArchitectureSvg}} /></div>
+                     <div className="uk-text-center"><img className="icon" src={ArchitectureSvg} /></div>
                      <div className="feature-title uk-text-center uk-margin-small-top">合理的代码结构</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
                         对Zend引擎的一维C接口重新进行组织，按照不同的模块进行面向对象的组织，为第三方扩展编写提供简单稳定的C++接口，通过重载和模板技术对Zend的接口进行改造，在保证灵活性的同时提供类型安全的接口。
@@ -26,7 +26,7 @@ export default class Features extends React.Component
                </div>
                <div className="uk-width-1-3@s">
                   <div className="uk-flex uk-flex-column uk-width-1-1 feature-item">
-                     <div className="uk-text-center"><span className="icon" dangerouslySetInnerHTML={{__html: SimpleSvg}} /></div>
+                     <div className="uk-text-center"><img className="icon" src={SimpleSvg} /></div>
                      <div className="feature-title uk-text-center uk-margin-small-top">合理的代码结构</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
                         对Zend引擎的一维C接口重新进行组织，按照不同的模块进行面向对象的组织，为第三方扩展编写提供简单稳定的C++接口，通过重载和模板技术对Zend的接口进行改造，在保证灵活性的同时提供类型安全的接口。
@@ -35,7 +35,7 @@ export default class Features extends React.Component
                </div>
                <div className="uk-width-1-3@s">
                   <div className="uk-flex uk-flex-column uk-width-1-1 feature-item">
-                     <div className="uk-text-center"><span className="icon" dangerouslySetInnerHTML={{__html: PerformanceSvg}} /></div>
+                     <div className="uk-text-center"><img className="icon" src={PerformanceSvg} /></div>
                      <div className="feature-title uk-text-center uk-margin-small-top">合理的代码结构</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
                         对Zend引擎的一维C接口重新进行组织，按照不同的模块进行面向对象的组织，为第三方扩展编写提供简单稳定的C++接口，通过重载和模板技术对Zend的接口进行改造，在保证灵活性的同时提供类型安全的接口。
@@ -47,7 +47,7 @@ export default class Features extends React.Component
                </div>
                <div className="uk-width-1-3@s">
                   <div className="uk-flex uk-flex-column uk-width-1-1 feature-item">
-                     <div className="uk-text-center"><span className="icon" dangerouslySetInnerHTML={{__html: DocSvg}} /></div>
+                     <div className="uk-text-center"><img className="icon" src={DocSvg} /></div>
                      <div className="feature-title uk-text-center uk-margin-small-top">合理的代码结构</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
                         对Zend引擎的一维C接口重新进行组织，按照不同的模块进行面向对象的组织，为第三方扩展编写提供简单稳定的C++接口，通过重载和模板技术对Zend的接口进行改造，在保证灵活性的同时提供类型安全的接口。
@@ -56,7 +56,7 @@ export default class Features extends React.Component
                </div>
                <div className="uk-width-1-3@s">
                   <div className="uk-flex uk-flex-column uk-width-1-1 feature-item">
-                     <div className="uk-text-center"><span className="icon" dangerouslySetInnerHTML={{__html: GoodSvg}} /></div>
+                     <div className="uk-text-center"><img className="icon" src={GoodSvg} /></div>
                      <div className="feature-title uk-text-center uk-margin-small-top">合理的代码结构</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
                         对Zend引擎的一维C接口重新进行组织，按照不同的模块进行面向对象的组织，为第三方扩展编写提供简单稳定的C++接口，通过重载和模板技术对Zend的接口进行改造，在保证灵活性的同时提供类型安全的接口。
@@ -65,7 +65,7 @@ export default class Features extends React.Component
                </div>
                <div className="uk-width-1-3@s">
                   <div className="uk-flex uk-flex-column uk-width-1-1 feature-item">
-                     <div className="uk-text-center"><span className="icon" dangerouslySetInnerHTML={{__html: SecuritySvg}} /></div>
+                     <div className="uk-text-center"><img className="icon" src={SecuritySvg} /></div>
                      <div className="feature-title uk-text-center uk-margin-small-top">合理的代码结构</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
                         对Zend引擎的一维C接口重新进行组织，按照不同的模块进行面向对象的组织，为第三方扩展编写提供简单稳定的C++接口，通过重载和模板技术对Zend的接口进行改造，在保证灵活性的同时提供类型安全的接口。
