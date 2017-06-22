@@ -12,47 +12,22 @@
 }
 
 .site-header {
-  height: 50px;
+  height: 40px;
+  line-height:40px;
   background: $site-base-color;
   .uk-navbar-container {
     background: transparent;
   }
   .uk-navbar-nav > li > a{
     color:#ffffff;
+    height:40px!important;
   }
-}
-
-.hot-area {
-  background: $site-base-color;
-  height: 300px;
-  font-family: "Gotham Rounded";
-  color: #ffffff;
-  box-sizing: border-box!important;
-}
-.hot-area {
-  .zendapi {
-    font-size: 60px;
-    padding-top: 30px;
-  }
-  .slogan {
-    font-size: 30px;
-  }
-  .btn {
-    height: 35px;
-    button:nth-child(1) {
-      color: $site-base-color!important;
-      background: #ffffff;
-      border: none;
-      height: 35px;
-    }
-    button:nth-child(2) {
-      color: #dddddd!important;
-      height: 35px;
-      border-color: #dddddd;
-      &:hover {
-        color: #ffffff!important;
-        border-color: #ffffff;
-      }
+  .nav-menu {
+    color: #dddddd!important;
+    width:20px;
+    padding: 0;
+    &:hover {
+      color: #ffffff!important;
     }
   }
 }

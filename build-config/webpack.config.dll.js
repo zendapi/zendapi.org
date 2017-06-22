@@ -22,7 +22,8 @@ const config = {
          "jquery",
          "react",
          "react-dom",
-         "uikit"
+         "uikit",
+         "uikit/dist/js/uikit-icons"
       ]
    },
    output : {

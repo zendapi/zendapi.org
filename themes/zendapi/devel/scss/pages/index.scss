@@ -1,5 +1,42 @@
+@import "../variables.scss";
 
-.article
-{
-  font-size: 12px;
+.hot-area {
+  background: $site-base-color;
+  font-family: "Gotham Rounded";
+  color: #ffffff;
+  height: 390px;
+}
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .hot-area {
+    height: 290px;
+  }
+}
+
+.hot-area {
+  .zendapi {
+    font-size: 60px;
+    padding-top: 30px;
+  }
+  .slogan {
+    font-size: 30px;
+  }
+  .btn {
+    height: 35px;
+    .start-btn {
+      color: $site-base-color!important;
+      background: #ffffff;
+      border: none;
+      height: 35px;
+    }
+    .github-repo-btn {
+      color: #dddddd!important;
+      height: 35px;
+      border-color: #dddddd;
+      &:hover {
+        color: #ffffff!important;
+        border-color: #ffffff;
+      }
+    }
+  }
 }

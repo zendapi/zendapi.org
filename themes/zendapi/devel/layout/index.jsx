@@ -1,12 +1,14 @@
   "use strict";
-+
-require("uikit");
+const Uikit = require("uikit");
+const UikitIcons = require("uikit/dist/js/uikit-icons");
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
 import HotArea from "Components/hotarea/HotArea";
 import Footer from "Components/footer/Footer";
 import Index from "Js/pages/index";
+import "Scss/base.scss";
+import "Scss/pages/index.scss"
 
 class IndexPage extends React.Component
 {
@@ -21,6 +23,7 @@ class IndexPage extends React.Component
 
 $(function ()
 {
+   Uikit.use(UikitIcons);
    ReactDOM.render(<Header/>, document.getElementById("header-wrapper"));
    ReactDOM.render(<IndexPage/>, document.getElementById("container"));
 });

@@ -4,10 +4,21 @@
     <%- partial('_partial/head') %>
 </head>
 <body>
-<div id="header-wrapper" class="uk-container uk-margin-remove uk-container-expand uk-sticky-below site-header"></div>
+<div class="uk-offcanvas-content">
+    <div id="header-wrapper" class="uk-container uk-margin-remove uk-container-expand uk-sticky-below site-header"></div>
+    <%- body %>
+    <div id= "footer-wrapper"></div>
+    <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+        <div class="uk-offcanvas-bar">
 
-<%- body %>
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-<div id= "footer-wrapper"></div>
+            <h3>李岱</h3>
+
+            <p>你说6不6</p>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>

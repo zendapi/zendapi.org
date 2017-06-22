@@ -29,7 +29,8 @@ const uglify = args.indexOf("--uglify") > -1;
 
 const alias = {
    Js: JS_LIB_PATH,
-   Components: SRC_PATH + "/components"
+   Components: SRC_PATH + "/components",
+   Scss: SRC_PATH + "/scss"
 };
 
 const config = {
