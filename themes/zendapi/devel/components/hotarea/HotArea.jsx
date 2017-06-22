@@ -4,7 +4,7 @@ export default class HotArea extends React.Component
 {
    render()
    {
-      return <div className="hot-area">
+      return <div className="hot-area uk-box-shadow-large">
          <div className="uk-width-1-1 uk-text-center">
             <div className="zendapi">zendAPI</div>
          </div>

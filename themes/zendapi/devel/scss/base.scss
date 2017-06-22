@@ -11,6 +11,14 @@
   font-style: normal;
 }
 
+body {
+  font-size: $zendapi-std-fontsize;
+}
+
+.clear {
+  clear: both;
+}
+
 .site-header {
   height: 40px;
   line-height:40px;

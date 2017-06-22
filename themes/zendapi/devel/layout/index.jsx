@@ -1,12 +1,13 @@
-  "use strict";
+"use strict";
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
 import HotArea from "Components/hotarea/HotArea";
+import Features from "Components/features/Features"
 import Footer from "Components/footer/Footer";
-import Index from "Js/pages/index";
+import InfoList from "Components/infolist/InfoList";
 import "Scss/base.scss";
 import "Scss/pages/index.scss"
 
@@ -14,9 +15,12 @@ class IndexPage extends React.Component
 {
    render()
    {
-       return <div style={{width:"100%"}} className="uk-box-shadow-large">
-           <HotArea/>
-       </div>;
+      return <div style={{width:"100%"}}>
+         <HotArea/>
+         <Features/>
+         <InfoList/>
+         <Footer/>
+      </div>;
    }
 }
 

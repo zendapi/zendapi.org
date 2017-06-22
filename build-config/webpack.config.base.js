@@ -67,7 +67,7 @@ const config = {
       new webpack.DllReferencePlugin({
          context: DIST_PATH+"/statics",
          manifest: require(DIST_PATH+"/statics/manifest.json"),
-         name: "vendors", 
+         name: "vendors",
       }),
       new webpack.ProvidePlugin({
          $: "jquery",
@@ -95,7 +95,7 @@ config.module.rules.push({
 
 
 config.module.rules.push({
-   test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+   test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
    use: [{
       loader: 'file-loader',
       options: {
@@ -125,9 +125,16 @@ config.module.rules.push({
    })
 });
 
+config.module.rules.push({
+   test: /\.svg$/,
+   use: {
+      loader: 'svg-inline-loader'
+   }
+});
+
 
 config.module.rules.push({
-   test: /\.(?:jpg|gif|png|svg)$/,
+   test: /\.(?:jpg|gif|png)$/,
    use: [{
       loader: "url?limit=8000&name=statics/images/[hash].[ext]"
    },{
