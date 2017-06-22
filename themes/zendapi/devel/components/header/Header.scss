@@ -1,0 +1,22 @@
+@import "../../scss/variables.scss";
+
+.site-header {
+  height: 40px;
+  line-height:40px;
+  background: $site-base-color;
+  .uk-navbar-container {
+    background: transparent;
+  }
+  .uk-navbar-nav > li > a{
+    color:#ffffff;
+    height:40px!important;
+  }
+  .nav-menu {
+    color: #dddddd!important;
+    width:20px;
+    padding: 0;
+    &:hover {
+      color: #ffffff!important;
+    }
+  }
+}

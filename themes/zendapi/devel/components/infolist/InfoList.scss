@@ -1,0 +1,24 @@
+@import "../../scss/variables.scss";
+
+.info-list-panel {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background: #F5F5F5;
+  :first-child {
+    max-width: 1200px;
+  }
+  .panel-title {
+    font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", "黑体";
+    color: #363b40;
+    font-weight: bold;
+    font-size: 15px;
+    height: 35px;
+    line-height: 35px;
+  }
+  .title-icon svg{
+    color: $site-base-color;
+    width : 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+}

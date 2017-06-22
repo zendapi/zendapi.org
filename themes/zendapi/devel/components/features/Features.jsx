@@ -11,7 +11,7 @@ export default class Features extends React.Component
 {
    render()
    {
-      return <div className="uk-container features uk-margin-large-top uk-flex uk-flex-column uk-width-1-1">
+      return <div className="uk-container features uk-margin-large-top uk-flex uk-flex-column">
          <div className="uk-flex uk-flex-center uk-margin-medium-bottom uk-visible@s"><div className="title uk-text-center">项目特性</div></div>
          <div className="uk-flex uk-flex-center">
             <div className="uk-grid-divider uk-child-width-expand@s grid" data-uk-grid>
@@ -76,4 +76,5 @@ export default class Features extends React.Component
          </div>
       </div>;
    }
+
 };

@@ -18,24 +18,19 @@ body {
 .clear {
   clear: both;
 }
-
-.site-header {
-  height: 40px;
-  line-height:40px;
-  background: $site-base-color;
-  .uk-navbar-container {
-    background: transparent;
-  }
-  .uk-navbar-nav > li > a{
-    color:#ffffff;
-    height:40px!important;
-  }
-  .nav-menu {
-    color: #dddddd!important;
-    width:20px;
-    padding: 0;
-    &:hover {
-      color: #ffffff!important;
-    }
-  }
+a {
+  color: $site-link-color;
+  text-decoration: none;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+  -webkit-transition-property: color;
+  transition-property: color;
+}
+a:hover {
+  color: $site-base-color;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transition-property: color;
+  transition-property: color;
 }
