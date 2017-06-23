@@ -133,20 +133,16 @@ config.module.rules.push({
    })
 });
 
-// config.module.rules.push({
-//    test: /\.svg$/,
-//    use: {
-//       loader: 'svg-inline-loader'
-//    }
-// });
-
 
 config.module.rules.push({
-   test: /\.(?:jpg|gif|png)$/,
+   test: /\.(?:jpg|gif|png|jpeg)$/,
    use: [{
-      loader: "url?limit=8000&name=statics/images/[hash].[ext]"
-   },{
-      loader: "image-webpack"
+      loader: "url-loader",
+      options: {
+         limit: 8192,
+         useRelativePath: false,
+         name: 'statics/images/[name].[ext]'
+      }
    }]
 });
 

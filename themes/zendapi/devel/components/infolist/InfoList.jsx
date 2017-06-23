@@ -7,7 +7,7 @@ export default class InfoList extends React.Component
 {
    render()
    {
-      return <div className="info-list-panel uk-margin-medium-top uk-flex uk-flex-center">
+      return <div className="info-list-panel uk-margin-medium-top uk-flex uk-flex-center uk-box-shadow-medium">
          <div className="uk-child-width-expand@s grid-wrapper" data-uk-grid>
             <div className="uk-width-1-1 uk-width-1-2@s info-item">
                <div className="uk-flex uk-flex-column">

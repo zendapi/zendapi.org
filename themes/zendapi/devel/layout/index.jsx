@@ -9,6 +9,7 @@ import Features from "Components/features/Features"
 import Footer from "Components/footer/Footer";
 import InfoList from "Components/infolist/InfoList";
 import Sponsor from "Components/sponsors/Sponsor";
+import Teamwork from "Components/teamwork/Teamwork";
 import "Scss/base.scss";
 import "Scss/pages/index.scss"
 
@@ -21,6 +22,7 @@ class IndexPage extends React.Component
          <Features/>
          <InfoList/>
          <Sponsor/>
+         <Teamwork/>
          <Footer/>
       </div>;
    }

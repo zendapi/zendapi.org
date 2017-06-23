@@ -1,0 +1,65 @@
+@import "../../scss/variables.scss";
+.teamwork-panel {
+  height:300px;
+  max-width: 1200px;
+  .teamwork-title {
+    img {
+      height:50px;
+      width: 50px;
+      padding-right: 10px;
+      @media (min-width: 640px) {
+        height:70px;
+        width: 70px;
+      }
+    }
+    //border-bottom: 3px solid $site-base-color;
+    padding-bottom: 10px;
+    height: 50px;
+    line-height: 50px;
+    @media (min-width: 640px) {
+      height: 70px;
+      line-height: 70px;
+    }
+    font-size: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", "黑体";
+    color: #363b40;
+    font-weight: bold;
+  }
+  .developer-logo {
+    img {
+      display: inline-block;
+      border: 2px solid #15BC70;
+      height: 90px;
+      width:90px;
+      border-radius: 50%;
+      padding:3px;
+      opacity: 0.6;
+      -webkit-transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out;
+      -webkit-transition-property: opacity;
+      transition-property: opacity;
+      &:hover {
+        opacity: 1;
+        -webkit-transition: 0.2s ease-in-out;
+        transition: 0.2s ease-in-out;
+        -webkit-transition-property: opacity;
+        transition-property: opacity;
+      }
+    }
+    margin-bottom: 10px;
+    @media (min-width: 640px) {
+      margin-bottom: 30px;
+    }
+  }
+}
+.become-developer-btn {
+  color: $site-base-color!important;
+  height: 40px;
+  border-color: $site-base-color;
+  font-weight: lighter;
+  &:hover {
+    color: #ffffff!important;
+    background: $site-base-color;
+    border-color: $site-base-color;
+  }
+}
