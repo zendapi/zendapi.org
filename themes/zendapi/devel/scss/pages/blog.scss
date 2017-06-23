@@ -2,9 +2,14 @@
 $zapi-blog-page-width: 960px;
 body {
   background-color: #FAFAFA!important;
-  height:100%;
 }
 .blog-page-container
 {
   max-width: $zapi-blog-page-width;
+  padding: 0!important;
+  @media (min-width: 640px) {
+    padding-left: 40px!important;
+    padding-right: 40px!important;
+  }
+  margin-top: 20px!important;
 }
