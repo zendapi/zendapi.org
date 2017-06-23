@@ -3,7 +3,11 @@
 .site-header {
   height: 40px;
   line-height: 40px;
-  background: $site-base-color;
+  @media (min-width: 640px) {
+    height: 60px;
+    line-height: 60px;
+  }
+  background: $zapi-base-color;
   .uk-navbar-container {
     background: transparent;
   }

@@ -1,7 +1,7 @@
 @import "../../scss/variables.scss";
 .teamwork-panel {
   min-height:250px;
-  max-width: 1200px;
+  max-width: $zapi-page-max-width;
   .teamwork-title {
     img {
       height:50px;
@@ -48,13 +48,13 @@
   }
 }
 .become-developer-btn {
-  color: $site-base-color!important;
+  color: $zapi-base-color!important;
   height: 40px;
-  border-color: $site-base-color;
+  border-color: $zapi-base-color;
   font-weight: lighter;
   &:hover {
     color: #ffffff!important;
-    background: $site-base-color;
-    border-color: $site-base-color;
+    background: $zapi-base-color;
+    border-color: $zapi-base-color;
   }
 }

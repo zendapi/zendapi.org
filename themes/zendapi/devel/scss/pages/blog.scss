@@ -1,0 +1,10 @@
+@import "../variables.scss";
+$zapi-blog-page-width: 960px;
+body {
+  background-color: #FAFAFA!important;
+  height:100%;
+}
+.blog-page-container
+{
+  max-width: $zapi-blog-page-width;
+}

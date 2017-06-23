@@ -1,7 +1,11 @@
-$site-base-color: #00ab6b;
-$site-link-color: #444444;
-$site-border-color: #e5e5e5;
-$zendapi-std-fontsize: 12px;
+$zapi-base-color: #00ab6b;
+$zapi-link-color: #444444;
+$zapi-border-color: #e5e5e5;
+$zapi-std-fontsize: 12px;
+$zapi-page-max-width : 1200px;
+
+
+
 /** 修改默认的uikit变量 */
 $navbar-nav-item-height: 50px !default;
 $global-font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", "宋体" ,"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;

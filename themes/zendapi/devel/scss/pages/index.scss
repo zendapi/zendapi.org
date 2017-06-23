@@ -1,7 +1,7 @@
 @import "../variables.scss";
 
 .hot-area {
-  background: $site-base-color;
+  background: $zapi-base-color;
   font-family: "Gotham Rounded";
   color: #ffffff;
   height: 390px;
@@ -24,7 +24,7 @@
   .btn {
     height: 35px;
     .start-btn {
-      color: $site-base-color!important;
+      color: $zapi-base-color!important;
       background: #ffffff;
       border: none;
       height: 35px;

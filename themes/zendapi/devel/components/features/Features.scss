@@ -7,11 +7,11 @@
     font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", "黑体";
     color: #363b40;
     font-weight: bold;
-    border-bottom: 3px solid $site-base-color;
+    border-bottom: 3px solid $zapi-base-color;
     padding-bottom: 5px;
   }
   .grid {
-    max-width: 1200px;
+    max-width: $zapi-page-max-width;
   }
   .uk-grid + .uk-grid, .uk-grid > .uk-grid-margin, * + .uk-grid-margin
   {
@@ -33,7 +33,7 @@
       font-size: 15px;
     }
     .icon {
-      color: $site-base-color;
+      color: $zapi-base-color;
       width : 60px;
       height: 60px;
     }

@@ -5,15 +5,15 @@
   padding-top: 30px;
   background: #F5F5F5;
   .grid-wrapper {
-    max-width: 1200px;
+    max-width: $zapi-page-max-width;
     @media (min-width: 640px) {
       min-width: 640px;
     }
     @media (min-width: 960px) {
       min-width: 960px;
     }
-    @media (min-width: 1200px) {
-      min-width: 1200px;
+    @media (min-width: $zapi-page-max-width) {
+      min-width: $zapi-page-max-width;
     }
     
   }
@@ -26,7 +26,7 @@
     line-height: 40px;
   }
   .title-icon {
-    color: $site-base-color;
+    color: $zapi-base-color;
     width : 30px;
     height: 30px;
     margin-right: 10px;
@@ -49,7 +49,7 @@
     }
   }
   .info-list{
-    border-bottom: 1px solid $site-border-color;
+    border-bottom: 1px solid $zapi-border-color;
     padding-bottom: 10px;
   }
 }

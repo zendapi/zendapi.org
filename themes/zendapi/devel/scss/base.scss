@@ -10,16 +10,19 @@
   font-weight: 400;
   font-style: normal;
 }
-
+html {
+  height: 100%;
+}
 body {
-  font-size: $zendapi-std-fontsize;
+  font-size: $zapi-std-fontsize;
+  height:100%;
 }
 
 .clear {
   clear: both;
 }
 a {
-  color: $site-link-color;
+  color: $zapi-link-color;
   text-decoration: none;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
@@ -27,7 +30,7 @@ a {
   transition-property: color;
 }
 a:hover {
-  color: $site-base-color;
+  color: $zapi-base-color;
   text-decoration: none;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;

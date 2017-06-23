@@ -1,7 +1,7 @@
 @import "../../scss/variables.scss";
 .sponsors-panel {
   min-height:250px;
-  max-width: 1200px;
+  max-width: $zapi-page-max-width;
   .sponsor-title {
     img {
       height:60px;
@@ -47,13 +47,13 @@
   }
 }
 .become-sponsor-btn {
-  color: $site-base-color!important;
+  color: $zapi-base-color!important;
   height: 40px;
-  border-color: $site-base-color;
+  border-color: $zapi-base-color;
   font-weight: lighter;
   &:hover {
     color: #ffffff!important;
-    background: $site-base-color;
-    border-color: $site-base-color;
+    background: $zapi-base-color;
+    border-color: $zapi-base-color;
   }
 }
