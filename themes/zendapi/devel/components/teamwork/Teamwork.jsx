@@ -20,7 +20,7 @@ export default class Teamwork extends React.Component
                <a className="developer-logo uk-width-auto"><img src={liaosanity}/></a>
             </div>
          </div>
-         <div className="sponsor-title uk-flex uk-flex-center uk-margin-small-top">
+         <div className="sponsor-title uk-flex uk-flex-center uk-margin-medium-top">
             <button className="uk-button uk-button-default become-developer-btn">如何成为开发者</button>
          </div>
       </div>;
