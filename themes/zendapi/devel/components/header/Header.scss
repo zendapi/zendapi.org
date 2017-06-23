@@ -2,14 +2,34 @@
 
 .site-header {
   height: 40px;
-  line-height:40px;
+  line-height: 40px;
   background: $site-base-color;
   .uk-navbar-container {
     background: transparent;
   }
+  .uk-navbar-nav > li
+  {
+    padding-left: 5px!important;
+    padding-right: 5px!important;
+  }
   .uk-navbar-nav > li > a{
+    padding-left: 5px!important;
+    padding-right: 5px!important;
     color:#ffffff;
-    height:40px!important;
+    height:25px!important;
+    padding-bottom: 5px!important;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    -webkit-transition-property: border-bottom-color;
+    transition-property: border-bottom-color;
+    &:hover {
+      border-bottom-color: #ffffff;
+      -webkit-transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out;
+      -webkit-transition-property: border-bottom-color;
+      transition-property: border-bottom-color;
+    }
   }
   .nav-menu {
     color: #dddddd!important;
