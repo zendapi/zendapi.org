@@ -4,26 +4,52 @@
   padding-bottom: 30px;
   padding-top: 30px;
   background: #F5F5F5;
-  :first-child {
+  .grid-wrapper {
     max-width: 1200px;
+    @media (min-width: 640px) {
+      min-width: 640px;
+    }
+    @media (min-width: 960px) {
+      min-width: 960px;
+    }
+    @media (min-width: 1200px) {
+      min-width: 1200px;
+    }
+    
   }
   .panel-title {
     font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", "黑体";
     color: #363b40;
     font-weight: bold;
-    font-size: 15px;
-    height: 35px;
-    line-height: 35px;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
   }
   .title-icon {
     color: $site-base-color;
-    width : 25px;
-    height: 25px;
+    width : 30px;
+    height: 30px;
     margin-right: 10px;
     margin-left: 10px;
   }
   .info-list li{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    @media (min-width: 640px) {
+      max-width: 100%;
+      /* 2 */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    a {
+      font-size: 13px;
+    }
+  }
+  .info-list{
+    border-bottom: 1px solid $site-border-color;
+    padding-bottom: 10px;
   }
 }
