@@ -110,7 +110,7 @@ config.module.rules.push({
       loader: 'file-loader',
       options: {
          useRelativePath: false,
-         name: 'statics/images/[name].[ext]'
+         name: 'statics/images/[path]/[name].[ext]'
       }
    }]
 });
@@ -141,7 +141,7 @@ config.module.rules.push({
       options: {
          limit: 8192,
          useRelativePath: false,
-         name: 'statics/images/[name].[ext]'
+         name: 'statics/images/[path]/[name].[ext]'
       }
    }]
 });
