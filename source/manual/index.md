@@ -1,0 +1,4 @@
+---
+layout: manual
+subtype: mainEntry
+---

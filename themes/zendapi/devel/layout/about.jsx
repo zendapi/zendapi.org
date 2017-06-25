@@ -11,15 +11,14 @@ const UikitIcons = require("uikit/dist/js/uikit-icons");
 import React from "react";
 
 import ReactDOM from "react-dom";
-import Header from "Components/header/Header";
-import Footer from "Components/footer/Footer";
 import SitePath from "Components/sitepath/SitePath";
 import AboutPanel from "Components/about/AboutPanel";
-
+import Header from "Components/header/Header";
+import Footer from "Components/footer/Footer";
 import "Scss/base.scss";
 import "Scss/pages/about.scss";
 
-export default class AboutPage extends React.Component
+class AboutPage extends React.Component
 {
    render()
    {

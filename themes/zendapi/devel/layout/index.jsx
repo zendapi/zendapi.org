@@ -1,4 +1,6 @@
 "use strict";
+import "Scss/base.scss";
+import "Scss/pages/index.scss"
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
 import React from "react";
@@ -10,8 +12,7 @@ import Footer from "Components/footer/Footer";
 import InfoList from "Components/infolist/InfoList";
 import Sponsor from "Components/sponsors/Sponsor";
 import Teamwork from "Components/teamwork/Teamwork";
-import "Scss/base.scss";
-import "Scss/pages/index.scss"
+
 
 class IndexPage extends React.Component
 {

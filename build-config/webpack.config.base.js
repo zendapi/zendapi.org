@@ -55,10 +55,14 @@ const config = {
       new webpack.DefinePlugin({
          "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development")
       }),
+      
       new webpack.optimize.CommonsChunkPlugin({
          name: "common",
-         filename: "statics/js/common.js",
-         chunks: ["index", "blog", "manual", "about"]
+         filename: "statics/js/common.js"
+      }),
+      new ExtractTextPlugin({
+         filename: "statics/css/[name].css",
+         allChunks: true
       }),
       new webpack.optimize.CommonsChunkPlugin({
          name: "manifest",
@@ -78,6 +82,7 @@ const config = {
    ],
    devtool: "eval-source-map"
 };
+
 
 config.module.rules = [];
 
@@ -146,12 +151,7 @@ config.module.rules.push({
    }]
 });
 
-config.plugins.push(
-   new ExtractTextPlugin({
-      filename: "statics/css/[name].css",
-      allChunks: true
-   })
-);
+
 
 if (uglify) {
    config.plugins.push(
