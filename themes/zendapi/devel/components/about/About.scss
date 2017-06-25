@@ -12,6 +12,9 @@
     border-color: $zapi-base-color;
     font-family: "Gotham Rounded";
   }
+  .uk-tab a {
+    font-family: "Gotham Rounded"!important;
+  }
   .changelog-container {
     h1 {
       font-family: "Gotham Rounded";
@@ -55,6 +58,45 @@
           line-height:22px;
         }
       }
+    }
+  }
+
+  .about-info-item {
+    margin-top: 20px;
+    @media (min-width: 640px) {
+      margin-top: 40px;
+    }
+    .logo {
+      @media (min-width: 640px) {
+        margin-top: 60px;
+      }
+    }
+    img {
+      width:60%;
+      @media (min-width: 640px) {
+        width:50%;
+      }
+    }
+    .text {
+      font-size:1.1em;
+      line-height: 1.8em;
+      @media (min-width: 640px) {
+        font-size:1.3em;
+        line-height: 2em;
+      }
+     
+    }
+    .zendapi-logo {
+      font-family: "Gotham Rounded"!important;
+      color: $zapi-base-color;
+      font-size:2em;
+      @media (min-width: 640px) {
+        font-size:4em;
+      }
+      font-weight:bold;
+    }
+    a {
+      text-decoration: underline;
     }
   }
 }
