@@ -40,7 +40,7 @@ const config = {
       blog : LAYOUT_PATH + "/blog.jsx",
       manual : LAYOUT_PATH + "/manual.jsx",
       about : LAYOUT_PATH + "/about.jsx",
-      layout: LAYOUT_PATH + "/layout.jsx"
+      article: LAYOUT_PATH + "/article.jsx"
    },
    output : {
       path : DIST_PATH,

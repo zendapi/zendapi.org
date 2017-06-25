@@ -12,23 +12,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
-import BlogList from "Components/bloglist/BlogList";
+import Article from "Components/artcile/Article";
 import SitePath from "Components/sitepath/SitePath";
 import "Scss/base.scss";
-import "Scss/pages/blog.scss"
+import "Scss/pages/article.scss"
 
-class BlogPage extends React.Component
+
+class ArticlePage extends React.Component
 {
    render()
    {
       return <div style={{width:"100%"}}>
-         <div className="uk-container uk-margin-small-top uk-margin-small-bottom blog-page-container">
+         <div className="uk-container uk-margin-small-top uk-margin-small-bottom article-page-container">
             <SitePath pathList = {this.getPathList()}/>
-            <BlogList/>
+            <Article/>
          </div>
       </div>;
    }
-   
    getPathList()
    {
       return [{
@@ -37,6 +37,8 @@ class BlogPage extends React.Component
       }, {
          name: "博客",
          url: '/blog'
+      }, {
+         name: "文章正文"
       }]
    }
 }
@@ -45,6 +47,14 @@ $(function ()
 {
    Uikit.use(UikitIcons);
    ReactDOM.render(<Header/>, document.getElementById("header-wrapper"));
-   ReactDOM.render(<BlogPage/>, document.getElementById("container"));
+   ReactDOM.render(<ArticlePage/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
+   let navItems = $(".page-nav .nav-item a");
+   navItems.hover(function ()
+   {
+      $(".page-nav .nav-item svg").addClass("page-nav-link-hover");
+   }, function ()
+   {
+      $(".page-nav .nav-item svg").removeClass("page-nav-link-hover");
+   });
 });
