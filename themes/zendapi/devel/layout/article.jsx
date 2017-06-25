@@ -12,7 +12,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
-import Article from "Components/artcile/Article";
+import Article from "Components/article/Article";
 import SitePath from "Components/sitepath/SitePath";
 import "Scss/base.scss";
 import "Scss/pages/article.scss"
