@@ -14,25 +14,25 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
-//import ManualPanel from "Components/manual/ManualPanel";
+import ManualPanel from "Components/manual/ManualPanel";
 
 
-// class ManualPage extends React.Component
-// {
-//    render()
-//    {
-//       return <div style={{width:"100%"}}>
-//          <div className="uk-container uk-margin-small-top uk-margin-small-bottom manual-page-container">
-//          
-//          </div>
-//       </div>;
-//    }
-// }
+class ManualPage extends React.Component
+{
+   render()
+   {
+      return <div style={{width:"100%"}}>
+         <div className="uk-container uk-margin-small-top uk-margin-small-bottom manual-page-container">
+            <ManualPanel renderType={MANUAL_PAGE_TYPE}/>
+         </div>
+      </div>;
+   }
+}
 
 $(function ()
 {
    Uikit.use(UikitIcons);
    ReactDOM.render(<Header/>, document.getElementById("header-wrapper"));
-   //ReactDOM.render(<ManualPage/>, document.getElementById("container"));
+   ReactDOM.render(<ManualPage/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
 });
