@@ -75,6 +75,12 @@
       font-size: 1.3em;
     }
   }
+  .nav-item-right {
+    margin-top: 5px;
+    @media (min-width: 960px) {
+      margin-top: 0;
+    }
+  }
 }
 .page-nav-link-hover {
   color: $zapi-base-color!important;

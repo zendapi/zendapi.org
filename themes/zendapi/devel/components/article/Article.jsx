@@ -23,7 +23,7 @@ export default class Article extends React.Component
            <span data-uk-icon="icon:  chevron-left"></span>
             <div className="uk-text-break uk-text-left">{this.renderLinkItem(data.prev)}</div>
          </div>
-         <div className="uk-width-1-1@s uk-width-1-2@m uk-width-1-2@m uk-flex uk-flex-right nav-item">
+         <div className="uk-width-1-1@s uk-width-1-2@m uk-width-1-2@m uk-flex uk-flex-right nav-item nav-item-right">
             <div className="uk-text-break uk-text-right">{this.renderLinkItem(data.next)}</div>
             <span data-uk-icon="icon:  chevron-right"></span>
          </div>
