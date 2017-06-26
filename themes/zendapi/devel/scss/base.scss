@@ -4,6 +4,8 @@
 @import "~uikit/src/scss/mixins-theme.scss";
 @import "~uikit/src/scss/uikit-theme.scss";
 
+@import "~perfect-scrollbar/src/css/main.scss";
+
 @font-face {
   font-family: 'Gotham Rounded';
   src: url('../fonts/GothamRoundedBook.otf') format('truetype');
@@ -34,4 +36,86 @@ a:hover {
   transition: 0.2s ease-in-out;
   -webkit-transition-property: color;
   transition-property: color;
+}
+
+.highlight {
+  border-radius: 2px;
+  @media (min-width: 640px) {
+    border-radius: 5px;
+  }
+  .line {
+    height: 1.2em!important;
+    @media (min-width: 640px) {
+      height: 1.3em!important;
+    }
+  }
+  max-height:500px;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #abb2bf;
+  background: #282c34;
+  pre {
+    border: none;
+    background-color: transparent;
+    span, div {
+      font-size: 0.7em!important;
+      @media (min-width: 640px) {
+        font-size: 0.9em!important;
+      }
+    }
+  }
+  
+  position: relative;
+  .comment, .quote {
+    color: #5c6370;
+    font-style: italic;
+  }
+  .doctag, .keyword, .formula{
+    color: #c678dd;
+  }
+  .section, .name, .selector-tag, .deletion, .subst {
+    color: #e06c75;
+  }
+  .literal {
+    color: #56b6c2;
+  }
+  .string, .regexp, .addition, .meta-string, .attribute {
+    color: #98c379;
+  }
+  .built_in, .class, .title {
+    color: #e6c07b;
+  }
+  .attr,
+  .variable,
+  .template-variable,
+  .type,
+  .selector-class,
+  .selector-attr,
+  .selector-pseudo,
+  .number {
+    color: #d19a66;
+  }
+  
+  .symbol,
+  .bullet,
+  .link,
+  .meta,
+  .selector-id,
+  .title {
+    color: #61aeee;
+  }
+
+  .emphasis {
+    font-style: italic;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .link {
+    text-decoration: underline;
+  }
+
 }

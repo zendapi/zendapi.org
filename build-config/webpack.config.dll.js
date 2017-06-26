@@ -23,7 +23,8 @@ const config = {
          "react",
          "react-dom",
          "uikit",
-         "uikit/dist/js/uikit-icons"
+         "uikit/dist/js/uikit-icons",
+         "perfect-scrollbar"
       ]
    },
    output : {

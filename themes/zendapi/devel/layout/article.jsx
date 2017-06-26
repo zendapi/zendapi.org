@@ -17,7 +17,7 @@ import Article from "Components/article/Article";
 import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
 import SitePath from "Components/sitepath/SitePath";
-
+import PerfectScroller from "perfect-scrollbar";
 class ArticlePage extends React.Component
 {
    render()
@@ -56,5 +56,12 @@ $(function ()
    }, function ()
    {
       $(".page-nav .nav-item svg").removeClass("page-nav-link-hover");
+   });
+   $(".highlight").each(function(){
+      PerfectScroller.initialize(this, {
+         wheelSpeed: 2,
+         wheelPropagation: true,
+         minScrollbarLength: 20
+      });
    });
 });

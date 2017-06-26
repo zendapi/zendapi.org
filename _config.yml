@@ -39,10 +39,10 @@ relative_link: false
 future: true
 highlight:
   enable: true
+  gutter: false
   line_number: true
   auto_detect: false
   tab_replace:
-
 # Category & Tag
 default_category: uncategorized
 category_map:

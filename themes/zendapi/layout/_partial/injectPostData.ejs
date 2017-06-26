@@ -15,7 +15,7 @@ if (page.prev) {
 window.ARTICLE_DATA = {
     title: "<%- page.title %>",
     date: "<%- page.date.format("YYYY/MM/DD HH:mm:ss") %>",
-    content: '<%- page.content.replace(/\n/g, "") %>',
+    content: <%- JSON.stringify(page.content.split("\n")) %>,
     prev: <%- JSON.stringify(prev) %>,
     next: <%- JSON.stringify(next) %>
 };
