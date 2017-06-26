@@ -14,7 +14,6 @@ export default class Header extends React.Component
             <ul className="uk-navbar-nav uk-visible@m">
                <li className="uk-active"><a href="/">网站首页</a></li>
                <li><a href="/manual">手册</a></li>
-               <li><a href="#">API文档</a></li>
                <li><a href="/blog">博客</a></li>
                <li><a href="/about">关于我们</a></li>
             </ul>

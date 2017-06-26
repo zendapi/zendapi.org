@@ -1,0 +1,13 @@
+.manual-container {
+  min-height: 600px;
+  .content {
+    background-color: #ffffff;
+    padding:20px;
+    @media (min-width: 640px) {
+      padding:30px;
+    }
+  }
+  .catalog {
+    width: 200px;
+  }
+}
