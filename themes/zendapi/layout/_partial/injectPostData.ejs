@@ -1,8 +1,21 @@
-<% 
-console.log(page);
+<%
+let prev = next = null;
+if (page.prev) {
+   prev = {
+      title: page.prev.title,
+       url: url_for(page.prev.canonical_path)
+   };
+} else if (page.next) {
+   next = {
+       title: page.next.title,
+       url: url_for(page.next.canonical_path)
+   };
+}
 %>
 window.ARTICLE_DATA = {
     title: "<%- page.title %>",
     date: "<%- page.date.format("YYYY/MM/DD HH:mm:ss") %>",
-    content: '<%- page.content.replace(/\n/g, "") %>'
+    content: '<%- page.content.replace(/\n/g, "") %>',
+    prev: <%- JSON.stringify(prev) %>,
+    next: <%- JSON.stringify(next) %>
 };

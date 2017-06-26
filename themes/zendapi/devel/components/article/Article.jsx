@@ -12,21 +12,29 @@ export default class Article extends React.Component
             <div className="uk-article article-content uk-margin-medium-bottom" dangerouslySetInnerHTML={{__html:data.content}}>
             </div>
          </div>
-         {this.renderPageNav()}
+         {this.renderPageNav(data)}
       </div>;
    }
    
-   renderPageNav()
+   renderPageNav(data)
    {
       return <div className="uk-grid-small uk-child-width-expand@s uk-text-center page-nav" data-uk-grid>
          <div className="uk-width-1-1@s uk-width-1-2@m uk-flex uk-flex-left nav-item">
            <span data-uk-icon="icon:  chevron-left"></span>
-            <div className="uk-text-break uk-text-left"><a>苹果大战泄密者内幕：从中国工厂到美国总部苹果大战泄密者内幕：从中国工厂到美国总部</a></div>
+            <div className="uk-text-break uk-text-left">{this.renderLinkItem(data.prev)}</div>
          </div>
          <div className="uk-width-1-1@s uk-width-1-2@m uk-width-1-2@m uk-flex uk-flex-right nav-item">
-            <div className="uk-text-break uk-text-right"><a>电子竞技真能名利双收？其实难度远远高于考上清华</a></div>
+            <div className="uk-text-break uk-text-right">{this.renderLinkItem(data.next)}</div>
             <span data-uk-icon="icon:  chevron-right"></span>
          </div>
       </div>;
+   }
+   
+   renderLinkItem(info) {
+      if (info) {
+         return <a href={info.url}>{info.title}</a>;
+      } else {
+         return <a>没有数据啦</a>;
+      }
    }
 };
