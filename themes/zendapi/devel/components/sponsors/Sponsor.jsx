@@ -5,7 +5,6 @@ import React from "react";
 import "./Sponsors.scss";
 import sponsorSvg from "./images/sponsor.svg";
 import unicornteam from "./images/unicornteam.png";
-import angular from "./images/angular.svg";
 import qcoreteam from "./images/qcoreteam.svg";
 import topjs from "./images/topjs.png";
 
@@ -21,7 +20,6 @@ export default class Sponsor extends React.Component
          </div>
          <div className="uk-margin-medium-top uk-flex uk-flex-center" data-uk-grid>
             <a className="sponsor-logo uk-width-auto"><img src={unicornteam}/></a>
-            <a className="sponsor-logo uk-width-auto"><img src={angular}/></a>
             <a className="sponsor-logo uk-width-auto"><img src={qcoreteam} style={{width:200}}/></a>
             <a className="sponsor-logo uk-width-auto"><img src={topjs} style={{width:200,height:60,paddingTop:10}}/></a>
          </div>

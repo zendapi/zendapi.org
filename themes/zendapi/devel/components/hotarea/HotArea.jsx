@@ -16,9 +16,13 @@ export default class HotArea extends React.Component
                <button className="uk-button uk-button-default uk-margin-medium-right@s uk-box-shadow-hover-large start-btn">开始学习</button>
             </div>
             <div className="uk-width-1-1 uk-width-1-2@s uk-text-center uk-text-left@s">
-               <button className="uk-button uk-button-default github-repo-btn">GitHub仓库</button>
+               <button className="uk-button uk-button-default github-repo-btn" onClick={this.gotoGithub}>GitHub仓库</button>
             </div>
          </div>
       </div>;
+   }
+   gotoGithub()
+   {
+      window.open("https://www.github.com/qcoreteam/zendapi");
    }
 };
