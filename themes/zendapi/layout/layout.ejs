@@ -4,19 +4,32 @@
     <%- partial('_partial/head') %>
 </head>
 <body>
+<script type="application/javascript">
+<%
+    let layout;
+    if (page.layout) {
+        layout = page.layout;
+    } else if (page.title) {
+       layout = "post";
+    }
+    if (layout == "post") { %>
+<%- partial("_partial/injectPostData") %>
+<%
+    } else if (layout == "manual") { %>
+<%- partial("_partial/injectManualData")%>
+<%
+    }
+%>
+</script>
 <div class="uk-offcanvas-content">
     <div id="header-wrapper" class="uk-container uk-margin-remove uk-container-expand site-header" uk-sticky="show-on-up: true; animation: uk-animation-slide-top;"></div>
     <%- body %>
     <div id= "footer-wrapper"></div>
     <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
         <div class="uk-offcanvas-bar">
-
             <button class="uk-offcanvas-close" type="button" uk-close></button>
-
             <h3>李岱</h3>
-
             <p>你说6不6</p>
-
         </div>
     </div>
 </div>

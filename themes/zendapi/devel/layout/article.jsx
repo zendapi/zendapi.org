@@ -18,8 +18,6 @@ import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
 import SitePath from "Components/sitepath/SitePath";
 
-
-
 class ArticlePage extends React.Component
 {
    render()
@@ -27,7 +25,7 @@ class ArticlePage extends React.Component
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom article-page-container">
             <SitePath pathList = {this.getPathList()}/>
-            <Article/>
+            <Article articleInfo = {ARTICLE_DATA}/>
          </div>
       </div>;
    }

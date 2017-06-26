@@ -1,0 +1,8 @@
+<% 
+console.log(page);
+%>
+window.ARTICLE_DATA = {
+    title: "<%- page.title %>",
+    date: "<%- page.date.format("YYYY/MM/DD HH:mm:ss") %>",
+    content: '<%- page.content.replace(/\n/g, "") %>'
+};
