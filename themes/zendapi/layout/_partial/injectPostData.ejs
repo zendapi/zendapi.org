@@ -1,11 +1,13 @@
 <%
 let prev = next = null;
+
 if (page.prev) {
    prev = {
       title: page.prev.title,
        url: url_for(page.prev.canonical_path)
    };
-} else if (page.next) {
+} 
+if (page.next) {
    next = {
        title: page.next.title,
        url: url_for(page.next.canonical_path)
