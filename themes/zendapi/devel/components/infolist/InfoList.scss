@@ -45,7 +45,10 @@
       white-space: nowrap;
     }
     a {
-      font-size: 13px;
+      font-size: 1.2em;
+      @media (min-width: 960px) {
+        font-size: 1.1em;
+      }
     }
   }
   .info-list{

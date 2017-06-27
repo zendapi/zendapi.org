@@ -16,6 +16,7 @@ body {
   font-size: $zapi-std-fontsize;
   color: $zapi-normal-font-color;
   height:100%;
+  -webkit-tap-highlight-color:rgba(0,0,0,0)!important;
 }
 
 .clear {
@@ -59,10 +60,7 @@ a:hover {
     border: none;
     background-color: transparent;
     span, div {
-      font-size: 0.7em!important;
-      @media (min-width: 640px) {
         font-size: 1em!important;
-      }
     }
   }
   

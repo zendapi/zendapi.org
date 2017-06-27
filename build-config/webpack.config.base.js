@@ -118,23 +118,7 @@ config.module.rules.push({
    }]
 });
 
-config.module.rules.push({
-   test: /\.scss$/,
-   use: ExtractTextPlugin.extract({
-      fallback: "style-loader",
-      use: [{
-         loader: "css-loader"
-      }, {
-         loader: "sass-loader",
-         options: {
-            includePaths: [
-               SRC_PATH+"/scss",
-               NODE_MODULES_PATH
-            ],
-         }
-      }]
-   })
-});
+
 
 
 config.module.rules.push({

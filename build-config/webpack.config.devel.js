@@ -6,8 +6,27 @@
  * @copyright Copyright (c) 2016-2017 QCoreTeam (http://www.qcoreteam.org)
  * @license   http://www.zendapi.org/license/new-bsd New BSD License
  */
+
 const webpack = require('webpack');
 const config = require('./webpack.config.base');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+config.module.rules.push({
+   test: /\.scss$/,
+   use: ExtractTextPlugin.extract({
+      fallback: "style-loader",
+      use: [{
+         loader: "css-loader"
+      }, {
+         loader: "sass-loader",
+         options: {
+            includePaths: [
+               SRC_PATH+"/scss",
+               NODE_MODULES_PATH
+            ],
+         }
+      }]
+   })
+});
 
 const args = process.argv;
 const watch = args.indexOf('--watch') > -1;

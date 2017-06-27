@@ -6,6 +6,7 @@
  * @copyright Copyright (c) 2016-2017 QCoreTeam (http://www.qcoreteam.org)
  * @license   http://www.zendapi.org/license/new-bsd New BSD License
  */
+
 const path = require("path");
 const Utils = require("./utils");
 const webpack = require("webpack");
