@@ -21,7 +21,7 @@ class IndexPage extends React.Component
       return <div style={{width:"100%"}}>
          <HotArea/>
          <Features/>
-         <InfoList/>
+         <InfoList newsItems = {INDEX_PAGE_DATA.newsList}/>
          <Sponsor/>
          <Teamwork/>
          <Footer/>

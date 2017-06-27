@@ -22,6 +22,8 @@
     <%
     } else if (layout == "blog") { %>
     <%- partial("_partial/injectBlogListData")%>
+    <%} else if (layout == "index") { %>
+    <%- partial("_partial/injectIndexData") %>
     <%} %>
 </script>
 <div class="uk-offcanvas-content">

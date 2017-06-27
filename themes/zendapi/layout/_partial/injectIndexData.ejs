@@ -1,0 +1,17 @@
+<%
+    let items = [];
+    let count = 0;
+    site.posts.forEach(function(item){
+        if (count > 4) {
+           return false;
+        }
+       items.push({
+          title: item.title,
+           url: url_for(item.canonical_path)
+       });
+       count++;
+    });
+%>
+window.INDEX_PAGE_DATA = {
+    newsList: <%- JSON.stringify(items)%>
+};
