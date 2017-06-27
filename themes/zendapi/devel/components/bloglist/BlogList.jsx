@@ -21,7 +21,7 @@ export default class BlogList extends React.Component
       return <div className="blog-list-item" key = {key}>
          <div className="title"><a href={info.link}>{info.title}</a></div>
          <div className="uk-flex uk-flex-left meta">{info.date}</div>
-         {info.coverImage &&  <div className="meta-img uk-margin-medium-top"><img src={info.coverImage} className="uk-border-rounded"/></div>}
+         {info.coverImage &&  <div className="meta-img uk-margin-medium-top uk-text-center"><img src={info.coverImage}/></div>}
          {info.excerpt != "" && <div className="excerpt uk-margin-medium-top" dangerouslySetInnerHTML={{__html:info.excerpt}}></div>}
          <div>
             <button className="uk-button uk-button-default goto-detail-btn uk-margin-medium-top" 

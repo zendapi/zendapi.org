@@ -61,7 +61,14 @@
     margin-top: 5px;
   }
   .meta-img {
-    
+    img {
+      opacity: 0.8;
+      max-height: 300px;
+      @media (min-width: 640px) {
+        max-height: 350px;
+        border-radius:2px;
+      }
+    }
   }
   .excerpt {
     color: #999999;
