@@ -13,6 +13,7 @@
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-stylus": "^0.3.1",
+    "hexo-deployer-git": "^0.3.0",
     "hexo-server": "^0.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -47,6 +48,7 @@
   "scripts": {
     "generate-theme": "node build-config/webpack.config.devel.js",
     "generate-site": "node build-config/webpack.config.devel.js && hexo generate",
+    "generate-site-production": "webpack --config build-config/webpack.config.dll.production.js && node build-config/webpack.config.production.js && hexo generate",
     "generate-dll": "webpack --config build-config/webpack.config.dll.js"
   }
 }

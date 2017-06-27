@@ -52,10 +52,6 @@ const config = {
       extensions: [".js", ".jsx"]
    },
    plugins : [
-      new webpack.DefinePlugin({
-         "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development")
-      }),
-      
       new webpack.optimize.CommonsChunkPlugin({
          name: "common",
          filename: "statics/js/common.js"
@@ -104,7 +100,8 @@ config.module.rules.push({
    use: [{
       loader: 'file-loader',
       options: {
-         name: 'statics/fonts/[name].[ext]'
+         name: 'statics/fonts/[name].[ext]',
+         publicPath: "/"
       }
    }]
 });
@@ -115,7 +112,8 @@ config.module.rules.push({
       loader: 'file-loader',
       options: {
          useRelativePath: false,
-         name: 'statics/images/[path]/[name].[ext]'
+         name: 'statics/images/[path]/[name].[ext]',
+         publicPath: "/"
       }
    }]
 });
@@ -151,19 +149,5 @@ config.module.rules.push({
    }]
 });
 
-
-
-if (uglify) {
-   config.plugins.push(
-      new webpack.optimize.UglifyJsPlugin({
-         compress: {
-            warnings: false
-         },
-         output: {
-            comments: false
-         }
-      })
-   );
-}
 
 module.exports = config;

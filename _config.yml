@@ -68,4 +68,6 @@ theme: zendapi
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  - type: git
+    repo: zendapi:zendapi/zendapi.github.io
+    branch: master

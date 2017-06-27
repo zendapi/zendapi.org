@@ -35,7 +35,6 @@ export default class InfoList extends React.Component
       </div>;
    }
 
-
    renderInfoItem(title, url, index)
    {
       return <li key={index}><a href={url}>{title}</a></li>;
