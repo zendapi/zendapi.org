@@ -32,6 +32,6 @@ class IndexPage extends React.Component
 $(function ()
 {
    Uikit.use(UikitIcons);
-   ReactDOM.render(<Header/>, document.getElementById("header-wrapper"));
+   ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
    ReactDOM.render(<IndexPage/>, document.getElementById("container"));
 });

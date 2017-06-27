@@ -45,7 +45,7 @@ class AboutPage extends React.Component
 $(function ()
 {
    Uikit.use(UikitIcons);
-   ReactDOM.render(<Header/>, document.getElementById("header-wrapper"));
+   ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
    ReactDOM.render(<AboutPage/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
    $(".about-container .about-nav a").click(function(){

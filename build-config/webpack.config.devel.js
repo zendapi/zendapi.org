@@ -7,9 +7,14 @@
  * @license   http://www.zendapi.org/license/new-bsd New BSD License
  */
 
+const path = require("path");
+const Utils = require("./utils");
 const webpack = require('webpack');
 const config = require('./webpack.config.base');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ROOT_PATH = Utils.fullPath("../themes/zendapi");
+const SRC_PATH = ROOT_PATH + "/devel";
+const NODE_MODULES_PATH = Utils.fullPath("../node_modules");
 config.module.rules.push({
    test: /\.scss$/,
    use: ExtractTextPlugin.extract({

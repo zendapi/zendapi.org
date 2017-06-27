@@ -115,5 +115,52 @@ a:hover {
   .link {
     text-decoration: underline;
   }
+}
 
+#sidebar {
+  background-color: #ffffff!important;
+  color: $zapi-normal-font-color;
+  .uk-offcanvas-close {
+    color: #cccccc;
+    &:hover {
+      color: #000000;
+      -webkit-transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out;
+      -webkit-transition-property: color;
+      transition-property: color;
+    }
+  }
+  .menu-container {
+    margin-top:30px;
+    .extra-items {
+      margin-top: 5px;
+      border-top:1px solid #E5E5E5;
+      padding-top: 20px;
+    }
+  }
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style-type: none;
+    height: 2em;
+    line-height: 2em;
+  }
+  a {
+    font-size:1.2em;
+    color: $zapi-link-color;
+    text-decoration: none;
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+    -webkit-transition-property: color;
+    transition-property: color;
+  }
+  a:hover {
+    color: $zapi-base-color;
+    text-decoration: none;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    -webkit-transition-property: color;
+    transition-property: color;
+  }
 }

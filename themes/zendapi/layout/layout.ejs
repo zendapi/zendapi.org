@@ -6,6 +6,8 @@
 <body>
 <script type="application/javascript">
     <%
+     // 嵌入导航   
+    let menuItems = site.data.category;
     let layout;
     if (page.layout) {
         layout = page.layout;
@@ -25,16 +27,29 @@
     <%} else if (layout == "index") { %>
     <%- partial("_partial/injectIndexData") %>
     <%} %>
+    window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
 </script>
 <div class="uk-offcanvas-content">
     <div id="header-wrapper" class="uk-container uk-margin-remove uk-container-expand site-header" uk-sticky="show-on-up: true; animation: uk-animation-slide-top;"></div>
     <%- body %>
     <div id= "footer-wrapper"></div>
-    <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
-        <div class="uk-offcanvas-bar">
+    <div id="offcanvas-push" uk-offcanvas="mode: slide; overlay: true">
+        <div class="uk-offcanvas-bar" id = "sidebar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
-            <h3>李岱</h3>
-            <p>你说6不6</p>
+            <div class="menu-container">
+                <%- partial("_partial/injectSiteMenu") %>
+                
+                <%
+                if (layout == "manual") { %>
+                
+                <%
+                } else if (layout == "about") { %>
+                <ul class = "uk-text-left extra-items uk-width-1-1">
+                    <li class="uk-width-1-1"><a href = "/about/changelog.html">Changelog</a></li>
+                </ul>
+                <%} %>
+               
+            </div>
         </div>
     </div>
 </div>
