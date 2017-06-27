@@ -1,0 +1,20 @@
+
+<%
+let items = [];
+page.posts.forEach(function(doc){
+    items.push({
+        title: doc.title,
+        date: doc.date.format("YYYY/MM/DD HH:mm:ss"),
+        excerpt: doc.excerpt,
+        link: url_for(doc.canonical_path)
+    });
+});
+let prevLink = page.prev_link == "" ? null : url_for(page.prev_link);
+let nextLink = page.next_link == "" ? null : url_for(page.next_link);
+%>
+
+window.BLOG_LIST_DATA = {
+items: <%- JSON.stringify(items) %>,
+prev: <%- JSON.stringify(prevLink) %>,
+next: <%- JSON.stringify(nextLink) %>
+};

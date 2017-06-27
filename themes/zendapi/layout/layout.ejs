@@ -5,24 +5,26 @@
 </head>
 <body>
 <script type="application/javascript">
-<%
+    <%
     let layout;
     if (page.layout) {
         layout = page.layout;
     } else if (page.title) {
-       layout = "post";
+        layout = "post";
+    } else if (page._isBlogList) {
+       layout = "blog";
     }
     if (layout == "post") { %>
-<%- partial("_partial/injectPostData") %>
-<%
+    <%- partial("_partial/injectPostData") %>
+    <%
     } else if (layout == "manual") { %>
-<%- partial("_partial/injectManualData")%>
-<%
-    }
-%>
+    <%- partial("_partial/injectManualData")%>
+    <%
+    } else if (layout == "blog") { %>
+    <%- partial("_partial/injectBlogListData")%>
+    <%} %>
 </script>
 <div class="uk-offcanvas-content">
-    
     <div id="header-wrapper" class="uk-container uk-margin-remove uk-container-expand site-header" uk-sticky="show-on-up: true; animation: uk-animation-slide-top;"></div>
     <%- body %>
     <div id= "footer-wrapper"></div>

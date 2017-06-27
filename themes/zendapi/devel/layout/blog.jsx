@@ -26,7 +26,7 @@ class BlogPage extends React.Component
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom blog-page-container">
             <SitePath pathList = {this.getPathList()}/>
-            <BlogList/>
+            <BlogList listData = {BLOG_LIST_DATA}/>
          </div>
       </div>;
    }
