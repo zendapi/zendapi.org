@@ -8,7 +8,7 @@ tags:
 ### 在这里打个广告
 >欢迎大家访问我们的github库, http://www.github.com/qcoreteam/zendapi
 
-`嵩哥` 这个是markdown解析
+这个是markdown解析
 ```javascript
 "use strict";
 /*

@@ -40,8 +40,7 @@
                 <%- partial("_partial/injectSiteMenu") %>
                 <%
                 if (layout == "manual") {
-                    let versionKey = "manual/v"+config.zapi_version.replace(/\./g, "");
-                    let catalog = clone(site.data[versionKey]);
+                    let catalog = get_manual_catalog(page, config, site);
                 %>
                 <div class="uk-panel">
                     <% for(var i = 0; i < catalog.length; i++) {
