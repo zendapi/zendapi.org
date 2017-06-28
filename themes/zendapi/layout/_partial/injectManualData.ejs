@@ -1,1 +1,9 @@
+<%
+let content = page.content.replace(/<a\s*?href\s*=\s*['"]([^'"]+)['"]\s*?class\s*?=\s*['"]header-anchor['"].*?<\/a>/g,
+"<a href=\"#$1\" class=\"header-anchor\">#</a>");
+%>
 window.MANUAL_CATALOG_DATA = <%- JSON.stringify(get_manual_catalog(page, config, site))%>
+window.MANUAL_DATA = {
+title: "<%- page.title %>",
+content: <%- JSON.stringify(content.split("\n")) %>
+};

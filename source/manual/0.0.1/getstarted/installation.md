@@ -1,6 +1,7 @@
 ---
 layout: manual
 subtype: normal
+title: 按照zendAPI
 ---
 installation
 
