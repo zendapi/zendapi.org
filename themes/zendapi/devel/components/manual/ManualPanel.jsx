@@ -7,7 +7,7 @@ export default class ManualPanel extends React.Component
    render()
    {
       return <div className="manual-container uk-flex uk-flex-left">
-         <Catalog/>
+         <Catalog catalog={this.props.catalog}/>
          <div className="content uk-width-expand">content</div>
       </div>;
    }

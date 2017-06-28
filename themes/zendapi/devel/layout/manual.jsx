@@ -23,7 +23,7 @@ class ManualPage extends React.Component
    {
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom manual-page-container">
-            <ManualPanel renderType={MANUAL_PAGE_TYPE}/>
+            <ManualPanel renderType={MANUAL_PAGE_TYPE} catalog={MANUAL_CATALOG_DATA}/>
          </div>
       </div>;
    }

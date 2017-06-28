@@ -1,0 +1,23 @@
+<%
+ let versionKey = "manual/v"+config.zapi_version.replace(/\./g, "");
+ let catalog = clone(site.data[versionKey]);
+ let key = manual_key_from_path(page.path);
+ catalog.forEach(function(category){
+    if (category.children && category.children.length != 0) {
+        category.children.forEach(function(item){
+           if (item.key == key) {
+               item.isActive = true;
+               category.isOpen = true;
+           }
+        });
+    }
+ });
+ if ("mainEntry" == page.subtype || "versionEntry" == page.subtype) {
+     catalog.forEach(function(category){
+         if (category.key == "prologue") {
+             category.isOpen = true;
+         }
+     });
+ }
+ %>
+window.MANUAL_CATALOG_DATA = <%- JSON.stringify(catalog)%>

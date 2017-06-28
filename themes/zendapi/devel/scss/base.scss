@@ -137,6 +137,27 @@ a:hover {
       border-top:1px solid #E5E5E5;
       padding-top: 20px;
     }
+    .uk-panel {
+      .uk-nav-header {
+        color: #222;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      ul {
+        margin-top: 0!important;
+        padding-top: 0!important;
+        margin-bottom: 10px!important;
+        .uk-nav-header {
+          margin-bottom: 10px;
+        }
+        a {
+          font-size: 0.9em;
+        }
+        li {
+          height: 1.4em;
+          line-height: 1.4em;
+        }
+      }
+    }
   }
   ul {
     padding-left: 0;

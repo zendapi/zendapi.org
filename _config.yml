@@ -65,6 +65,9 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: zendapi
 
+## zendAPI项目当前的版本号
+zapi_version: 0.0.1
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
