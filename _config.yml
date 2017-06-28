@@ -47,6 +47,14 @@ highlight:
 default_category: uncategorized
 category_map:
 tag_map:
+toc:
+  maxdepth: 3
+  class: toc
+  slugify: transliteration
+  anchor:
+    position: before
+    symbol: '#'
+    style: header-anchor
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
