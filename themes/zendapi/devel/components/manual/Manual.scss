@@ -1,3 +1,5 @@
+@import "../../scss/variables.scss";
+
 .manual-container {
   min-height: 600px;
   .content {
@@ -9,5 +11,8 @@
   }
   .catalog {
     width: 200px;
+    .uk-active a{
+      color: $zapi-base-color!important;
+    }
   }
 }

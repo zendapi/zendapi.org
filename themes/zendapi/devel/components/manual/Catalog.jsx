@@ -27,7 +27,7 @@ export default class Catalog extends React.Component
    renderChildren(children)
    {
       return <ul className="uk-nav-sub">
-         {children.map((item) => <li className={item.isActive && "uk-active"}><a href="#">{item.text}</a></li>)}
+         {children.map((item) => <li className={item.isActive && "uk-active"}><a href={item.url}>{item.text}</a></li>)}
       </ul>;
    }
 };
