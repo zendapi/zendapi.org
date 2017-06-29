@@ -1,0 +1,25 @@
+@import "../../../scss/variables.scss";
+
+.side-panel {
+  width: 200px;
+  background-color: #ffffff;
+  padding: 20px;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    line-height: 30px;
+    height: 30px;
+    a {
+      font-size: 1.2em;
+      display: inline-block;
+    }
+    img {
+      height:16px;
+      width:16px;
+      margin-top: -5px;
+      margin-right: 5px;
+    }
+  }
+}

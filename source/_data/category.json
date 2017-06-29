@@ -4,6 +4,9 @@
 },{
   "name": "手册",
   "url": "/manual"
+},{
+  "name": "API文档",
+  "url": "/api"
 }, {
   "name": "博客",
   "url": "/blog"

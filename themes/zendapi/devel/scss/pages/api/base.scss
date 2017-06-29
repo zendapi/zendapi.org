@@ -1,0 +1,29 @@
+@import "../../variables.scss";
+body {
+  background-color: #FAFAFA!important;
+}
+$zapi-apidoc-page-width: 1200px;
+.apidoc-page-container {
+  max-width: $zapi-apidoc-page-width;
+  margin-top: 20px!important;
+  margin-bottom: 20px!important;
+  padding: 0!important;
+  @media (min-width: 640px) {
+    margin-top: 30px!important;
+    margin-bottom: 30px!important;
+  }
+  @media (min-width: 960px) {
+    padding-left: 40px!important;
+    padding-right: 40px!important;
+    margin-top: 40px!important;
+    margin-bottom: 40px!important;
+  }
+}
+
+.apidoc-info-container {
+  background-color: #ffffff;
+  padding:20px;
+  @media (min-width: 640px) {
+    padding:30px;
+  }
+}

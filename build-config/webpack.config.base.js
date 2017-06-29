@@ -40,7 +40,8 @@ const config = {
       blog : LAYOUT_PATH + "/blog.jsx",
       manual : LAYOUT_PATH + "/manual.jsx",
       about : LAYOUT_PATH + "/about.jsx",
-      article: LAYOUT_PATH + "/article.jsx"
+      article: LAYOUT_PATH + "/article.jsx",
+      "api/index": LAYOUT_PATH + "/api/index.jsx"
    },
    output : {
       path : DIST_PATH,
@@ -117,8 +118,6 @@ config.module.rules.push({
       }
    }]
 });
-
-
 
 
 config.module.rules.push({

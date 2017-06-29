@@ -1,29 +1,27 @@
 "use strict";
 import "Scss/base.scss";
-import "Scss/pages/index.scss"
+import "Scss/pages/api/base.scss"
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
-import HotArea from "Components/hotarea/HotArea";
-import Features from "Components/features/Features"
 import Footer from "Components/footer/Footer";
-import InfoList from "Components/infolist/InfoList";
-import Sponsor from "Components/sponsors/Sponsor";
-import Teamwork from "Components/teamwork/Teamwork";
+import SidePanel from "Components/api/sidepanel/SidePanel";
 
-
-class IndexPage extends React.Component
+class ApiIndexPage extends React.Component
 {
    render()
    {
       return <div style={{width:"100%"}}>
-         <HotArea/>
-         <Features/>
-         <InfoList newsItems = {INDEX_PAGE_DATA.newsList}/>
-         <Sponsor/>
-         <Teamwork/>
+         <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container">
+            <div className="manual-container uk-flex uk-flex-left">
+               <SidePanel/>
+               <div className="uk-width-expand apidoc-info-container">
+                  content
+               </div>
+            </div>
+         </div>
       </div>;
    }
 }
@@ -32,6 +30,6 @@ $(function ()
 {
    Uikit.use(UikitIcons);
    ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
-   ReactDOM.render(<IndexPage/>, document.getElementById("container"));
+   ReactDOM.render(<ApiIndexPage/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
 });
