@@ -75,7 +75,13 @@ theme: zendapi
 
 ## zendAPI项目当前的版本号
 zapi_version: 0.0.1
-
+## api文档相关
+api_generator:
+  git_ref: master
+  git_stash_name: apidoc_generate_stash
+  git_repo: /softboy/projects/cplusplus/zendapidevel
+  build_dir: temp/apidoc
+apidoc_path: api
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

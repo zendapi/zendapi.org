@@ -1,0 +1,3 @@
+[submodule "node_modules/hexo-generator-apidoc"]
+	path = node_modules/hexo-generator-apidoc
+	url = zendapi:/zendapi/hexo-generator-apidoc

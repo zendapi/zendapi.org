@@ -20,7 +20,7 @@ export default class Features extends React.Component
                      <div className="uk-text-center"><img className="icon" src={ArchitectureSvg} /></div>
                      <div className="feature-title uk-text-center uk-margin-small-top">合理的代码结构</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
-                        对 Zend 引擎的一维 C 接口重新进行组织，按照不同的模块进行面向对象的组织，为第三方扩展编写提供简单稳定的 C++ 接口，通过重载和模板技术对Zend的接口进行改造，在保证灵活性的同时提供类型安全的接口。
+                        对 Zend 引擎的一维 C 接口重新进行组织，按照不同的模块进行面向对象的组织，为第三方扩展编写提供简单稳定的 C++ 接口，通过重载和模板技术对 Zend 的接口进行改造，在保证灵活性的同时提供类型安全的接口。
                      </div>
                   </div>
                </div>
@@ -57,7 +57,7 @@ export default class Features extends React.Component
                <div className="uk-width-1-3@s">
                   <div className="uk-flex uk-flex-column uk-width-1-1 feature-item">
                      <div className="uk-text-center"><img className="icon" src={GoodSvg} /></div>
-                     <div className="feature-title uk-text-center uk-margin-small-top">拥抱C++最新标准</div>
+                     <div className="feature-title uk-text-center uk-margin-small-top">拥抱 C++ 最新标准</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
                         项目采用 C++11 进行编写，最新的C++标准在程序的效率和代码的可阅读性上做了很多努力，我们会紧跟 C++ 标准步伐，将更好的编程体验带到 zendAPI 项目中，尽最大努力提高项目的效率和可阅读性，让您更胸有成竹。
                      </div>
@@ -66,9 +66,9 @@ export default class Features extends React.Component
                <div className="uk-width-1-3@s">
                   <div className="uk-flex uk-flex-column uk-width-1-1 feature-item">
                      <div className="uk-text-center"><img className="icon" src={FreeSvg} /></div>
-                     <div className="feature-title uk-text-center uk-margin-small-top">zendAPI是免费的！</div>
+                     <div className="feature-title uk-text-center uk-margin-small-top">zendAPI 是免费的！</div>
                      <div className="feature-desc uk-text-left uk-margin-small-top">
-                        zendAPI 是在 Zend Engine 之上进行实现的开源项目，采用 BSD 开源协议，项目代码托管下GitHub项目库中，您可以无忧无虑的在您的项目中进行使用。Just enjoy it!
+                        zendAPI 是在 Zend Engine 之上进行实现的开源项目，采用 BSD 开源协议，项目代码托管下 GitHub 项目库中，您可以无忧无虑的在您的项目中进行使用。Just enjoy it!
                      </div>
                   </div>
                </div>
