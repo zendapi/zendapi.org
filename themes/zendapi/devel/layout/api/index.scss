@@ -1,0 +1,27 @@
+.apidoc-index-info-container {
+  .title {
+    height: 40px;
+    line-height: 40px;
+    h3 {
+      display: inline;
+      margin-left:10px;
+    }
+    img {
+      display: inline;
+      width: 35px;
+      height:35px;
+      margin-top: -5px;
+    }
+  }
+  .namespace-entry {
+    font-family: "Gotham Rounded";
+  }
+  a {
+    font-size: 1.2em;
+  }
+  li {
+    @media (min-width: 640px) {
+      padding-bottom: 3px;
+    }
+  }
+}

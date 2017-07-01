@@ -1,0 +1,12 @@
+<%
+
+let items = [];
+page.namespaces.sort("name").map(function(doc){
+    items.push({
+        name: doc.name,
+        url: url_for_api_entity(doc.refid)
+    })
+});
+%>
+
+window.API_INDEX_NAMESPACES_DATA = <%- JSON.stringify(items)%>;

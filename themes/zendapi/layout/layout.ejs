@@ -6,6 +6,7 @@
 <body>
 <script type="application/javascript">
     <%
+        
      // 嵌入导航   
     let menuItems = site.data.category;
     let layout;
@@ -17,15 +18,17 @@
        layout = "blog";
     }
     if (layout == "post") { %>
-    <%- partial("_partial/injectPostData") %>
+    <%- partial("_partial/inject_post_data") %>
     <%
     } else if (layout == "manual") { %>
-    <%- partial("_partial/injectManualData")%>
+    <%- partial("_partial/inject_manual_data")%>
     <%
     } else if (layout == "blog") { %>
-    <%- partial("_partial/injectBlogListData")%>
+    <%- partial("_partial/inject_blog_list_data")%>
     <%} else if (layout == "index") { %>
-    <%- partial("_partial/injectIndexData") %>
+    <%- partial("_partial/inject_index_data") %>
+    <%} else if (layout == "apiindex") { %>
+    <%- partial("_partial/api/inject_index_data") %>
     <%} %>
     window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
 </script>
@@ -37,7 +40,7 @@
         <div class="uk-offcanvas-bar" id = "sidebar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
             <div class="menu-container">
-                <%- partial("_partial/injectSiteMenu") %>
+                <%- partial("_partial/inject_site_menu") %>
                 <%
                 if (layout == "manual") {
                     let catalog = get_manual_catalog(page, config, site);

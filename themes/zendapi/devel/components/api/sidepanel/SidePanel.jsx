@@ -12,8 +12,8 @@ export default class SidePanel extends React.Component
       return <div className="side-panel uk-visible@m uk-margin-medium-right">
          <ul>
             <li><img src ={homeSvg}/><a>API手册首页</a></li>
-            <li><img src ={moduleSvg}/><a>所有模块</a></li>
-            <li><img src ={namespaceSvg}/><a>所有名称空间</a></li>
+            <li><img src ={moduleSvg}/><a>模块分类</a></li>
+            <li><img src ={namespaceSvg}/><a>名称空间</a></li>
             <li><img src ={globalSvg}/><a>全局定义</a></li>
          </ul>
       </div>;
