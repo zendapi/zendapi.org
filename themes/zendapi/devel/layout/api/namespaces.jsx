@@ -9,6 +9,7 @@ import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
 import SidePanel from "Components/api/sidepanel/SidePanel";
+import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 
 class NamespacesIndexPage extends React.Component
 {
@@ -20,6 +21,8 @@ class NamespacesIndexPage extends React.Component
                <SidePanel items = {API_CATALOG_CATEGORIES}/>
                <div className="uk-width-expand apidoc-info-container apidoc-namespaces-info-container">
                   namespaces
+                  <hr className="uk-divider-icon"/>
+                  <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
          </div>

@@ -1,6 +1,10 @@
 "use strict";
 let PathUtils = require("path");
 let Clone = require("clone");
+let _ = require('lodash');
+
+const { spawnSync } = require('child_process');
+
 hexo.extend.helper.register('manual_key_from_path', function(path){
    return PathUtils.basename(path, ".html");
 });
@@ -64,4 +68,13 @@ hexo.extend.helper.register('get_api_catalog', function(page, config, site){
          isActive: item.key == page.layout
       };
    });
+});
+
+hexo.extend.helper.register('get_doxygen_version', function(){
+   let ret = spawnSync("doxygen", ["--version"]);
+   if (0 != ret.status) {
+      throw ret.stderr.toString(); 
+   } else {
+      return _.trim(ret.stdout.toString());
+   }
 });

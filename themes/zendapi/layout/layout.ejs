@@ -36,6 +36,7 @@
                 apiCatalog = get_api_catalog(page, config, site);
             %>
        window.API_CATALOG_CATEGORIES = <%- JSON.stringify(get_api_catalog(page, config, site))%>
+    window.API_DOXYGEN_VERSION = <%- JSON.stringify(get_doxygen_version())%>
     <%}%>
 </script>
 <div class="uk-offcanvas-content">
