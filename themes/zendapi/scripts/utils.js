@@ -59,7 +59,9 @@ hexo.extend.helper.register('get_api_catalog', function(page, config, site){
    return items.map(function(item) {
       return {
          name: item.name,
-         url: url_for.call(hexo, item.url)
+         url: url_for.call(hexo, item.url),
+         key: item.key,
+         isActive: item.key == page.layout
       };
    });
 });

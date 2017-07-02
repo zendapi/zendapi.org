@@ -1,13 +1,17 @@
 [{
   "name": "API手册首页",
-  "url": "api/index.html"
+  "url": "api/index.html",
+  "key": "apiindex"
 },{
   "name": "模块分类",
-  "url": "api/modules.html"
+  "url": "api/modules.html",
+  "key": "apimodules"
 },{
   "name": "名称空间",
-  "url": "api/namespaces.html"
+  "url": "api/namespaces.html",
+  "key":"apinamespaces"
 }, {
   "name": "全局定义",
-  "url": "api/global.html"
+  "url": "api/globals.html",
+  "key": "apiglobals"
 }]

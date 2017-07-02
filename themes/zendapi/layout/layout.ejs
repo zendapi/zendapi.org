@@ -6,7 +6,6 @@
 <body>
 <script type="application/javascript">
     <%
-
     // 嵌入导航   
     let menuItems = site.data.category;
     let layout;
@@ -33,7 +32,7 @@
     window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
             <%
             let apiCatalog = [];
-            if (layout == "apiindex" || layout == "modules") {
+            if (layout == "apiindex" || layout == "apimodules" || layout == "apinamespaces" || layout == "apiclasses" || layout == "apiglobals") {
                 apiCatalog = get_api_catalog(page, config, site);
             %>
        window.API_CATALOG_CATEGORIES = <%- JSON.stringify(get_api_catalog(page, config, site))%>
@@ -76,7 +75,7 @@
                 <ul class = "uk-text-left extra-items uk-width-1-1">
                     <li class="uk-width-1-1"><a href = "/about/changelog.html">Changelog</a></li>
                 </ul>
-                <%} else if (layout == "apiindex" || layout == "modules") {%>
+                <%} else if (layout == "apiindex" || layout == "apimodules" || layout == "apinamespaces" || layout == "apiclasses" || layout == "apiglobals") {%>
                 <ul class = "uk-text-left extra-items uk-width-1-1">
                     <%
                     for(let i = 0; i < apiCatalog.length; i++) {

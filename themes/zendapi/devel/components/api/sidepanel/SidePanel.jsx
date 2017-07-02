@@ -18,7 +18,7 @@ export default class SidePanel extends React.Component
       ];
       return <div className="side-panel uk-visible@m uk-margin-medium-right">
          <ul>
-            {items.map((item, index)=> <li key = {"apicatalog"+index}><img src ={imgs[index]}/><a href={item.url}>{item.name}</a></li>)}
+            {items.map((item, index)=> <li key = {"apicatalog"+index} className={item.isActive && "active-item"}><img src ={imgs[index]}/><a href={item.url}>{item.name}</a></li>)}
          </ul>
       </div>;
    }
