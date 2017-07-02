@@ -22,7 +22,7 @@ class ApiIndexPage extends React.Component
             <div className="manual-container uk-flex uk-flex-left">
                <SidePanel/>
                <div className="uk-width-expand apidoc-info-container apidoc-index-info-container">
-                  <ModulesEntry/>
+                  <ModulesEntry items = {API_INDEX_MODULES_DATA}/>
                   <NamespacesEntry items = {API_INDEX_NAMESPACES_DATA}/>
                </div>
             </div>
@@ -35,13 +35,13 @@ class ModulesEntry extends React.Component
 {
    render()
    {
+      let items = this.props.items;
       return <div className="module-entry">
          <div className="title">
             <img src={moduleSvg}/><h3 className="uk-width-expand">模块列表</h3>
          </div>
          <ul>
-            <li><a>内核数据结构</a></li>
-            <li><a>内存管理</a></li>
+            {items.map((item)=><li><a href={item.url}>{item.name}</a></li>)}
          </ul>
       </div>;
    }
