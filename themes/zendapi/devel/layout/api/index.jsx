@@ -1,10 +1,11 @@
 "use strict";
 import "Scss/base.scss";
 import "Scss/pages/api/base.scss";
+import "./index.scss";
 import globalSvg from "./images/global.svg";
 import moduleSvg from "./images/module.svg";
 import namespaceSvg from "./images/namespace.svg";
-import "./index.scss";
+
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
 import React from "react";
@@ -20,7 +21,7 @@ class ApiIndexPage extends React.Component
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-index-page">
             <div className="manual-container uk-flex uk-flex-left">
-               <SidePanel/>
+               <SidePanel items = {API_CATALOG_CATEGORIES}/>
                <div className="uk-width-expand apidoc-info-container apidoc-index-info-container">
                   <ModulesEntry items = {API_INDEX_MODULES_DATA}/>
                   <NamespacesEntry items = {API_INDEX_NAMESPACES_DATA}/>

@@ -47,3 +47,19 @@ hexo.extend.helper.register('get_manual_catalog', function(page, config, site){
    }
    return catalog;
 });
+
+/**
+ * 我在这里提供这个helper是为版本号做准备的, 暂时我们在积极的开发，不提供版本号的api手册
+ * 只提供实时的api手册文档
+ */
+hexo.extend.helper.register('get_api_catalog', function(page, config, site){
+
+   let url_for = hexo.extend.helper.get('url_for');
+   let items = site.data['api/catalog'];
+   return items.map(function(item) {
+      return {
+         name: item.name,
+         url: url_for.call(hexo, item.url)
+      };
+   });
+});

@@ -41,7 +41,8 @@ const config = {
       manual : LAYOUT_PATH + "/manual.jsx",
       about : LAYOUT_PATH + "/about.jsx",
       article: LAYOUT_PATH + "/article.jsx",
-      "api/index": LAYOUT_PATH + "/api/index.jsx"
+      "api/index": LAYOUT_PATH + "/api/index.jsx",
+      "api/modules": LAYOUT_PATH + "/api/modules.jsx"
    },
    output : {
       path : DIST_PATH,

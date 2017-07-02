@@ -9,12 +9,16 @@ export default class SidePanel extends React.Component
 {
    render()
    {
+      let items = this.props.items;
+      let imgs = [
+         homeSvg,
+         moduleSvg,
+         namespaceSvg,
+         globalSvg
+      ];
       return <div className="side-panel uk-visible@m uk-margin-medium-right">
          <ul>
-            <li><img src ={homeSvg}/><a>API手册首页</a></li>
-            <li><img src ={moduleSvg}/><a>模块分类</a></li>
-            <li><img src ={namespaceSvg}/><a>名称空间</a></li>
-            <li><img src ={globalSvg}/><a>全局定义</a></li>
+            {items.map((item, index)=> <li key = {"apicatalog"+index}><img src ={imgs[index]}/><a href={item.url}>{item.name}</a></li>)}
          </ul>
       </div>;
    }

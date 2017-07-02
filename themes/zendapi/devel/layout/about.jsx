@@ -6,6 +6,8 @@
  * @copyright Copyright (c) 2016-2017 QCoreTeam (http://www.qcoreteam.org)
  * @license   http://www.topjs.org/license/new-bsd New BSD License
  */
+import "Scss/base.scss";
+import "Scss/pages/about.scss";
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
 import React from "react";
@@ -15,8 +17,7 @@ import SitePath from "Components/sitepath/SitePath";
 import AboutPanel from "Components/about/AboutPanel";
 import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
-import "Scss/base.scss";
-import "Scss/pages/about.scss";
+
 
 class AboutPage extends React.Component
 {

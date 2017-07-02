@@ -6,8 +6,8 @@
 <body>
 <script type="application/javascript">
     <%
-        
-     // 嵌入导航   
+
+    // 嵌入导航   
     let menuItems = site.data.category;
     let layout;
     if (page.layout) {
@@ -15,7 +15,7 @@
     } else if (page.title) {
         layout = "post";
     } else if (page._isBlogList) {
-       layout = "blog";
+        layout = "blog";
     }
     if (layout == "post") { %>
     <%- partial("_partial/inject_post_data") %>
@@ -31,6 +31,13 @@
     <%- partial("_partial/api/inject_index_data") %>
     <%} %>
     window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
+            <%
+            let apiCatalog = [];
+            if (layout == "apiindex" || layout == "modules") {
+                apiCatalog = get_api_catalog(page, config, site);
+            %>
+       window.API_CATALOG_CATEGORIES = <%- JSON.stringify(get_api_catalog(page, config, site))%>
+    <%}%>
 </script>
 <div class="uk-offcanvas-content">
     <div id="header-wrapper" class="uk-container uk-margin-remove uk-container-expand site-header" uk-sticky="show-on-up: true; animation: uk-animation-slide-top;"></div>
@@ -47,19 +54,19 @@
                 %>
                 <div class="uk-panel">
                     <% for(var i = 0; i < catalog.length; i++) {
-                       let category = catalog[i];
+                        let category = catalog[i];
                     %>
                     <ul class="uk-nav uk-nav-default tm-nav uk-margin-top">
                         <li class="uk-nav-header"><%- category.text %></li>
                         <%
-                            if (category.children && category.children.length != 0) {
-                                for(var j = 0; j < category.children.length; j++) {
-                                   let item = category.children[j];
-                                   %>
+                        if (category.children && category.children.length != 0) {
+                        for(var j = 0; j < category.children.length; j++) {
+                            let item = category.children[j];
+                        %>
                         <li><a href="<%- item.url %>"><%- item.text %></a></li>
                         <%
-                                }
-                            }
+                        }
+                        }
                         %>
                     </ul>
                     <%}%>
@@ -69,8 +76,17 @@
                 <ul class = "uk-text-left extra-items uk-width-1-1">
                     <li class="uk-width-1-1"><a href = "/about/changelog.html">Changelog</a></li>
                 </ul>
-                <%} %>
-               
+                <%} else if (layout == "apiindex" || layout == "modules") {%>
+                <ul class = "uk-text-left extra-items uk-width-1-1">
+                    <%
+                    for(let i = 0; i < apiCatalog.length; i++) {
+                       let catalogItem = apiCatalog[i];
+                    %>
+                    <li class="uk-width-1-1"><a href = <%- catalogItem.url %>><%- catalogItem.name %></a></li>
+                    <% } %>
+                </ul>
+                <% }%>
+
             </div>
         </div>
     </div>
