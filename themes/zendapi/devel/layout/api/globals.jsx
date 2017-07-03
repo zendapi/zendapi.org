@@ -20,8 +20,18 @@ class GlobalsIndexPage extends React.Component
             <div className="manual-container uk-flex uk-flex-left">
                <SidePanel items = {API_CATALOG_CATEGORIES}/>
                <div className="uk-width-expand apidoc-info-container apidoc-globals-info-container">
-                  globals
-                  <hr className="uk-divider-icon"/>
+                  <h3 className="uk-width-1-1">类定义</h3>
+                  类定义
+                  <h3 className="uk-width-1-1">结构定义</h3>
+                  结构定义
+                  <h3 className="uk-width-1-1">枚举定义</h3>
+                  枚举定义
+                  <h3 className="uk-width-1-1">宏定义</h3>
+                  宏定义
+                  <h3 className="uk-width-1-1">函数定义</h3>
+                  函数定义
+                  <h3 className="uk-width-1-1">变量/常量定义</h3>
+                  变量定义
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>

@@ -15,13 +15,18 @@ class NamespacesIndexPage extends React.Component
 {
    render()
    {
+      let namespaces = this.props.namespaces;
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-namespaces-page">
             <div className="manual-container uk-flex uk-flex-left">
                <SidePanel items = {API_CATALOG_CATEGORIES}/>
                <div className="uk-width-expand apidoc-info-container apidoc-namespaces-info-container">
-                  namespaces
-                  <hr className="uk-divider-icon"/>
+                  <h3 className="uk-width-1-1">名称空间列表</h3>
+                  {namespaces.map((item, index) =>
+                     <div className="uk-grid-small list-item" data-uk-grid>
+                        <div className="uk-width-1-1 uk-width-1-3@s"><a href = {item.url}>{item.name}</a></div><div className="uk-width-1-1 uk-width-2-3@s"><span>{item.description}</span></div>
+                     </div>
+                  )}
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
@@ -34,6 +39,6 @@ $(function ()
 {
    Uikit.use(UikitIcons);
    ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
-   ReactDOM.render(<NamespacesIndexPage/>, document.getElementById("container"));
+   ReactDOM.render(<NamespacesIndexPage namespaces = {API_NAMESPACES_LIST_DATA}/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
 });
