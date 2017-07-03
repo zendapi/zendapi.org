@@ -1,0 +1,28 @@
+@import "../../scss/variables.scss";
+
+.apidoc-globals-info-container
+{
+  .uk-grid {
+    border-bottom: 1px solid #e5e5e5!important;
+    padding-bottom: 5px;
+  }
+  .title {
+    font-size: 1.8em;
+    color: #000000;
+  }
+  .list-item {
+    a ,span {
+      font-size: 1em!important;
+      font-family: "Gotham Rounded", $global-font-family;
+    }
+    span {
+      font-size: 1em!important;
+    }
+  }
+  .uk-nav-sub {
+    margin-top: 10px;
+    @media (min-width: 640px) {
+      margin-top: 20px;
+    }
+  }
+}

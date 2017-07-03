@@ -1,0 +1,27 @@
+<%
+let items = {
+    defines: [],
+    funcs:[],
+    typedefs: [],
+    variables: [],
+    classes: []
+};
+_.forOwn(page.globals, function (fileContainer, key)
+{
+   
+    items.defines = _.concat(items.defines, fileContainer.defines);
+    items.funcs = _.concat(items.funcs, fileContainer.funcs);
+    items.typedefs = _.concat(items.typedefs, fileContainer.typedefs);
+    items.variables = _.concat(items.variables, fileContainer.variables);
+    items.classes = _.concat(items.classes, fileContainer.classes);
+});
+_.forOwn(items, function (container, key)
+{
+    container.map(function(item){
+       
+       item.url = item.refid ? url_for_api_entity(item.refid) : url_for_entity_detail("global"+key, item.id);
+    });
+});
+%>
+
+window.API_GLOBAL_LIST_DATA = <%- JSON.stringify(items)%>

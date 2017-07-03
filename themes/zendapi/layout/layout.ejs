@@ -32,7 +32,9 @@
     <%- partial("_partial/api/inject_modules_data") %>
     <%} else if (layout == "apinamespaces") {%>
     <%- partial("_partial/api/inject_namespaces_data") %>
-    <%}%>
+    <%} else if (layout == "apiglobals") {%>
+    <%- partial("_partial/api/inject_globals_data") %>
+    <% } %>
     window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
             <%
             let apiCatalog = [];

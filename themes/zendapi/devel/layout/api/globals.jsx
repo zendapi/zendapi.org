@@ -15,28 +15,48 @@ class GlobalsIndexPage extends React.Component
 {
    render()
    {
+      let classes = this.props.data.classes;
+      let defines = this.props.data.defines;
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-globals-page">
             <div className="manual-container uk-flex uk-flex-left">
                <SidePanel items = {API_CATALOG_CATEGORIES}/>
-               <div className="uk-width-expand apidoc-info-container apidoc-globals-info-container">
-                  <h3 className="uk-width-1-1">类定义</h3>
-                  类定义
-                  <h3 className="uk-width-1-1">结构定义</h3>
-                  结构定义
-                  <h3 className="uk-width-1-1">枚举定义</h3>
-                  枚举定义
-                  <h3 className="uk-width-1-1">宏定义</h3>
-                  宏定义
-                  <h3 className="uk-width-1-1">函数定义</h3>
-                  函数定义
-                  <h3 className="uk-width-1-1">变量/常量定义</h3>
-                  变量定义
+               <div className="uk-nav-default uk-nav-parent-icon uk-width-expand apidoc-info-container apidoc-globals-info-container" data-uk-nav>
+                  <li className="uk-parent uk-open">
+                     <a className="uk-width-1-1 title uk-active">宏定义</a>
+                     <ul className="uk-nav-sub">
+                        {this.renderNormalItems(defines)}
+                     </ul>
+                  </li>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
          </div>
       </div>;
+   }
+   
+   renderNormalItems(items)
+   {
+      return items.map((item, index) =>
+         <div className="uk-grid-small list-item" data-uk-grid>
+            <div className="uk-width-1-1 uk-width-1-3@s"><a className="uk-text-break" href = {item.url}>{item.name}</a></div><div className="uk-width-1-1 uk-width-2-3@s"><span>{item.briefDescription}</span></div>
+         </div>
+      );
+   }
+   
+   renderClasses(classes)
+   {
+      return <div className="uk-nav-sub">classes</div>
+   }
+   
+   renderVariables(vars)
+   {
+      
+   }
+   
+   renderFunctions(funcs)
+   {
+      
    }
 }
 
@@ -44,6 +64,6 @@ $(function ()
 {
    Uikit.use(UikitIcons);
    ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
-   ReactDOM.render(<GlobalsIndexPage/>, document.getElementById("container"));
+   ReactDOM.render(<GlobalsIndexPage data = {API_GLOBAL_LIST_DATA}/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
 });

@@ -24,7 +24,7 @@ class NamespacesIndexPage extends React.Component
                   <h3 className="uk-width-1-1">名称空间列表</h3>
                   {namespaces.map((item, index) =>
                      <div className="uk-grid-small list-item" data-uk-grid>
-                        <div className="uk-width-1-1 uk-width-1-3@s"><a href = {item.url}>{item.name}</a></div><div className="uk-width-1-1 uk-width-2-3@s"><span>{item.description}</span></div>
+                        <div className="uk-width-1-1 uk-width-1-3@s"><a  className="uk-text-break" href = {item.url}>{item.name}</a></div><div className="uk-width-1-1 uk-width-2-3@s"><span>{item.description}</span></div>
                      </div>
                   )}
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
