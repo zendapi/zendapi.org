@@ -1,6 +1,6 @@
 <%
 let items = [];
-page.namespaces.map(function(namespace){
+_.values(page.namespaces).map(function(namespace){
     items.push({
         name: namespace.name,
         url: url_for_api_entity(namespace.refid),

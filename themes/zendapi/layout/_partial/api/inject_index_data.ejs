@@ -1,14 +1,14 @@
 <%
 
 let items = [];
-page.namespaces.map(function(doc){
+_.values(page.namespaces).map(function(doc){
     items.push({
         name: doc.name,
         url: url_for_api_entity(doc.refid)
     })
 });
 let moduleModels = [];
-page.modules.map(function(module){
+_.values(page.modules).map(function(module){
     if(!module.parent) {
         moduleModels.push(module);
     }

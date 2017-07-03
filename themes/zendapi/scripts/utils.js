@@ -78,3 +78,14 @@ hexo.extend.helper.register('get_doxygen_version', function(){
       return _.trim(ret.stdout.toString());
    }
 });
+
+
+hexo.extend.helper.register('sort_api_entity_by_name',function(left, right){
+   if (left.name < right.name) {
+      return -1;
+   } else if (left.name == right.name) {
+      return 0;
+   } else {
+      return 1;
+   }
+});
