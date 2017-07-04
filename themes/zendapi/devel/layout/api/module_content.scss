@@ -3,5 +3,8 @@
   .title {
     margin: 0!important;
     padding: 0!important;
+    @media (min-width: 640px) {
+      margin-top: 15px!important;
+    }
   }
 }

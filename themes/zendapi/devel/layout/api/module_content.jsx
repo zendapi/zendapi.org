@@ -23,16 +23,16 @@ class ApiModuleConetentPage extends React.Component
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-index-page">
             <div className="manual-container uk-flex uk-flex-left">
-               <div className="side-panel-container">
+               <div className="side-panel-container uk-visible@s">
                   <SidePanel items = {API_CATALOG_CATEGORIES}/>
                </div>
                <div className="uk-width-expand apidoc-info-container apidoc-module-content-info-container">
                   {mpaths && <Path pathList = {mpaths}/>}
                   <h3 className="title">{content.name}</h3>
                   <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.briefDescription}
+                     {content.briefDescription.trim() != "" ? content.briefDescription : "暂无描述"}
                   </div>
-                  <ModuleSection/>
+                  <ModuleSection modules = {content.modules}/>
                   <hr className="uk-divider-icon"/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>

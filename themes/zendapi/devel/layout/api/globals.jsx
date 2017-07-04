@@ -22,7 +22,7 @@ class GlobalsIndexPage extends React.Component
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-globals-page">
             <div className="manual-container uk-flex uk-flex-left">
-               <div className="side-panel-container">
+               <div className="side-panel-container uk-visible@s">
                   <SidePanel items = {API_CATALOG_CATEGORIES}/>
                </div>
                <div className="uk-nav-default uk-nav-parent-icon uk-width-expand apidoc-info-container apidoc-globals-info-container" data-uk-nav>
