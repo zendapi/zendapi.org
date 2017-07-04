@@ -16,6 +16,9 @@ let moduleIndex = catalog.apimodules;
 mpaths.unshift({
     name: moduleIndex.name,
     url: url_for(moduleIndex.url)
+});
+module.modules.map(function(submodule){
+    submodule.url = url_for_api_entity(submodule.refid);
 })
 module.mpaths = mpaths;
 %>

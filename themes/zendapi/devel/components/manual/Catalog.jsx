@@ -8,7 +8,7 @@ export default class Catalog extends React.Component
       let me = this;
       return <div className="catalog uk-visible@m uk-margin-small-right">
          <ul className="uk-nav-default uk-nav-parent-icon" data-uk-nav="multiple: false">
-            {catalog.map(function(parent) {
+            {catalog.map(function(parent, index) {
                let titleCls = "";
                if (parent.children && parent.children.length != 0) {
                   titleCls = "uk-parent";
@@ -16,7 +16,7 @@ export default class Catalog extends React.Component
                      titleCls += " uk-open"
                   }
                }
-               return <li className={titleCls}>
+               return <li className={titleCls} key = {"manualcatalogmain" + index}>
                      <a>{parent.text}</a>
                   {parent.children && parent.children.length != 0 && me.renderChildren(parent.children)}
                   </li>
@@ -27,7 +27,7 @@ export default class Catalog extends React.Component
    renderChildren(children)
    {
       return <ul className="uk-nav-sub">
-         {children.map((item) => <li className={item.isActive && "uk-active"}><a href={item.url}>{item.text}</a></li>)}
+         {children.map((item, index) => <li key = {"manualcatalogsubmenu"+index} className={item.isActive && "uk-active"}><a href={item.url}>{item.text}</a></li>)}
       </ul>;
    }
 };

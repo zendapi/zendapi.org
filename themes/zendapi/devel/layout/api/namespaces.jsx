@@ -25,7 +25,7 @@ class NamespacesIndexPage extends React.Component
                <div className="uk-width-expand apidoc-info-container apidoc-namespaces-info-container">
                   <h3 className="uk-width-1-1 title">名称空间列表</h3>
                   {namespaces.map((item, index) =>
-                     <div className="uk-grid-small list-item" data-uk-grid>
+                     <div className="uk-grid-small list-item" data-uk-grid key = {"apidocnamespaces"+index}>
                         <div className="uk-width-1-1 uk-width-1-3@s"><a  className="uk-text-break" href = {item.url}>{item.name}</a></div><div className="uk-width-1-1 uk-width-2-3@s"><span>{item.description}</span></div>
                      </div>
                   )}

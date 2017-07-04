@@ -29,25 +29,25 @@ class GlobalsIndexPage extends React.Component
                   {classes.length > 0 && <li className="uk-parent uk-open">
                      <a className="uk-width-1-1 title uk-active">全局类定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
-                        {this.renderClasses(classes)}
+                        {this.renderClasses(classes, "apidocglobalsclasses")}
                      </ul>
                   </li>}
                   {structs.length > 0 && <li className="uk-parent uk-open">
                      <a className="uk-width-1-1 title uk-active">全局结构定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
-                        {this.renderClasses(structs)}
+                        {this.renderClasses(structs, "apidocglobalsstructs")}
                      </ul>
                   </li>}
-                  <li className={classes.length > 0 ? "uk-parent" : "uk-parent uk-open"}>
+                  <li className={defines.length > 0 ? "uk-parent" : "uk-parent uk-open"}>
                      <a className="uk-width-1-1 title uk-active">全局宏定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
-                        {this.renderNormalItems(defines)}
+                        {this.renderNormalItems(defines, "apidocglobalsmacros")}
                      </ul>
                   </li>
-                  <li className={classes.length > 0 ? "uk-parent" : "uk-parent"}>
+                  <li className={variables.length > 0 ? "uk-parent" : "uk-parent"}>
                      <a className="uk-width-1-1 title uk-active">全局变量/常量定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
-                        {this.renderNormalItems(variables)}
+                        {this.renderNormalItems(variables, "apidocglobalsvariables")}
                      </ul>
                   </li>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
@@ -57,19 +57,19 @@ class GlobalsIndexPage extends React.Component
       </div>;
    }
    
-   renderNormalItems(items)
+   renderNormalItems(items, key)
    {
       return items.map((item, index) =>
-         <div className="uk-grid-small list-item" data-uk-grid>
+         <div className="uk-grid-small list-item" data-uk-grid key={key+index}>
             <div className="uk-width-1-1 uk-width-1-3@s"><a className="uk-text-break" href = {item.url}>{item.name}</a></div><div className="uk-width-1-1 uk-width-2-3@s"><span>{item.briefDescription}</span></div>
          </div>
       );
    }
    
-   renderClasses(classes)
+   renderClasses(classes, key)
    {
       return classes.map((item, index) =>
-         <div className="uk-grid-small list-item" data-uk-grid>
+         <div className="uk-grid-small list-item" data-uk-grid key={key+index}>
             <div className="uk-width-1-1 uk-width-1-3@s"><a className="uk-text-break" href = {item.url}>{item.name}</a></div><div className="uk-width-1-1 uk-width-2-3@s"><span>{item.briefDescription}</span></div>
          </div>
       );

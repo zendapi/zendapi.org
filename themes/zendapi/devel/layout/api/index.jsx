@@ -47,7 +47,7 @@ class ModulesEntry extends React.Component
             <img src={moduleSvg}/><h3 className="uk-width-expand">模块列表</h3>
          </div>
          <ul>
-            {items.map((item)=><li><a href={item.url}>{item.name}</a></li>)}
+            {items.map((item, index)=><li key = {"apidocindexmodulelist"+index}><a href={item.url}>{item.name}</a></li>)}
          </ul>
       </div>;
    }
@@ -63,7 +63,7 @@ class NamespacesEntry extends React.Component
             <img src={namespaceSvg}/><h3>名称空间列表</h3>
          </div>
          <ul>
-            {items.map((item) => <li><a href = {item.url}>{item.name}</a></li>)}
+            {items.map((item, index) => <li key = {"apidocindexnamespacelist"+index}><a href = {item.url}>{item.name}</a></li>)}
          </ul>
       </div>;
    }

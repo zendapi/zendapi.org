@@ -13,7 +13,7 @@ export default class Header extends React.Component
          </div>
          <div className="uk-navbar-right">
             <ul className="uk-navbar-nav uk-visible@m">
-               {items.map((item) => <li><a href={item.url}>{item.name}</a></li>)}
+               {items.map((item, index) => <li key = {"headernav"+index}><a href={item.url}>{item.name}</a></li>)}
             </ul>
             <ul className="uk-navbar-nav uk-hidden@m">
                <li><button className="nav-menu" data-uk-icon="icon: menu" data-uk-toggle="target: #offcanvas-push"></button></li>
