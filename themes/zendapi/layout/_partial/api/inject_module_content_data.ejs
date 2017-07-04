@@ -1,0 +1,10 @@
+<%
+let module = page.module;
+let mpaths = [];
+let parent = module.parent;
+while(parent) {
+    mpaths.unshift(parent);
+    parent = parent.parent;
+}
+module.mpaths = mpaths;
+%>

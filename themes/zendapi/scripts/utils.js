@@ -61,12 +61,24 @@ hexo.extend.helper.register('get_api_catalog', function(page, config, site){
    let url_for = hexo.extend.helper.get('url_for');
    let items = site.data['api/catalog'];
    return items.map(function(item) {
-      return {
+      let ret = {
          name: item.name,
          url: url_for.call(hexo, item.url),
          key: item.key,
-         isActive: item.key == page.layout
+         isActive: false
       };
+      if (item.key == "apimodules") {
+         if (page.layout == "apimodulecontent" || page.layout == "apimodules") {
+            ret.isActive = true;
+         }
+      } else if (item.key == "apinamespaces") {
+         if (page.layout == "apinamespacecontent" || page.layout == "apinamespaces") {
+            ret.isActive = true;
+         }
+      }else if (item.key == page.layout) {
+         ret.isActive = true;
+      }
+      return ret;
    });
 });
 

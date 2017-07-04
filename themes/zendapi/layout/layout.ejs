@@ -6,6 +6,15 @@
 <body>
 <script type="application/javascript">
     <%
+    let apilayouts = [
+        "apiindex",
+        "apimodules",
+        "apinamespaces",
+        "apiclasses",
+        "apiglobals",
+        "apimodulecontent",
+        "apinamespacecontent"
+    ];
     // 嵌入导航   
     let menuItems = site.data.category;
     let layout;
@@ -34,15 +43,17 @@
     <%- partial("_partial/api/inject_namespaces_data") %>
     <%} else if (layout == "apiglobals") {%>
     <%- partial("_partial/api/inject_globals_data") %>
+    <% } else if (layout == "apimodulecontent") {%>
+    <%- partial("_partial/api/inject_module_content_data") %>
     <% } %>
     window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
             <%
             let apiCatalog = [];
-            if (layout == "apiindex" || layout == "apimodules" || layout == "apinamespaces" || layout == "apiclasses" || layout == "apiglobals") {
+            if (_.indexOf(apilayouts, layout) != -1) {
                 apiCatalog = get_api_catalog(page, config, site);
             %>
        window.API_CATALOG_CATEGORIES = <%- JSON.stringify(get_api_catalog(page, config, site))%>
-    window.API_DOXYGEN_VERSION = <%- JSON.stringify(get_doxygen_version())%>
+          window.API_DOXYGEN_VERSION = <%- JSON.stringify(get_doxygen_version())%>
     <%}%>
 </script>
 <div class="uk-offcanvas-content">
@@ -82,11 +93,11 @@
                 <ul class = "uk-text-left extra-items uk-width-1-1">
                     <li class="uk-width-1-1"><a href = "/about/changelog.html">Changelog</a></li>
                 </ul>
-                <%} else if (layout == "apiindex" || layout == "apimodules" || layout == "apinamespaces" || layout == "apiclasses" || layout == "apiglobals") {%>
+                <%} else if (_.indexOf(apilayouts, layout) != -1) {%>
                 <ul class = "uk-text-left extra-items uk-width-1-1">
                     <%
                     for(let i = 0; i < apiCatalog.length; i++) {
-                       let catalogItem = apiCatalog[i];
+                        let catalogItem = apiCatalog[i];
                     %>
                     <li class="uk-width-1-1"><a href = <%- catalogItem.url %>><%- catalogItem.name %></a></li>
                     <% } %>

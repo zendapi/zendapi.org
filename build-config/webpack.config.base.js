@@ -44,7 +44,9 @@ const config = {
       "api/index": LAYOUT_PATH + "/api/index.jsx",
       "api/modules": LAYOUT_PATH + "/api/modules.jsx",
       "api/namespaces": LAYOUT_PATH + "/api/namespaces.jsx",
-      "api/globals": LAYOUT_PATH + "/api/globals.jsx"
+      "api/globals": LAYOUT_PATH + "/api/globals.jsx",
+      "api/module_content" : LAYOUT_PATH + "/api/module_content.jsx",
+      "api/namespace_content" : LAYOUT_PATH + "/api/namespace_content.jsx"
    },
    output : {
       path : DIST_PATH,
