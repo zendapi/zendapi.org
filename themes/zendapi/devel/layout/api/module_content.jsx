@@ -15,6 +15,7 @@ import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 import ModuleSection from "Components/api/modulesection/ModuleSection";
 import NamespaceSection from "Components/api/namespacesection/NamespaceSection";
 import ClassSection from "Components/api/classsection/ClassSection";
+import MacroSection from "Components/api/macrosection/MacroSection";
 
 class ApiModuleConetentPage extends React.Component
 {
@@ -37,6 +38,7 @@ class ApiModuleConetentPage extends React.Component
                   <ModuleSection modules = {content.modules}/>
                   <NamespaceSection namespaces = {content.namespaces}/>
                   <ClassSection classes = {content.classes}/>
+                  <MacroSection defines = {content.defines}/>
                   <hr className="uk-divider-icon"/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>

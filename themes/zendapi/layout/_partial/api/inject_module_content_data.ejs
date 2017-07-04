@@ -19,7 +19,10 @@ mpaths.unshift({
 });
 module.modules.map(function(submodule){
     submodule.url = url_for_api_entity(submodule.refid);
-})
+});
+module.classes.map(function(cls){
+    cls.url = url_for_api_entity(cls.refid);
+});
 module.mpaths = mpaths;
 %>
 

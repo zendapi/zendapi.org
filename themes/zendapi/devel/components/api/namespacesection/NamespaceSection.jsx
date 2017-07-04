@@ -6,7 +6,7 @@ export default class NamespaceSection extends React.Component
    render()
    {
       let namespaces = this.props.namespaces;
-      return <div className="namespace-section-container">
+      return <div className={namespaces.length != 0 ? "namespace-section-container" : "uk-hidden"}>
          <h3>名称空间列表</h3>
          {namespaces.length != 0 ? namespaces.map((item, index) =>
                <div className="uk-grid-small list-item" data-uk-grid key = {"namespacesection"+index}>
