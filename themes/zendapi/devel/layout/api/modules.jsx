@@ -19,7 +19,9 @@ class ModulesIndexPage extends React.Component
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-modules-page">
             <div className="manual-container uk-flex uk-flex-left">
-               <SidePanel items = {API_CATALOG_CATEGORIES}/>
+               <div className="side-panel-container">
+                  <SidePanel items = {API_CATALOG_CATEGORIES}/>
+               </div>
                <div className="uk-width-expand apidoc-info-container apidoc-modules-info-container">
                   <h3 className="uk-width-1-1 title">模块列表</h3>
                   {modules.map((item, index) =>

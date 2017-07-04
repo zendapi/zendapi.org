@@ -16,10 +16,8 @@ export default class SidePanel extends React.Component
          namespaceSvg,
          globalSvg
       ];
-      return <div className="side-panel uk-visible@m uk-margin-medium-right">
-         <ul>
-            {items.map((item, index)=> <li key = {"apicatalog"+index} className={item.isActive && "active-item"}><img src ={imgs[index]}/><a href={item.url}>{item.name}</a></li>)}
-         </ul>
-      </div>;
+      return <ul className="side-panel uk-visible@m" data-uk-sticky="offset: 70">
+         {items.map((item, index)=> <li key = {"apicatalog"+index} className={item.isActive && "active-item"}><img src ={imgs[index]}/><a href={item.url}>{item.name}</a></li>)}
+      </ul>;
    }
 };

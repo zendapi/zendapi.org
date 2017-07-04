@@ -22,29 +22,31 @@ class GlobalsIndexPage extends React.Component
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-globals-page">
             <div className="manual-container uk-flex uk-flex-left">
-               <SidePanel items = {API_CATALOG_CATEGORIES}/>
+               <div className="side-panel-container">
+                  <SidePanel items = {API_CATALOG_CATEGORIES}/>
+               </div>
                <div className="uk-nav-default uk-nav-parent-icon uk-width-expand apidoc-info-container apidoc-globals-info-container" data-uk-nav>
                   {classes.length > 0 && <li className="uk-parent uk-open">
                      <a className="uk-width-1-1 title uk-active">全局类定义</a>
-                     <ul className="uk-nav-sub">
+                     <ul className="uk-nav-sub uk-margin-small-bottom">
                         {this.renderClasses(classes)}
                      </ul>
                   </li>}
                   {structs.length > 0 && <li className="uk-parent uk-open">
                      <a className="uk-width-1-1 title uk-active">全局结构定义</a>
-                     <ul className="uk-nav-sub">
+                     <ul className="uk-nav-sub uk-margin-small-bottom">
                         {this.renderClasses(structs)}
                      </ul>
                   </li>}
                   <li className={classes.length > 0 ? "uk-parent" : "uk-parent uk-open"}>
                      <a className="uk-width-1-1 title uk-active">全局宏定义</a>
-                     <ul className="uk-nav-sub">
+                     <ul className="uk-nav-sub uk-margin-small-bottom">
                         {this.renderNormalItems(defines)}
                      </ul>
                   </li>
                   <li className={classes.length > 0 ? "uk-parent" : "uk-parent"}>
                      <a className="uk-width-1-1 title uk-active">全局变量/常量定义</a>
-                     <ul className="uk-nav-sub">
+                     <ul className="uk-nav-sub uk-margin-small-bottom">
                         {this.renderNormalItems(variables)}
                      </ul>
                   </li>

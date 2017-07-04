@@ -1,13 +1,12 @@
 @import "../../../scss/variables.scss";
 
 .side-panel {
-  width: 180px;
+  width: 200px;
   background-color: #ffffff;
-  padding: 20px;
-  ul {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding:0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   li {
     line-height: 30px;
     height: 30px;
@@ -20,6 +19,7 @@
       width:16px;
       margin-top: -5px;
       margin-right: 5px;
+      margin-left: 20px;
     }
   }
   .active-item {
