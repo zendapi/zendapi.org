@@ -17,6 +17,7 @@ body {
   color: $zapi-normal-font-color;
   height:100%;
   -webkit-tap-highlight-color:rgba(0,0,0,0)!important;
+  font-family: $global-font-family!important;
 }
 
 .clear {

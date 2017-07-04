@@ -39,7 +39,6 @@ class ApiModuleConetentPage extends React.Component
                   <NamespaceSection namespaces = {content.namespaces}/>
                   <ClassSection classes = {content.classes}/>
                   <MacroSection defines = {content.defines}/>
-                  <hr className="uk-divider-icon"/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
