@@ -13,6 +13,7 @@ import SidePanel from "Components/api/sidepanel/SidePanel";
 import Path from "Components/api/path/Path";
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 import ModuleSection from "Components/api/modulesection/ModuleSection";
+import NamespaceSection from "Components/api/namespacesection/NamespaceSection";
 
 class ApiModuleConetentPage extends React.Component
 {
@@ -33,6 +34,7 @@ class ApiModuleConetentPage extends React.Component
                      {content.briefDescription.trim() != "" ? content.briefDescription : "暂无描述"}
                   </div>
                   <ModuleSection modules = {content.modules}/>
+                  <NamespaceSection namespaces = {content.namespaces}/>
                   <hr className="uk-divider-icon"/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>

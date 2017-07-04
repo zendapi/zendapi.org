@@ -1,0 +1,9 @@
+.namespace-section-container {
+  margin-top: 20px;
+  @media (min-width: 640px) {
+    margin-top: 40px;
+  }
+  a {
+    font-size: 1.2em;
+  }
+}
