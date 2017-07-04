@@ -26,4 +26,8 @@ $zapi-apidoc-page-width: 1300px;
   @media (min-width: 640px) {
     padding:30px;
   }
+  .title {
+    padding-top: 0;
+    margin-bottom: 30px!important;
+  }
 }

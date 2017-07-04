@@ -1,10 +1,23 @@
 <%
 let module = page.module;
 let mpaths = [];
-let parent = module.parent;
+
+let modules = page.modules;
+let parent = modules[module.parent];
 while(parent) {
-    mpaths.unshift(parent);
-    parent = parent.parent;
+    mpaths.unshift({
+       name: parent.name,
+        url: url_for_api_entity(parent.refid)
+    });
+    parent = modules[parent.parent];
 }
+let catalog = site.data['api/catalog'];
+let moduleIndex = catalog.apimodules;
+mpaths.unshift({
+    name: moduleIndex.name,
+    url: url_for(moduleIndex.url)
+})
 module.mpaths = mpaths;
 %>
+
+window.API_MODULE_CONTENT_DATA = <%- JSON.stringify(module)%>

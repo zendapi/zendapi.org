@@ -59,27 +59,29 @@ hexo.extend.helper.register('get_manual_catalog', function(page, config, site){
 hexo.extend.helper.register('get_api_catalog', function(page, config, site){
 
    let url_for = hexo.extend.helper.get('url_for');
-   let items = site.data['api/catalog'];
-   return items.map(function(item) {
+   let catalog = site.data['api/catalog'];
+   let items = [];
+   _.forIn(catalog, function(item, key) {
       let ret = {
          name: item.name,
          url: url_for.call(hexo, item.url),
-         key: item.key,
+         key: key,
          isActive: false
       };
-      if (item.key == "apimodules") {
+      if (key == "apimodules") {
          if (page.layout == "apimodulecontent" || page.layout == "apimodules") {
             ret.isActive = true;
          }
-      } else if (item.key == "apinamespaces") {
+      } else if (key == "apinamespaces") {
          if (page.layout == "apinamespacecontent" || page.layout == "apinamespaces") {
             ret.isActive = true;
          }
-      }else if (item.key == page.layout) {
+      }else if (key == page.layout) {
          ret.isActive = true;
       }
-      return ret;
+      items.push(ret);
    });
+   return items;
 });
 
 hexo.extend.helper.register('get_doxygen_version', function(){
