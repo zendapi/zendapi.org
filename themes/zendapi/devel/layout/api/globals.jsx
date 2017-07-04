@@ -15,9 +15,10 @@ class GlobalsIndexPage extends React.Component
 {
    render()
    {
-      let classes = this.props.data.classes;
+      let items = this.props.data.classes;
       let defines = this.props.data.defines;
       let variables = this.props.data.variables;
+      let classes = this.props.data.classes;
       let structs = this.props.data.structs;
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-globals-page">

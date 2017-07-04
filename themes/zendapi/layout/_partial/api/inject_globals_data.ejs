@@ -5,34 +5,37 @@ let items = {
     typedefs: [],
     variables: [],
     classes: [],
-    structs: [],
-    enums: []
+    enums: [],
+    structs: []
 };
 
 _.forOwn(page.globals, function (fileContainer, key)
 {
-   
+
     items.defines = _.concat(items.defines, fileContainer.defines);
     items.funcs = _.concat(items.funcs, fileContainer.funcs);
     items.typedefs = _.concat(items.typedefs, fileContainer.typedefs);
     items.variables = _.concat(items.variables, fileContainer.variables);
     for (let i = 0; i < fileContainer.classes.length; i++) {
-       let cur = fileContainer.classes[i];
-       let name = cur.name;
-       let pos = name.indexOf("::");
-       if (pos == 0 || pos == -1) {
-           items.classes.push(cur);
-       }
+        let cur = fileContainer.classes[i];
+        let name = cur.name;
+        let pos = name.indexOf("::");
+        if (pos == 0 || pos == -1) {
+            if (cur.isStruct) {
+                items.structs.push(cur);
+            }else {
+                items.classes.push(cur);
+            }
+        }
     }
-    items.structs = _.concat(items.structs, fileContainer.structs);
     items.enums = _.concat(items.enums, fileContainer.enums);
 });
 _.forOwn(items, function (container, key)
 {
     container.sort(sort_api_entity_by_name);
     container.map(function(item){
-       
-       item.url = item.refid ? url_for_api_entity(item.refid) : url_for_entity_detail("global"+key, item.id);
+
+        item.url = item.refid ? url_for_api_entity(item.refid) : url_for_entity_detail("global"+key, item.id);
     });
 });
 %>
