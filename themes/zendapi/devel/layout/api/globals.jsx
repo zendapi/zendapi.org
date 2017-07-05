@@ -33,24 +33,24 @@ class GlobalsIndexPage extends React.Component
                         {this.renderClasses(classes, "apidocglobalsclasses")}
                      </ul>
                   </li>}
-                  {structs.length > 0 && <li className="uk-parent uk-open">
+                  {structs.length > 0 && <li className="uk-parent">
                      <a className="uk-width-1-1 title uk-active">全局结构定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
                         {this.renderClasses(structs, "apidocglobalsstructs")}
                      </ul>
                   </li>}
-                  <li className={defines.length > 0 ? "uk-parent" : "uk-parent uk-open"}>
+                  {defines.length > 0 && <li className="uk-parent">
                      <a className="uk-width-1-1 title uk-active">全局宏定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
                         {this.renderNormalItems(defines, "apidocglobalsmacros")}
                      </ul>
-                  </li>
-                  <li className={variables.length > 0 ? "uk-parent" : "uk-parent"}>
+                  </li>}
+                  {variables.length > 0 && <li className="uk-parent">
                      <a className="uk-width-1-1 title uk-active">全局变量/常量定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
                         {this.renderNormalItems(variables, "apidocglobalsvariables")}
                      </ul>
-                  </li>
+                  </li>}
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>

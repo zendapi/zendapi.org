@@ -19,7 +19,7 @@ export default class Path extends React.Component
                )}
             </ul>
          </div>
-         <div className="nav-path-grid uk-hidden@s uk-grid-collapse uk-margin-small-bottom" data-uk-grid>
+         <div className="nav-path-grid uk-hidden@s uk-grid-collapse " data-uk-grid>
             {this.props.pathList.map((item, index)=>{
                   if(item.url) {
                      return <div className="uk-width-1-1" key={index}><span data-uk-icon="icon: link"></span><a href={item.url}>{item.name}</a></div>;

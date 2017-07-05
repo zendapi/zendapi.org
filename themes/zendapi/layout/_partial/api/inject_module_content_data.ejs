@@ -6,7 +6,7 @@ let modules = page.modules;
 let parent = modules[module.parent];
 while(parent) {
     mpaths.unshift({
-       name: parent.name,
+        name: parent.name,
         url: url_for_api_entity(parent.refid)
     });
     parent = modules[parent.parent];
@@ -26,7 +26,13 @@ module.classes.map(function(cls){
 module.defines.map(function(macro){
     macro.url = url_for_entity_detail(macro.containerId, macro.id);
 });
+module.typedefs.map(function(typedef){
+    typedef.url = url_for_entity_detail(typedef.containerId, typedef.id);
+    typedef.definition = typedef.definition.replace(typedef.name,
+    "<a class = 'uk-text-break' href='"+typedef.url+"'>"+typedef.name+"</a>");
+});
 module.mpaths = mpaths;
+//console.log(module)
 %>
 
 window.API_MODULE_CONTENT_DATA = <%- JSON.stringify(module)%>

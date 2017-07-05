@@ -16,6 +16,7 @@ import ModuleSection from "Components/api/modulesection/ModuleSection";
 import NamespaceSection from "Components/api/namespacesection/NamespaceSection";
 import ClassSection from "Components/api/classsection/ClassSection";
 import MacroSection from "Components/api/macrosection/MacroSection";
+import TypedefSection from "Components/api/typedefsection/TypedefSection";
 
 class ApiModuleConetentPage extends React.Component
 {
@@ -35,10 +36,14 @@ class ApiModuleConetentPage extends React.Component
                   <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
                      {content.briefDescription.trim() != "" ? content.briefDescription : "暂无描述"}
                   </div>
+                  <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
+                     {content.detailDescription.trim() != "" ? content.detailDescription : "暂无描述"}
+                  </div>
                   <ModuleSection modules = {content.modules}/>
                   <NamespaceSection namespaces = {content.namespaces}/>
                   <ClassSection classes = {content.classes}/>
                   <MacroSection defines = {content.defines}/>
+                  <TypedefSection typedefs = {content.typedefs}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
