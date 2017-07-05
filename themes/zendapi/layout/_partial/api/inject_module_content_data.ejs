@@ -1,9 +1,10 @@
 <%
 let module = page.module;
 let mpaths = [];
-
 let modules = page.modules;
 let parent = modules[module.parent];
+let objectPrototype = Object.prototype;
+let toString = objectPrototype.toString;
 while(parent) {
     mpaths.unshift({
         name: parent.name,
@@ -29,10 +30,21 @@ module.defines.map(function(macro){
 module.typedefs.map(function(typedef){
     typedef.url = url_for_entity_detail(typedef.containerId, typedef.id);
     typedef.definition = typedef.definition.replace(typedef.name,
-    "<a class = 'uk-text-break' href='"+typedef.url+"'>"+typedef.name+"</a>");
+            "<a class = 'uk-text-break' href='"+typedef.url+"'>"+typedef.name+"</a>");
+    // 替换type
+    if (typedef.type && "[object Array]" == toString.call(typedef.type)) {
+        typedef.type.map(function(item){
+            item.url = url_for_entity_detail(item.containerId, item.id)
+            typedef.definition = typedef.definition.replace(item.name,
+                    "<a class = 'uk-text-break' href='"+item.url+"'>"+item.name+"</a>");
+        });
+    }
+});
+module.enums.map(function(enumitem){
+    enumitem.url = url_for_entity_detail(enumitem.containerId, enumitem.id);
 });
 module.mpaths = mpaths;
-//console.log(module)
+//console.log(module.typedefs);
 %>
 
 window.API_MODULE_CONTENT_DATA = <%- JSON.stringify(module)%>

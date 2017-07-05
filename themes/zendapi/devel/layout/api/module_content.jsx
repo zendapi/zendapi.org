@@ -17,6 +17,7 @@ import NamespaceSection from "Components/api/namespacesection/NamespaceSection";
 import ClassSection from "Components/api/classsection/ClassSection";
 import MacroSection from "Components/api/macrosection/MacroSection";
 import TypedefSection from "Components/api/typedefsection/TypedefSection";
+import EnumSection from "Components/api/enumsection/EnumSection";
 
 class ApiModuleConetentPage extends React.Component
 {
@@ -44,6 +45,7 @@ class ApiModuleConetentPage extends React.Component
                   <ClassSection classes = {content.classes}/>
                   <MacroSection defines = {content.defines}/>
                   <TypedefSection typedefs = {content.typedefs}/>
+                  <EnumSection enums = {content.enums}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
