@@ -43,6 +43,10 @@ module.typedefs.map(function(typedef){
 module.enums.map(function(enumitem){
     enumitem.url = url_for_entity_detail(enumitem.containerId, enumitem.id);
 });
+module.funcs.map(function(func){
+    func.url = url_for_entity_detail(func.containerId, func.id);
+//    console.log(func)
+});
 module.mpaths = mpaths;
 //console.log(module.typedefs);
 %>

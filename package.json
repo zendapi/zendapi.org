@@ -10,17 +10,18 @@
     "hexo-deployer-git": "^0.3.0",
     "hexo-excerpt": "^1.1.2",
     "hexo-filter-highlight": "0.0.3",
+    "hexo-generator-apidoc": "^0.0.1",
     "hexo-prism-plugin": "^2.1.2",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-stylus": "^0.3.1",
-    "hexo-generator-apidoc": "^0.0.1",
     "hexo-server": "^0.2.0",
     "hexo-toc": "^1.0.8",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router": "^4.1.1",
-    "react-with-addons": "0.0.1"
+    "react-with-addons": "0.0.1",
+    "sax": "^1.2.4"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
