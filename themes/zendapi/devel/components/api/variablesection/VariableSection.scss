@@ -1,0 +1,20 @@
+.typedef-section-container {
+  margin-top: 20px;
+  @media (min-width: 640px) {
+    margin-top: 40px;
+  }
+  a {
+    font-size: 1.2em;
+  }
+  .entity-type {
+    font-size: 1.2em;
+    padding-right:10px;
+  }
+  .define {
+    margin-bottom: 5px;
+    font-size: 1em!important;
+    a {
+      font-size: 1.2em;
+    }
+  }
+}

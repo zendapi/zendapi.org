@@ -57,7 +57,6 @@ module.enums.map(function(enumitem){
 });
 module.funcs.map(function(func){
     func.url = url_for_entity_detail(func.containerId, func.id);
-    func.signature = func.signature.replace(/\{cls\}/g, "");
     if (func.isTemplate) {
         func.tplParamsString = [];
         func.templateParams.map(function(param){
@@ -68,10 +67,10 @@ module.funcs.map(function(func){
             }
         });
         func.tplParamsString = func.tplParamsString.join(", ");
-        func.tplParamsString = func.tplParamsString.replace(/\{cls\}/g, "");
     }
 });
 module.mpaths = mpaths;
+console.log(module)
 %>
 
 window.API_MODULE_CONTENT_DATA = <%- JSON.stringify(module)%>
