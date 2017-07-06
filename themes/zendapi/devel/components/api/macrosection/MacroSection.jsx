@@ -11,7 +11,7 @@ export default class MacroSection extends React.Component
          {defines.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"macrosection"+index}>
                <div className="uk-width-1-1 uk-width-1-4@s">
-                  <a className="uk-text-break" href = {item.url}>{item.name}{item.params.length > 0 && this.renderParams(item.params)}</a>
+                  <a className="uk-text-break" href = {item.url}>{item.name}{item.params && item.params.length > 0 && this.renderParams(item.params)}</a>
                </div>
                <div className="uk-width-1-1 uk-width-3-4@s">
                   {this.shouldRenderInitializer(item.initializer) && <div className="define uk-text-primary">{item.initializer}</div>}
@@ -29,6 +29,6 @@ export default class MacroSection extends React.Component
    
    shouldRenderInitializer(initializer)
    {
-      return initializer.indexOf("\n") == -1;
+      return initializer && initializer.indexOf("\n") == -1;
    }
 };

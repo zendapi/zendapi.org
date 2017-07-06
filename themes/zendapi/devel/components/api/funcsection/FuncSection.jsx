@@ -6,7 +6,6 @@ export default class FuncSection extends React.Component
    render()
    {
       let funcs = this.props.funcs;
-      console.log(funcs)
       return <div className={funcs.length != 0 ? "func-section-container" : "uk-hidden"}>
          <h3>函数列表</h3>
          {funcs.map((item, index) =>

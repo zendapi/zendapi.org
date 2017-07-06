@@ -32,11 +32,13 @@ module.typedefs.map(function(typedef){
     typedef.definition = typedef.definition.replace(typedef.name,
             "<a class = 'uk-text-break' href='"+typedef.url+"'>"+typedef.name+"</a>");
     // 替换type
-    if (typedef.type && "[object Array]" == toString.call(typedef.type)) {
-        typedef.type.map(function(item){
-            item.url = url_for_entity_detail(item.containerId, item.id)
-            typedef.definition = typedef.definition.replace(item.name,
-                    "<a class = 'uk-text-break' href='"+item.url+"'>"+item.name+"</a>");
+    if (typedef.types && "[object Array]" == toString.call(typedef.types)) {
+        typedef.types.map(function(item){
+            if (is_object(item)){
+                item.url = url_for_entity_detail(item.containerId, item.id)
+                typedef.definition = typedef.definition.replace(item.name,
+                        "<a class = 'uk-text-break' href='"+item.url+"'>"+item.name+"</a>");
+            }
         });
     }
 });
@@ -45,7 +47,7 @@ module.enums.map(function(enumitem){
 });
 module.funcs.map(function(func){
     func.url = url_for_entity_detail(func.containerId, func.id);
-//    console.log(func)
+    //    console.log(func)
 });
 module.mpaths = mpaths;
 //console.log(module.typedefs);

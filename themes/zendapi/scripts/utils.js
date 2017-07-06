@@ -2,6 +2,7 @@
 let PathUtils = require("path");
 let Clone = require("clone");
 let _ = require('lodash');
+let toString = Object.prototype.toString;
 
 const { spawnSync } = require('child_process');
 
@@ -102,4 +103,24 @@ hexo.extend.helper.register('sort_api_entity_by_name',function(left, right){
    } else {
       return 1;
    }
+});
+
+hexo.extend.helper.register('is_array',function(value)
+{
+   return toString.call(value) == "[object Array]";
+});
+
+hexo.extend.helper.register('is_boolean',function(value)
+{
+   return typeof value === 'boolean';
+});
+
+hexo.extend.helper.register('is_string',function(value)
+{
+   return typeof value === 'string';
+});
+
+hexo.extend.helper.register('is_object',function(value)
+{
+   return toString.call(value) === '[object Object]';
 });
