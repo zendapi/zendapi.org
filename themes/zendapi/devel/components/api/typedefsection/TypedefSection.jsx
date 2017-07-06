@@ -11,7 +11,7 @@ export default class TypedefSection extends React.Component
          {typedefs.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"typedefsection"+index}>
                <div className="uk-width-1-1">
-                  <div className="define" dangerouslySetInnerHTML={{__html:item.definition}}></div>
+                  <div className="define uk-text-break" dangerouslySetInnerHTML={{__html:item.definition}}></div>
                   <div className="uk-text-break">{item.briefDescription}</div>
                </div>
             </div>

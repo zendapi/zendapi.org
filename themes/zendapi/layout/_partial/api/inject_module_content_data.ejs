@@ -26,19 +26,29 @@ module.classes.map(function(cls){
 });
 module.defines.map(function(macro){
     macro.url = url_for_entity_detail(macro.containerId, macro.id);
+    if (macro.params) {
+        macro.paramsString = [];
+        macro.params.map(function (param)
+        {
+            macro.paramsString.push(param.defname);
+        });
+        macro.paramsString = macro.paramsString.join(", ");
+    }
 });
 module.typedefs.map(function(typedef){
     typedef.url = url_for_entity_detail(typedef.containerId, typedef.id);
     typedef.definition = typedef.definition.replace(typedef.name,
-            "<a class = 'uk-text-break' href='"+typedef.url+"'>"+typedef.name+"</a>");
+            "<a href='"+typedef.url+"'>"+typedef.name+"</a>");
     // 替换type
-    if (typedef.types && "[object Array]" == toString.call(typedef.types)) {
-        typedef.types.map(function(item){
-            if (is_object(item)){
+    if (typedef.refs && is_array(typedef.refs)) {
+        typedef.refs.map(function(item){
+            if (item.kindref == "member") {
                 item.url = url_for_entity_detail(item.containerId, item.id)
-                typedef.definition = typedef.definition.replace(item.name,
-                        "<a class = 'uk-text-break' href='"+item.url+"'>"+item.name+"</a>");
+            } else {
+                item.url = url_for_api_entity(item.refid);
             }
+            typedef.definition = typedef.definition.replace(item.name,
+                    "<a href='"+item.url+"'>"+item.name+"</a>");
         });
     }
 });
@@ -47,10 +57,21 @@ module.enums.map(function(enumitem){
 });
 module.funcs.map(function(func){
     func.url = url_for_entity_detail(func.containerId, func.id);
-    //    console.log(func)
+    func.signature = func.signature.replace(/\{cls\}/g, "");
+    if (func.isTemplate) {
+        func.tplParamsString = [];
+        func.templateParams.map(function(param){
+            if (param.defValue) {
+                func.tplParamsString.push(param.type + " = " + param.defValue);
+            } else {
+                func.tplParamsString.push(param.type);
+            }
+        });
+        func.tplParamsString = func.tplParamsString.join(", ");
+        func.tplParamsString = func.tplParamsString.replace(/\{cls\}/g, "");
+    }
 });
 module.mpaths = mpaths;
-//console.log(module.typedefs);
 %>
 
 window.API_MODULE_CONTENT_DATA = <%- JSON.stringify(module)%>
