@@ -42,13 +42,13 @@ class GlobalsIndexPage extends React.Component
                   {defines.length > 0 && <li className="uk-parent">
                      <a className="uk-width-1-1 title uk-active">全局宏定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
-                        {this.renderNormalItems(defines, "apidocglobalsmacros")}
+                        {this.renderMacros(defines)}
                      </ul>
                   </li>}
                   {variables.length > 0 && <li className="uk-parent">
                      <a className="uk-width-1-1 title uk-active">全局变量/常量定义</a>
                      <ul className="uk-nav-sub uk-margin-small-bottom">
-                        {this.renderNormalItems(variables, "apidocglobalsvariables")}
+                        {this.renderVariables(variables)}
                      </ul>
                   </li>}
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
@@ -75,10 +75,31 @@ class GlobalsIndexPage extends React.Component
          </div>
       );
    }
+   renderMacros(macros)
+   {
+      return macros.map((item, index) =>
+         <div className="uk-grid-small list-item" data-uk-grid key = {"apidocglobalsmacros"+index}>
+            <div className="uk-width-1-1 uk-width-1-4@s">
+               <a className="uk-text-break" href = {item.url}>{item.name}{item.params && item.params.length > 0 && <span> ({item.paramsString})</span>}</a>
+            </div>
+            <div className="uk-width-1-1 uk-width-3-4@s">
+               {(item.initializer && item.initializer.indexOf("\n") == -1) && <div className="define uk-text-primary" dangerouslySetInnerHTML={{__html:item.initializer}}></div>}
+               <div>{item.briefDescription}</div>
+            </div>
+         </div>
+      );
+   }
    
    renderVariables(vars)
    {
-      
+      return vars.map((item, index) =>
+         <div className="uk-grid-small list-item" data-uk-grid key = {"apidocglobalsvariables"+index}>
+            <div className="uk-width-1-1">
+               <div className="define uk-text-break" dangerouslySetInnerHTML={{__html:item.defineStr}}></div>
+               <div className="uk-text-break">{item.briefDescription}</div>
+            </div>
+         </div>
+      )
    }
    
    renderFunctions(funcs)

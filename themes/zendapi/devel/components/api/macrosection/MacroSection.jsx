@@ -14,7 +14,7 @@ export default class MacroSection extends React.Component
                   <a className="uk-text-break" href = {item.url}>{item.name}{item.params && item.params.length > 0 && this.renderParams(item.paramsString)}</a>
                </div>
                <div className="uk-width-1-1 uk-width-3-4@s">
-                  {this.shouldRenderInitializer(item.initializer) && <div className="define uk-text-primary">{item.initializer}</div>}
+                  {this.shouldRenderInitializer(item.initializer) && <div className="define uk-text-primary" dangerouslySetInnerHTML={{__html:item.initializer}}></div>}
                   <div>{item.briefDescription}</div>
                </div>
             </div>

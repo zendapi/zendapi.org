@@ -34,8 +34,7 @@ _.forOwn(items, function (container, key)
 {
     container.sort(sort_api_entity_by_name);
     container.map(function(item){
-
-        item.url = item.refid ? url_for_api_entity(item.refid) : url_for_entity_detail("global"+key, item.id);
+        item.url = item.refid ? url_for_api_entity(item.refid) : url_for_entity_detail(item.containerId, item.id);
     });
 });
 %>
