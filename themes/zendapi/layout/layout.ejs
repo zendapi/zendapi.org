@@ -43,6 +43,8 @@
     <%- partial("_partial/api/inject_namespaces_data") %>
     <%} else if (layout == "apiglobals") {%>
     <%- partial("_partial/api/inject_globals_data") %>
+    <% } else if (layout == "apifiles") {%>
+    <%- partial("_partial/api/inject_files_data") %>
     <% } else if (layout == "apimodulecontent") {%>
     <%- partial("_partial/api/inject_module_content_data") %>
     <% } %>

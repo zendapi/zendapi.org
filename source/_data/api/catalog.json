@@ -14,5 +14,9 @@
   "apiglobals" : {
     "name": "全局定义",
     "url": "api/globals.html"
+  },
+  "files" : {
+    "name": "所有头文件",
+    "url": "api/files.html"
   }
 }

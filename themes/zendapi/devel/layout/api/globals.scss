@@ -11,12 +11,21 @@
     color: #000000;
   }
   .list-item {
-    a ,span {
-      font-size: 1em!important;
-      font-family: "Gotham Rounded", $global-font-family;
+    
+    font-size: 1em!important;
+    .desc {
+      font-size: 0.8em!important;
     }
-    span {
-      font-size: 1em!important;
+    a {
+      padding: 0;
+    }
+    font-family: $global-font-family;
+    .uk-label {
+      height:15px!important;
+      line-height: 15px!important;
+      padding-top: 2px;
+      font-size: 10px!important;
+      margin-right: 5px!important;
     }
   }
 }

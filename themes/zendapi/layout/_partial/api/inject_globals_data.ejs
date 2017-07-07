@@ -12,12 +12,12 @@ let items = {
 _.forOwn(page.globals, function (fileContainer, key)
 {
 
-    items.defines = _.concat(items.defines, fileContainer.defines);
-    items.funcs = _.concat(items.funcs, fileContainer.funcs);
-    items.typedefs = _.concat(items.typedefs, fileContainer.typedefs);
-    items.variables = _.concat(items.variables, fileContainer.variables);
+    items.defines = clone(_.concat(items.defines, fileContainer.defines));
+    items.funcs = clone(_.concat(items.funcs, fileContainer.funcs));
+    items.typedefs = clone(_.concat(items.typedefs, fileContainer.typedefs));
+    items.variables = clone(_.concat(items.variables, fileContainer.variables));
     for (let i = 0; i < fileContainer.classes.length; i++) {
-        let cur = fileContainer.classes[i];
+        let cur = clone(fileContainer.classes[i]);
         let name = cur.name;
         let pos = name.indexOf("::");
         if (pos == 0 || pos == -1) {
@@ -28,13 +28,128 @@ _.forOwn(page.globals, function (fileContainer, key)
             }
         }
     }
-    items.enums = _.concat(items.enums, fileContainer.enums);
+    items.enums = clone(_.concat(items.enums, fileContainer.enums));
 });
 _.forOwn(items, function (container, key)
 {
     container.sort(sort_api_entity_by_name);
-    container.map(function(item){
-        item.url = item.refid ? url_for_api_entity(item.refid) : url_for_entity_detail(item.containerId, item.id);
+    items[key] = container.map(function(item){
+        if (key == "defines") {
+            let ret = {
+                containerId: item.containerId,
+                id: item.id,
+                name: item.name,
+                briefDescription: item.briefDescription,
+                url: item.refid ? url_for_api_entity(item.refid) : url_for_entity_detail(item.containerId, item.id)
+            };
+            if (item.params) {
+                ret.paramsString = [];
+                item.params.map(function (param)
+                {
+                    ret.paramsString.push(param.defname);
+                });
+                ret.paramsString = ret.paramsString.join(", ");
+            }
+            if (item.initializer) {
+                ret.initializer = item.initializer;
+            }
+            return ret;
+        } else if(key == "funcs") {
+            let ret = {
+                containerId: item.containerId,
+                id: item.id,
+                name: item.name,
+                accessLevel: item.accessLevel,
+                isStatic: item.isStatic,
+                isConst: item.isConst,
+                isExplict: item.isExplict,
+                isInline: item.isInline,
+                isVirtual: item.isVirtual,
+                signature: item.signature,
+                briefDescription: item.briefDescription,
+                tags: [],
+                isTemplate: item.isTemplate
+            }
+            if (ret.isTemplate) {
+                ret.tags.push("template");
+            }
+            if (ret.isStatic) {
+               ret.tags.push("static");
+            }
+            if (ret.isConst) {
+                ret.tags.push("const");
+            }
+            if (ret.isInline) {
+                ret.tags.push("inline");
+            }
+            ret.url = url_for_entity_detail(item.containerId, item.id);
+            if (item.isTemplate) {
+                ret.tplParamsString = [];
+                item.templateParams.map(function(param){
+                    if (param.defValue) {
+                        ret.tplParamsString.push(param.type + " = " + param.defValue);
+                    } else {
+                        ret.tplParamsString.push(param.type);
+                    }
+                });
+                ret.tplParamsString = ret.tplParamsString.join(", ");
+            }
+            return ret;
+        } else if (key == "typedefs") {
+            let ret = {
+                containerId: item.containerId,
+                id: item.id,
+                name: item.name,
+                briefDescription: item.briefDescription
+            };
+            ret.url = url_for_entity_detail(item.containerId, item.id);
+            ret.definition = item.definition.replace(item.name,
+                    "<a href='"+ret.url+"'>"+item.name+"</a>");
+            // 替换type
+            if (item.refs && is_array(item.refs)) {
+                item.refs.map(function(ref){
+                    if (ref.kindref == "member") {
+                        ref.url = url_for_entity_detail(ref.containerId, ref.id)
+                    } else {
+                        ref.url = url_for_api_entity(ref.refid);
+                    }
+                    ret.definition = ret.definition.replace(ref.name,
+                            "<a href='"+ref.url+"'>"+ref.name+"</a>");
+                });
+            }
+            return ret;
+        } else if (key == "variables") {
+            return {
+                briefDescription: item.briefDescription,
+                defineStr: item.defineStr
+            }
+        } else if (key == "classes" || key == "structs") {
+           let ret = clone(item);
+           ret.tags = [];
+            if (ret.isTemplate) {
+                ret.tags.push("template");
+            }
+            if (ret.isTemplate) {
+                ret.tplParamsString = [];
+                ret.templateParams.map(function(param){
+                    if (param.defValue) {
+                        ret.tplParamsString.push(param.type + " = " + param.defValue);
+                    } else {
+                        ret.tplParamsString.push(param.type);
+                    }
+                });
+                delete ret.templateParams;
+                ret.tplParamsString = ret.tplParamsString.join(", ");
+            }
+            return ret;
+        } else if (key == "enums"){
+           return {
+               containerId: item.containerId,
+               id: item.id,
+               name: item.name,
+               briefDescription: item.briefDescription
+           }
+        }
     });
 });
 %>

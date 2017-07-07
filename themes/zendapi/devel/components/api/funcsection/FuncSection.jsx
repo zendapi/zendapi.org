@@ -14,7 +14,7 @@ export default class FuncSection extends React.Component
                {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
                <div className="uk-width-1-1 uk-text-break signature" dangerouslySetInnerHTML={{__html:item.signature}}>
                </div>
-               <div className="uk-width-1-1 uk-width-3-4@s"><span>{item.briefDescription}</span></div>
+               <div className="uk-width-1-1 uk-width-3-4@s uk-text-break"><span>{item.briefDescription}</span></div>
             </div>
          )}
       </div>;

@@ -1,0 +1,16 @@
+
+<%
+let items = _.values(page.files);
+items.sort(sort_api_entity_by_name);
+items = items.map(function(item){
+    let path = item.location.file;
+    return {
+        name: item.name,
+        briefDescription: item.briefDescription,
+        refid: item.refid,
+        path: path.substring(8)
+    }
+});
+%>
+
+window.API_FILES_LIST_DATA = <%- JSON.stringify(items)%>
