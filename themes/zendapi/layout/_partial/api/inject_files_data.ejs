@@ -8,7 +8,8 @@ items = items.map(function(item){
         name: item.name,
         briefDescription: item.briefDescription,
         refid: item.refid,
-        path: path.substring(8)
+        path: path.substring(8),
+        url: url_for_api_entity(item.refid)
     }
 });
 %>

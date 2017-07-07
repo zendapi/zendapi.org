@@ -141,13 +141,15 @@ _.forOwn(items, function (container, key)
                 delete ret.templateParams;
                 ret.tplParamsString = ret.tplParamsString.join(", ");
             }
+            ret.url = url_for_api_entity(ret.refid);
             return ret;
         } else if (key == "enums"){
            return {
                containerId: item.containerId,
                id: item.id,
                name: item.name,
-               briefDescription: item.briefDescription
+               briefDescription: item.briefDescription,
+               url: url_for_entity_detail(item.containerId, item.id)
            }
         }
     });

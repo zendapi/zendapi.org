@@ -45,6 +45,7 @@ const config = {
       "api/modules": LAYOUT_PATH + "/api/modules.jsx",
       "api/namespaces": LAYOUT_PATH + "/api/namespaces.jsx",
       "api/globals": LAYOUT_PATH + "/api/globals.jsx",
+      "api/files": LAYOUT_PATH + "/api/files.jsx",
       "api/module_content" : LAYOUT_PATH + "/api/module_content.jsx",
       "api/namespace_content" : LAYOUT_PATH + "/api/namespace_content.jsx"
    },
