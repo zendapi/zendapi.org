@@ -3,8 +3,6 @@ let module = page.module;
 let mpaths = [];
 let modules = page.modules;
 let parent = modules[module.parent];
-let objectPrototype = Object.prototype;
-let toString = objectPrototype.toString;
 while(parent) {
     mpaths.unshift({
         name: parent.name,
@@ -21,8 +19,26 @@ mpaths.unshift({
 module.modules.map(function(submodule){
     submodule.url = url_for_api_entity(submodule.refid);
 });
+module.namespaces.map(function(namespace){
+    namespace.url = url_for_api_entity(namespace.refid);
+});
 module.classes.map(function(cls){
     cls.url = url_for_api_entity(cls.refid);
+    cls.tags = [];
+    if (cls.isTemplate) {
+        cls.tags.push("template");
+    }
+    if (cls.isTemplate) {
+        cls.tplParamsString = [];
+        cls.templateParams.map(function(param){
+            if (param.defValue) {
+                cls.tplParamsString.push(param.type + " = " + param.defValue);
+            } else {
+                cls.tplParamsString.push(param.type);
+            }
+        });
+        cls.tplParamsString = cls.tplParamsString.join(", ");
+    }
 });
 module.defines.map(function(macro){
     macro.url = url_for_entity_detail(macro.containerId, macro.id);
@@ -57,6 +73,7 @@ module.enums.map(function(enumitem){
 });
 module.funcs.map(function(func){
     func.url = url_for_entity_detail(func.containerId, func.id);
+    func.tags = [];
     if (func.isTemplate) {
         func.tplParamsString = [];
         func.templateParams.map(function(param){
@@ -67,6 +84,22 @@ module.funcs.map(function(func){
             }
         });
         func.tplParamsString = func.tplParamsString.join(", ");
+        func.tplParamsString = func.tplParamsString.replace(/\{cls\}/g, "");
+    }
+    if (func.isTemplate) {
+        func.tags.push("template");
+    }
+    if (func.isStatic) {
+        func.tags.push("static");
+    }
+    if (func.isConst) {
+        func.tags.push("const");
+    }
+    if (func.isInline) {
+        func.tags.push("inline");
+    }
+    if (func.isConstExpr) {
+        func.tags.push("constexpr");
     }
 });
 module.mpaths = mpaths;

@@ -10,4 +10,13 @@
     font-size: 1.2em;
     padding-right:10px;
   }
+  .list-item {
+    .uk-label {
+      height:15px!important;
+      line-height: 15px!important;
+      padding-top: 2px;
+      font-size: 10px!important;
+      margin-right: 5px!important;
+    }
+  }
 }

@@ -27,6 +27,7 @@ class ApiModuleConetentPage extends React.Component
    {
       let content = this.props.content;
       let mpaths = content.mpaths;
+      console.log(content.namespaces)
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-index-page">
             <div className="manual-container uk-flex uk-flex-left">

@@ -92,7 +92,7 @@ class GlobalsIndexPage extends React.Component
    
    renderTags(tags)
    {
-      return <div className="uk-width-1-1 uk-flex uk-flex-left">
+      return <div className="uk-width-1-1 uk-flex uk-text-break">
          {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"apidocglobalstags"+index}>{tag}</span>)}
       </div>;
    }

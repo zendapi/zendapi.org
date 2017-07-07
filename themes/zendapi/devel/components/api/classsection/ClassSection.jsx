@@ -10,9 +10,29 @@ export default class ClassSection extends React.Component
          <h3>类列表</h3>
          {classes.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"classsection"+index}>
-               <div className="uk-width-1-1 uk-width-1-4@s"><span className="entity-type uk-text-right">{item.isStruct?"struct":"class"}</span><a className="uk-text-break" href = {item.url}>{item.name}</a></div><div className="uk-width-1-1 uk-width-3-4@s"><span>{item.briefDescription}</span></div>
+               {item.tags.length > 0 && this.renderTags(item.tags)}
+               {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
+               <div className="uk-width-1-1 uk-width-1-4@s">
+                  <span className="entity-type uk-text-right">{item.isStruct?"struct":"class"}</span>
+                  <a className="uk-text-break" href = {item.url}>{item.name}</a></div>
+               <div className="uk-width-1-1 uk-width-3-4@s">
+                  <span>{item.briefDescription}</span>
+               </div>
             </div>
          )}
+      </div>;
+   }
+   
+   renderTemplateParams(tplParamsString)
+   {
+      let params = "template &lt;" +tplParamsString + "&gt";
+      return <div className="uk-width-1-1 tpl-params desc" dangerouslySetInnerHTML={{__html:params}}/>;
+   }
+
+   renderTags(tags)
+   {
+      return <div className="uk-width-1-1 uk-flex uk-flex-left">
+         {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"classsectiontags"+index}>{tag}</span>)}
       </div>;
    }
 };

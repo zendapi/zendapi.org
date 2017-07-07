@@ -74,7 +74,7 @@ _.forOwn(items, function (container, key)
                 ret.tags.push("template");
             }
             if (ret.isStatic) {
-               ret.tags.push("static");
+                ret.tags.push("static");
             }
             if (ret.isConst) {
                 ret.tags.push("const");
@@ -124,8 +124,8 @@ _.forOwn(items, function (container, key)
                 defineStr: item.defineStr
             }
         } else if (key == "classes" || key == "structs") {
-           let ret = clone(item);
-           ret.tags = [];
+            let ret = clone(item);
+            ret.tags = [];
             if (ret.isTemplate) {
                 ret.tags.push("template");
             }
@@ -144,13 +144,13 @@ _.forOwn(items, function (container, key)
             ret.url = url_for_api_entity(ret.refid);
             return ret;
         } else if (key == "enums"){
-           return {
-               containerId: item.containerId,
-               id: item.id,
-               name: item.name,
-               briefDescription: item.briefDescription,
-               url: url_for_entity_detail(item.containerId, item.id)
-           }
+            return {
+                containerId: item.containerId,
+                id: item.id,
+                name: item.name,
+                briefDescription: item.briefDescription,
+                url: url_for_entity_detail(item.containerId, item.id)
+            }
         }
     });
 });
