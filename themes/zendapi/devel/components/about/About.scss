@@ -45,7 +45,7 @@
           margin-top: 20px;
         }
         .uk-label {
-          font-family: "Gotham Rounded"!important;
+          font-family: $global-font-family!important;
           height:20px!important;
           line-height: 20px!important;
           padding-top: 2px;
@@ -97,6 +97,13 @@
     }
     a {
       text-decoration: underline;
+    }
+    .uk-label {
+      height:18px!important;
+      line-height: 18px!important;
+      padding-top: 2px;
+      font-size: 11px!important;
+      margin-right: 5px!important;
     }
   }
 }

@@ -51,6 +51,7 @@ module.defines.map(function(macro){
         macro.paramsString = macro.paramsString.join(", ");
     }
 });
+module.defines.sort(sort_api_entity_by_name);
 module.typedefs.map(function(typedef){
     typedef.url = url_for_entity_detail(typedef.containerId, typedef.id);
     typedef.definition = typedef.definition.replace(typedef.name,

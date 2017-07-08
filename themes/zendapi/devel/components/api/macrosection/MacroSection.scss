@@ -7,6 +7,14 @@
     font-size: 1.2em;
   }
   .define {
-    margin-bottom: 5px;
+    height: 23px;
+    line-height: 23px;
+  }
+  .name {
+    margin-right: 20px;
+  }
+  .uk-grid-small > * {
+    padding-left: 1px!important;
+    padding-right: 1px!important;
   }
 }

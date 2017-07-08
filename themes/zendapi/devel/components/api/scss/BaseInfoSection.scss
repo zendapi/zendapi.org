@@ -1,0 +1,26 @@
+.info-section-container
+{
+  .section-title {
+    height: 35px;
+    line-height: 35px;
+  }
+  .section-item-name {
+    height: 30px;
+    line-height: 30px;
+    span {
+      font-size: 1.5em;
+    }
+    img {
+      margin-top: -4px;
+      margin-right: 3px;
+    }
+  }
+  .definition {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
