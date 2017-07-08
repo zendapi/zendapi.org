@@ -27,4 +27,20 @@
       margin-right: 20px;
     }
   }
+  .section-item {
+    .uk-label {
+      height:15px!important;
+      line-height: 15px!important;
+      padding-top: 2px;
+      font-size: 10px!important;
+      margin-right: 5px!important;
+    }
+    .tags {
+      line-height: 30px;
+      height: 30px;
+      span {
+        margin-top: 7px;
+      }
+    }
+  }
 }

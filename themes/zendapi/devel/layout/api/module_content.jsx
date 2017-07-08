@@ -22,6 +22,7 @@ import FuncSection from "Components/api/funcsection/FuncSection";
 import VariableSection from "Components/api/variablesection/VariableSection";
 import MacrosInfoSection from "Components/api/macrosinfosection/MacrosInfoSection";
 import TypedefsInfoSection from "Components/api/typedefsinfosection/TypedefsInfoSection";
+import EnumsInfoSection from "Components/api/enumsinfosection/EnumsInfoSection";
 
 class ApiModuleConetentPage extends React.Component
 {
@@ -54,6 +55,7 @@ class ApiModuleConetentPage extends React.Component
                   <VariableSection variables = {content.variables}/>
                   <MacrosInfoSection macros = {content.defines}/>
                   <TypedefsInfoSection typedefs = {content.typedefs}/>
+                  <EnumsInfoSection enums = {content.enums}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>

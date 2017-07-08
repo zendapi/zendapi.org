@@ -16,12 +16,13 @@ export default class EnumsInfoSection extends React.Component
             <div className="section-item uk-margin-medium-bottom" key = {"enuminfosectionitem"+index}>
                <a id={item.id}/>
                <div className="uk-flex uk-flex-wrap section-item-name">
-                  <div className="uk-width-1-1">
+                  <div className="uk-width-1-2">
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
                      <span>{item.name}</span></div>
+                  {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                </div>
                <div className="uk-background-muted uk-text-break enum-definition definition uk-flex uk-flex-left uk-flex-wrap">
-                  <div className="define uk-text-break" dangerouslySetInnerHTML={{__html:item.definitionWithoutSelfLink}}></div>
+                  enum&nbsp;{item.name}&nbsp;{item.isStrong && " : "+item.underType}
                </div>
                <div className="uk-text-break">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;
@@ -33,6 +34,12 @@ export default class EnumsInfoSection extends React.Component
                </div>
             </div>
          )}
+      </div>;
+   }
+   renderTags(tags)
+   {
+      return <div className="uk-width-1-2 tags uk-flex uk-flex-right uk-text-middle">
+         {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"enumsinfosectiontags"+index}>{tag}</span>)}
       </div>;
    }
 };
