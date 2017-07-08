@@ -14,15 +14,26 @@ export default class MacrosInfoSection extends React.Component
          </div>
          {macros.map((item, index) => 
             <div className="section-item uk-margin-medium-bottom" key = {"macroinfosectionitem"+index}>
+               <a id={item.id}/>
                <div className="uk-flex uk-flex-wrap section-item-name">
-                  <div className="uk-width-1-1"><img src={linkSvg}/><span>{item.name}</span></div>
+                  <div className="uk-width-1-1">
+                     <a href={"#"+item.id}><img src={linkSvg}/></a>
+                     <span>{item.name}</span></div>
                </div>
-               <div className="uk-background-muted uk-text-break definition">
-                  dsalkfjalskdjfaksjdflkasjdflasd
-                  kshjdfkjahsdfkjhsajdfhas
+               <div className="uk-background-muted uk-text-break macro-definition definition uk-flex uk-flex-left uk-flex-wrap">
+                  <span className="define-keyword">#define</span> 
+                  <span className="uk-text-break name">
+                     {item.name}
+                     {item.params && item.params.length > 0 && "( " +item.paramsString + " )"}
+                  </span>
+                  {this.shouldRenderInitializer(item.initializer) && <div className="define uk-text-primary" dangerouslySetInnerHTML={{__html:item.initializer}}></div>}
                </div>
             </div>
          )}
       </div>;
+   }
+   shouldRenderInitializer(initializer)
+   {
+      return initializer && initializer.indexOf("\n") == -1;
    }
 };

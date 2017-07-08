@@ -1,0 +1,18 @@
+.macro-info-section-container {
+  .macro-definition {
+    .define {
+      height: 23px;
+      line-height: 23px;
+    }
+    .name {
+      margin-right: 20px;
+      height: 23px;
+      line-height: 23px;
+    }
+    .define-keyword {
+      margin-right: 10px;
+      height: 23px;
+      line-height: 23px;
+    }
+  }
+}

@@ -18,9 +18,13 @@
   .definition {
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 10px;
+    .define {
+      height: 23px;
+      line-height: 23px;
+    }
+    .name {
+      margin-right: 20px;
+    }
   }
 }

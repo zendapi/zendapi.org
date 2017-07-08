@@ -28,7 +28,6 @@ class ApiModuleConetentPage extends React.Component
    {
       let content = this.props.content;
       let mpaths = content.mpaths;
-      console.log(content.namespaces)
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-index-page">
             <div className="manual-container uk-flex uk-flex-left">
@@ -67,4 +66,12 @@ $(function ()
    ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
    ReactDOM.render(<ApiModuleConetentPage content = {API_MODULE_CONTENT_DATA}/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
+   $(document).ready(function ()
+   {
+      if (location.hash.trim().length > 0) {
+         $('html,body')
+         .stop()
+         .animate({scrollTop: Math.round($(location.hash).offset().top)}, 0);
+      }
+   });
 });
