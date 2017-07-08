@@ -71,9 +71,12 @@ $(function ()
    $(document).ready(function ()
    {
       if (location.hash.trim().length > 0) {
-         $('html,body')
-         .stop()
-         .animate({scrollTop: Math.round($(location.hash).offset().top)}, 0);
+         let target = $(location.hash);
+         if (target.length > 0) {
+            $('html,body')
+            .stop()
+            .animate({scrollTop: Math.round($(location.hash).offset().top)}, 0);
+         }
       }
    });
 });
