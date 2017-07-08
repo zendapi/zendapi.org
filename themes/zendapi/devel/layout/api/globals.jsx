@@ -21,6 +21,7 @@ class GlobalsIndexPage extends React.Component
       let structs = this.props.data.structs;
       let funcs = this.props.data.funcs;
       let enums = this.props.data.enums;
+      console.log(enums)
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-globals-page">
             <div className="manual-container uk-flex uk-flex-left">
@@ -75,7 +76,7 @@ class GlobalsIndexPage extends React.Component
    {
       return funcs.map((item, index) =>
          <div className="uk-grid-small list-item" data-uk-grid key = {"apidocglobalsfuncs"+index}>
-            {item.tags.length > 0 && this.renderTags(item.tags)}
+            {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
             {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
             <div className="uk-width-1-1 uk-text-break signature" dangerouslySetInnerHTML={{__html:item.signature}}>
             </div>
@@ -101,8 +102,10 @@ class GlobalsIndexPage extends React.Component
    {
       return enums.map((item, index) =>
          <div className="uk-grid-small list-item" data-uk-grid key = {"apidocglobalsenums"+index}>
+            {item.tags&& item.tags.length > 0 && this.renderTags(item.tags)}
             <div className="uk-width-1-1 uk-width-1-4@s">
                <a className="uk-text-break" href = {item.url}>{item.name}</a>
+               {item.isStrong && " : "+item.underType}
             </div>
             <div className="uk-width-1-1 uk-width-3-4@s desc uk-text-break">{item.briefDescription}</div>
          </div>
@@ -113,7 +116,7 @@ class GlobalsIndexPage extends React.Component
    {
       return classes.map((item, index) =>
          <div className="uk-grid-small list-item" data-uk-grid key={key+index}>
-            {item.tags.length > 0 && this.renderTags(item.tags)}
+            {item.tags&& item.tags.length > 0 && this.renderTags(item.tags)}
             {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
             <div className="uk-width-1-1 uk-width-1-3@s"><a className="uk-text-break" href = {item.url}>{item.name}</a></div>
             <div className="uk-width-1-1 uk-width-2-3@s desc uk-text-break">{item.briefDescription}</div>

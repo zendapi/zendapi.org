@@ -149,7 +149,10 @@ _.forOwn(items, function (container, key)
                 id: item.id,
                 name: item.name,
                 briefDescription: item.briefDescription,
-                url: url_for_entity_detail(item.containerId, item.id)
+                url: url_for_entity_detail(item.containerId, item.id),
+                tags: item.tags ? item.tags : [],
+                isStrong: item.isStrong,
+                underType: item.underType
             }
         }
     });
