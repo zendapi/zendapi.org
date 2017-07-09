@@ -1,0 +1,21 @@
+<%
+let namespace = page.namespace;
+namespace.namespaces.map(function(namespace){
+ namespace.url = url_for_api_entity(namespace.refid);
+});
+namespace.classes.map(function(cls){
+ setup_class_info_obj(cls)
+});
+namespace.typedefs.map(function(typedef){
+ setup_typedef_info_obj(typedef);
+});
+namespace.enums.map(function(enumitem){
+ enumitem.url = url_for_entity_detail(enumitem.containerId, enumitem.id);
+});
+
+namespace.funcs.map(function(func){
+ setup_func_info_obj(func);
+ //    console.log(func);
+});
+ %>
+window.API_NAMESPACE_CONTENT_DATA = <%- JSON.stringify(namespace)%>

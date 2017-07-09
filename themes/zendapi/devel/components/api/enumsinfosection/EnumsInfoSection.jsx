@@ -30,7 +30,7 @@ export default class EnumsInfoSection extends React.Component
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
                {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.detailDescription}</div>}
 
-               <table className="uk-table uk-table-responsive uk-table-divider">
+               <table className="uk-table uk-table-responsive uk-table-small uk-table-divider">
                   <thead>
                   <tr>
                      <th>枚举项名称</th>

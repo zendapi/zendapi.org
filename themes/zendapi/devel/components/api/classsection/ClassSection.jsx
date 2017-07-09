@@ -12,10 +12,10 @@ export default class ClassSection extends React.Component
             <div className="uk-grid-small list-item" data-uk-grid key = {"classsection"+index}>
                {item.tags.length > 0 && this.renderTags(item.tags)}
                {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
-               <div className="uk-width-1-1 uk-width-1-4@s">
+               <div className="uk-width-1-1">
                   <span className="entity-type uk-text-right">{item.isStruct?"struct":"class"}</span>
                   <a className="uk-text-break" href = {item.url}>{item.name}</a></div>
-               <div className="uk-width-1-1 uk-width-3-4@s">
+               <div className="uk-width-1-1">
                   <span>{item.briefDescription}</span>
                </div>
             </div>

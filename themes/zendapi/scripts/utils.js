@@ -105,7 +105,6 @@ hexo.extend.helper.register('sort_api_entity_by_name',function(left, right){
    }
 });
 
-
 hexo.extend.helper.register('sort_api_entity_by_path',function(left, right){
    if (left.path < right.path) {
       return -1;

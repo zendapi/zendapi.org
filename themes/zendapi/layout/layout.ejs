@@ -48,6 +48,8 @@
     <%- partial("_partial/api/inject_files_data") %>
     <% } else if (layout == "apimodulecontent") {%>
     <%- partial("_partial/api/inject_module_content_data") %>
+    <% } else if (layout == "apinamespacecontent") {%>
+    <%- partial("_partial/api/inject_namespace_content_data") %>
     <% } %>
     window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
             <%

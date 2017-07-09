@@ -23,22 +23,7 @@ module.namespaces.map(function(namespace){
     namespace.url = url_for_api_entity(namespace.refid);
 });
 module.classes.map(function(cls){
-    cls.url = url_for_api_entity(cls.refid);
-    cls.tags = [];
-    if (cls.isTemplate) {
-        cls.tags.push("template");
-    }
-    if (cls.isTemplate) {
-        cls.tplParamsString = [];
-        cls.templateParams.map(function(param){
-            if (param.defValue) {
-                cls.tplParamsString.push(param.type + " = " + param.defValue);
-            } else {
-                cls.tplParamsString.push(param.type);
-            }
-        });
-        cls.tplParamsString = cls.tplParamsString.join(", ");
-    }
+    setup_class_info_obj(cls)
 });
 module.defines.map(function(macro){
     macro.url = url_for_entity_detail(macro.containerId, macro.id);
@@ -53,59 +38,15 @@ module.defines.map(function(macro){
 });
 module.defines.sort(sort_api_entity_by_name);
 module.typedefs.map(function(typedef){
-    typedef.url = url_for_entity_detail(typedef.containerId, typedef.id);
-    typedef.rawDefinition = typedef.definition;
-    typedef.definitionWithoutSelfLink = typedef.rawDefinition;
-    typedef.definition = typedef.definition.replace(typedef.name,
-            "<a href='"+typedef.url+"' uk-scroll>"+typedef.name+"</a>");
-    // 替换type
-    if (typedef.refs && is_array(typedef.refs)) {
-        typedef.refs.map(function(item){
-            if (item.kindref == "member") {
-                item.url = url_for_entity_detail(item.containerId, item.id)
-            } else {
-                item.url = url_for_api_entity(item.refid);
-            }
-            typedef.definition = typedef.definition.replace(item.name,
-                    "<a href='"+item.url+"'>"+item.name+"</a>");
-            typedef.definitionWithoutSelfLink = typedef.definitionWithoutSelfLink.replace(item.name,
-                    "<a href='"+item.url+"'>"+item.name+"</a>");
-        });
-    }
+    setup_typedef_info_obj(typedef);
 });
+
 module.enums.map(function(enumitem){
     enumitem.url = url_for_entity_detail(enumitem.containerId, enumitem.id);
 });
+
 module.funcs.map(function(func){
-    func.url = url_for_entity_detail(func.containerId, func.id);
-    func.tags = [];
-    if (func.isTemplate) {
-        func.tplParamsString = [];
-        func.templateParams.map(function(param){
-            if (param.defValue) {
-                func.tplParamsString.push(param.type + " = " + param.defValue);
-            } else {
-                func.tplParamsString.push(param.type);
-            }
-        });
-        func.tplParamsString = func.tplParamsString.join(", ");
-        func.tplParamsString = func.tplParamsString.replace(/\{cls\}/g, "");
-    }
-    if (func.isTemplate) {
-        func.tags.push("template");
-    }
-    if (func.isStatic) {
-        func.tags.push("static");
-    }
-    if (func.isConst) {
-        func.tags.push("const");
-    }
-    if (func.isInline) {
-        func.tags.push("inline");
-    }
-    if (func.isConstExpr) {
-        func.tags.push("constexpr");
-    }
+   setup_func_info_obj(func);
 //    console.log(func);
 });
 module.mpaths = mpaths;
