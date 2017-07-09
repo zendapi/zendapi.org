@@ -12,7 +12,7 @@ export default class EnumSection extends React.Component
             <div className="uk-grid-small list-item" data-uk-grid key = {"enumsection"+index}>
                {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                <div className="uk-width-1-1 uk-width-1-4@s">
-                  enum <a className="uk-text-break" href = {item.url}>{item.name}
+                  enum <a className="uk-text-break" href = {item.url} data-uk-scroll>{item.name}
                   </a>
                   {item.isStrong && " : "+item.underType}
                </div>
