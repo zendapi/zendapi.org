@@ -4,8 +4,9 @@ let npaths = [];
 let namespaces = page.namespaces;
 let parent = namespaces[namespace.parent];
 while(parent) {
+ let parts = parent.name.split("::");
  npaths.unshift({
-  name: parent.name,
+  name: parts.pop(),
   url: url_for_api_entity(parent.refid)
  });
  parent = namespaces[parent.parent];
@@ -35,5 +36,5 @@ namespace.funcs.map(function(func){
  //    console.log(func);
 });
 namespace.npaths = npaths;
- %>
+%>
 window.API_NAMESPACE_CONTENT_DATA = <%- JSON.stringify(namespace)%>
