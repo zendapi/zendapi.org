@@ -8,7 +8,6 @@ export default class EnumsInfoSection extends React.Component
    render()
    {
       let enums = this.props.enums;
-      console.log(enums)
       return <div className={enums.length != 0 ? "uk-margin-medium-top info-section-container enum-info-section-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>枚举类型详细文档</h3>
@@ -16,8 +15,8 @@ export default class EnumsInfoSection extends React.Component
          {enums.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"enuminfosectionitem"+index}>
                <a id={item.id}/>
-               <div className="uk-flex uk-flex-wrap section-item-name">
-                  <div className="uk-width-1-2">
+               <div className="uk-flex uk-flex-wrap section-item-name-wrapper">
+                  <div className="uk-width-1-2 section-item-name">
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
                      <span>{item.name}</span></div>
                   {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}

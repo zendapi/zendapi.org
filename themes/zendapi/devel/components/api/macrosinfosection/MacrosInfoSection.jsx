@@ -15,8 +15,8 @@ export default class MacrosInfoSection extends React.Component
          {macros.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"macroinfosectionitem"+index}>
                <a id={item.id}/>
-               <div className="uk-flex uk-flex-wrap section-item-name">
-                  <div className="uk-width-1-1">
+               <div className="uk-flex uk-flex-wrap section-item-name-wrapper">
+                  <div className="uk-width-1-1 section-item-name">
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
                      <span>{item.name}</span></div>
                </div>
