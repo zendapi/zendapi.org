@@ -9,6 +9,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
+import Path from "Components/api/path/Path";
 import SidePanel from "Components/api/sidepanel/SidePanel";
 import NamespaceSection from "Components/api/namespacesection/NamespaceSection";
 import ClassSection from "Components/api/classsection/ClassSection";
@@ -27,6 +28,7 @@ class ApiNamespaceConetentPage extends React.Component
    render()
    {
       let content = this.props.content;
+      let npaths = content.npaths;
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-namespace-page">
             <div className="manual-container uk-flex uk-flex-left">
@@ -34,7 +36,8 @@ class ApiNamespaceConetentPage extends React.Component
                   <SidePanel items = {API_CATALOG_CATEGORIES}/>
                </div>
                <div className="uk-width-expand apidoc-info-container apidoc-namespace-content-info-container">
-                  <h3 className="title">{content.name}</h3>
+                  {npaths && <Path pathList = {npaths}/>}
+                  <h3 className="title uk-text-break">{content.name}</h3>
                   <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
                      {content.briefDescription.trim() != "" ? content.briefDescription : "暂无描述"}
                   </div>

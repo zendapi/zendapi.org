@@ -1,5 +1,22 @@
 <%
 let namespace = page.namespace;
+let npaths = [];
+let namespaces = page.namespaces;
+let parent = namespaces[namespace.parent];
+while(parent) {
+ npaths.unshift({
+  name: parent.name,
+  url: url_for_api_entity(parent.refid)
+ });
+ parent = namespaces[parent.parent];
+}
+let catalog = site.data['api/catalog'];
+let namespaceIndex = catalog.apinamespaces;
+npaths.unshift({
+ name: namespaceIndex.name,
+ url: url_for(namespaceIndex.url)
+});
+
 namespace.namespaces.map(function(namespace){
  namespace.url = url_for_api_entity(namespace.refid);
 });
@@ -17,5 +34,6 @@ namespace.funcs.map(function(func){
  setup_func_info_obj(func);
  //    console.log(func);
 });
+namespace.npaths = npaths;
  %>
 window.API_NAMESPACE_CONTENT_DATA = <%- JSON.stringify(namespace)%>
