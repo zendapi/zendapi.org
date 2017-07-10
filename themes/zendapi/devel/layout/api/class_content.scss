@@ -1,0 +1,33 @@
+@import "../../scss/variables.scss";
+
+.apidoc-class-content-info-container
+{
+  .title {
+    margin: 0!important;
+    padding: 0!important;
+    @media (min-width: 640px) {
+      margin-top: 15px!important;
+    }
+  }
+  .uk-grid {
+    border-bottom: 1px solid #e5e5e5!important;
+    padding-bottom: 5px;
+    margin-left:3px;
+  }
+  .list-item {
+    a ,span {
+      font-size: 1.2em;
+      font-family: $global-font-family;
+    }
+    span {
+      font-size: 1em;
+    }
+  }
+  .include-files {
+    padding-left: 0;
+    li {
+      padding-bottom: 5px;
+    }
+  }
+
+}

@@ -6,6 +6,7 @@ export default class ClassSection extends React.Component
    render()
    {
       let classes = this.props.classes;
+      let showSimpleName = !!this.props.showSimpleName;
       return <div className={classes.length != 0 ? "class-section-container" : "uk-hidden"}>
          <h3>类列表</h3>
          {classes.map((item, index) =>
@@ -14,7 +15,7 @@ export default class ClassSection extends React.Component
                {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
                <div className="uk-width-1-1">
                   <span className="entity-type uk-text-right">{item.isStruct?"struct":"class"}</span>
-                  <a className="uk-text-break" href = {item.url}>{item.name}</a></div>
+                  <a className="uk-text-break" href = {item.url}>{showSimpleName ? item.simpleName : item.name}</a></div>
                <div className="uk-width-1-1">
                   <span>{item.briefDescription}</span>
                </div>

@@ -41,19 +41,20 @@ class ApiModuleConetentPage extends React.Component
                <div className="uk-width-expand apidoc-info-container apidoc-module-content-info-container">
                   {mpaths && <Path pathList = {mpaths}/>}
                   <h3 className="title uk-text-break">{content.name}</h3>
-                  <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.briefDescription.trim() != "" ? content.briefDescription : "暂无描述"}
-                  </div>
-                  <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.detailDescription.trim() != "" ? content.detailDescription : "暂无描述"}
-                  </div>
+                  {content.briefDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
+                     {content.briefDescription.trim()}
+                  </div>}
+                  {content.detailDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
+                     {content.detailDescription.trim()}
+                  </div>}
+                  
                   <ModuleSection modules = {content.modules}/>
                   <NamespaceSection namespaces = {content.namespaces}/>
                   <ClassSection classes = {content.classes}/>
                   <MacroSection defines = {content.defines}/>
                   <TypedefSection typedefs = {content.typedefs}/>
-                  <EnumSection enums = {content.enums}/>
-                  <FuncSection funcs = {content.funcs}/>
+                  <EnumSection enums = {content.enums} />
+                  <FuncSection funcs = {content.funcs} showSimpleName = {false}/>
                   <VariableSection variables = {content.variables}/>
                   <MacrosInfoSection defines = {content.defines} containerId = {content.refid}/>
                   <TypedefsInfoSection typedefs = {content.typedefs} containerId = {content.refid}/>

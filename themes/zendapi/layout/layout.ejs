@@ -15,7 +15,8 @@
         "apifiles",
         "apimodulecontent",
         "apinamespacecontent",
-        "apifilecontent"
+        "apifilecontent",
+        "apiclasscontent"
     ];
     // 嵌入导航   
     let menuItems = site.data.category;
@@ -53,6 +54,8 @@
     <%- partial("_partial/api/inject_namespace_content_data") %>
     <% } else if (layout == "apifilecontent") {%>
     <%- partial("_partial/api/inject_file_content_data") %>
+    <% } else if (layout == "apiclasscontent") {%>
+    <%- partial("_partial/api/inject_class_content_data") %>
     <% } %>
     window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
             <%

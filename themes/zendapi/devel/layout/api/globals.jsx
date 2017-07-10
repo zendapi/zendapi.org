@@ -21,7 +21,6 @@ class GlobalsIndexPage extends React.Component
       let structs = this.props.data.structs;
       let funcs = this.props.data.funcs;
       let enums = this.props.data.enums;
-      console.log(enums)
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-globals-page">
             <div className="manual-container uk-flex uk-flex-left">

@@ -48,7 +48,8 @@ const config = {
       "api/files": LAYOUT_PATH + "/api/files.jsx",
       "api/module_content" : LAYOUT_PATH + "/api/module_content.jsx",
       "api/namespace_content" : LAYOUT_PATH + "/api/namespace_content.jsx",
-      "api/file_content" : LAYOUT_PATH + "/api/file_content.jsx"
+      "api/file_content" : LAYOUT_PATH + "/api/file_content.jsx",
+      "api/class_content" : LAYOUT_PATH + "/api/class_content.jsx"
    },
    output : {
       path : DIST_PATH,

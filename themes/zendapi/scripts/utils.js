@@ -74,7 +74,7 @@ hexo.extend.helper.register('get_api_catalog', function(page, config, site){
             ret.isActive = true;
          }
       } else if (key == "apinamespaces") {
-         if (page.layout == "apinamespacecontent" || page.layout == "apinamespaces") {
+         if (page.layout == "apinamespacecontent" || page.layout == "apinamespaces" || page.layout == "apiclasscontent") {
             ret.isActive = true;
          }
       } else if (key == "apifiles") {
