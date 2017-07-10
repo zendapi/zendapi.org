@@ -1,7 +1,6 @@
 <%
 let file = page.file;
 let files = page.files;
-
 file.namespaces.map(function(namespace){
     namespace.url = url_for_api_entity(namespace.refid);
 });
@@ -14,7 +13,14 @@ file.typedefs.map(function(typedef){
 file.enums.map(function(enumitem){
     enumitem.url = url_for_entity_detail(enumitem.containerId, enumitem.id);
 });
-
+if (!file.includes) {
+    file.includes = [];
+}
+file.includes.map(function(include){
+   if (include.refid) {
+       include.url = url_for_api_entity(include.refid);
+   }
+});
 file.funcs.map(function(func){
     setup_func_info_obj(func);
 });

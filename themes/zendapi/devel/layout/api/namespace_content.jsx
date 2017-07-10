@@ -30,7 +30,7 @@ class ApiNamespaceConetentPage extends React.Component
       let content = this.props.content;
       let npaths = content.npaths;
       return <div style={{width:"100%"}}>
-         <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-namespace-page">
+         <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-namespace-content-page">
             <div className="manual-container uk-flex uk-flex-left">
                <div className="side-panel-container uk-visible@m">
                   <SidePanel items = {API_CATALOG_CATEGORIES}/>

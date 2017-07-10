@@ -30,19 +30,20 @@ class ApiFileConetentPage extends React.Component
    {
       let content = this.props.content;
       return <div style={{width:"100%"}}>
-         <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-file-page">
+         <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-file-content-page">
             <div className="manual-container uk-flex uk-flex-left">
                <div className="side-panel-container uk-visible@m">
                   <SidePanel items = {API_CATALOG_CATEGORIES}/>
                </div>
                <div className="uk-width-expand apidoc-info-container apidoc-file-content-info-container">
                   <h3 className="title uk-text-break">{content.name}</h3>
-                  <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.briefDescription.trim() != "" ? content.briefDescription : "暂无描述"}
-                  </div>
-                  <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.detailDescription.trim() != "" ? content.detailDescription : "暂无描述"}
-                  </div>
+                  {content.includes && content.includes.length > 0 && this.renderIncludesList(content.includes)}
+                  {content.briefDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
+                     {content.briefDescription.trim()}
+                  </div>}
+                  {content.detailDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
+                     {content.detailDescription.trim()}
+                  </div>}
                   <NamespaceSection namespaces = {content.namespaces}/>
                   <ClassSection classes = {content.classes}/>
                   <MacroSection defines = {content.defines}/>
@@ -60,6 +61,19 @@ class ApiFileConetentPage extends React.Component
             </div>
          </div>
       </div>;
+   }
+
+   renderIncludesList(includes)
+   {
+      return <ul className="include-files">
+         {includes.map((include, index) =>
+            <li key = {"apifilecontentincludes"+index} className="uk-text-break">
+               include {include.local ? '"' : "<"}
+               {include.url ? <a href={include.url}>{include.name}</a>:<span>{include.name}</span>}
+               {include.local ? '"': ">"}
+            </li>
+         )}
+      </ul>
    }
 }
 
