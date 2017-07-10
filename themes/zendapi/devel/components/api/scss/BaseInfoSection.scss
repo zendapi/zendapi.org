@@ -9,8 +9,10 @@
     
   }
   .section-item-name {
-    height: 30px;
-    line-height: 30px;
+    a,span {
+      height: 30px;
+      line-height: 30px;
+    }
     span {
       font-size: 1.5em;
     }
@@ -24,8 +26,10 @@
     margin-bottom: 10px;
     padding: 10px;
     .define {
-      height: 23px;
-      line-height: 23px;
+      a, span {
+        height: 23px;
+        line-height: 23px;
+      }
     }
     .name {
       margin-right: 20px;

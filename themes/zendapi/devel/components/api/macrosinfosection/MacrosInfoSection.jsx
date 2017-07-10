@@ -26,15 +26,19 @@ export default class MacrosInfoSection extends React.Component
                <div className="uk-flex uk-flex-wrap section-item-name-wrapper">
                   <div className="uk-width-1-1 section-item-name">
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
-                     <span>{item.name}</span></div>
+                     <span className="uk-text-break">{item.name}</span></div>
                </div>
                <div className="uk-background-muted uk-text-break macro-definition definition uk-flex uk-flex-left uk-flex-wrap">
                   <span className="define-keyword">#define</span>
-                  <span className="uk-text-break name">
+                  <div className="uk-text-break name">
+                     <span>
                      {item.name}
-                     {item.params && item.params.length > 0 && "( " +item.paramsString + " )"}
+                        {item.params && item.params.length > 0 && "( " +item.paramsString + " )"}
                   </span>
-                  {this.shouldRenderInitializer(item.initializer) && <div className="define uk-text-primary" dangerouslySetInnerHTML={{__html:item.initializer}}></div>}
+                  </div>
+                  {this.shouldRenderInitializer(item.initializer) && <div className="define uk-text-primary">
+                     <span dangerouslySetInnerHTML={{__html:item.initializer}}/>
+                  </div>}
                </div>
                <div className="uk-text-break">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;

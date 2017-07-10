@@ -77,7 +77,11 @@ hexo.extend.helper.register('get_api_catalog', function(page, config, site){
          if (page.layout == "apinamespacecontent" || page.layout == "apinamespaces") {
             ret.isActive = true;
          }
-      }else if (key == page.layout) {
+      } else if (key == "apifiles") {
+         if (page.layout == "apifilecontent" || page.layout == "apifiles") {
+            ret.isActive = true;
+         }
+      } else if (key == page.layout) {
          ret.isActive = true;
       }
       items.push(ret);
