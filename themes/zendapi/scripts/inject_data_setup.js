@@ -65,7 +65,7 @@ hexo.extend.helper.register('setup_typedef_info_obj', function(typedef){
    typedef.rawDefinition = typedef.definition;
    typedef.definitionWithoutSelfLink = typedef.rawDefinition;
    typedef.definition = typedef.definition.replace(typedef.name,
-      "<a href='"+typedef.url+"' uk-scroll>"+typedef.name+"</a>");
+      "<a href='"+typedef.url+"' class='page-scroll-trigger'>"+typedef.name+"</a>");
    // 替换type
    if (typedef.refs && is_array.call(hexo, typedef.refs)) {
       typedef.refs.map(function(item){
@@ -82,5 +82,24 @@ hexo.extend.helper.register('setup_typedef_info_obj', function(typedef){
    }
 });
 
+hexo.extend.helper.register('setup_macro_info_obj', function(macro){
+   let url_for_entity_detail = hexo.extend.helper.get('url_for_entity_detail');
+   macro.url = url_for_entity_detail.call(hexo, macro.containerId, macro.id);
+   if (macro.params) {
+      macro.paramsString = [];
+      macro.params.map(function (param)
+      {
+         macro.paramsString.push(param.defname);
+      });
+      macro.paramsString = macro.paramsString.join(", ");
+   }
+});
+hexo.extend.helper.register('setup_var_info_obj', function(variable){
+   // let tpl = '<a href = "{url}" " class = "page-scroll-trigger">{name}</a>';
+   // let url_for_entity_detail = hexo.extend.helper.get('url_for_entity_detail');
+   // let name = tpl.replace(/\{url\}/g, url_for_entity_detail.call(hexo, variable.containerId, variable.id)).
+   // replace("{name}", variable.name);
+   // variable.defineStr = variable.type + " " + name;
+});
 
 

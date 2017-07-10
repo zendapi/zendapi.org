@@ -7,12 +7,20 @@ export default class MacrosInfoSection extends React.Component
 {
    render()
    {
-      let macros = this.props.macros;
-      return <div className={macros.length != 0 ? "uk-margin-medium-top info-section-container macro-info-section-container" : "uk-hidden"}>
+      let defines = this.props.defines;
+      let cid = this.props.containerId;
+      let tobeRendered = [];
+      defines.map(function (item)
+      {
+         if (item.containerId == cid) {
+            tobeRendered.push(item);
+         }
+      });
+      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top info-section-container macro-info-section-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>宏定义详细文档</h3>
          </div>
-         {macros.map((item, index) =>
+         {tobeRendered.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"macroinfosectionitem"+index}>
                <a id={item.id}/>
                <div className="uk-flex uk-flex-wrap section-item-name-wrapper">

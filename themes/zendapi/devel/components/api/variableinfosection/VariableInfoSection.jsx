@@ -8,11 +8,20 @@ export default class VariableInfoSection extends React.Component
    render()
    {
       let variables = this.props.variables;
-      return <div className={variables.length != 0 ? "uk-margin-medium-top info-section-container vars-info-section-container" : "uk-hidden"}>
+      let cid = this.props.containerId;
+      let tobeRendered = [];
+      variables.map(function (item)
+      {
+         if (item.containerId == cid) {
+            tobeRendered.push(item);
+         }
+      });
+      
+      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top info-section-container vars-info-section-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>变量类型详细文档</h3>
          </div>
-         {variables.map((item, index) =>
+         {tobeRendered.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"varsinfosectionitem"+index}>
                <a id={item.id}/>
                <div className="uk-flex uk-flex-wrap uk-flex-wrap-around section-item-name-wrapper">

@@ -26,15 +26,7 @@ module.classes.map(function(cls){
     setup_class_info_obj(cls)
 });
 module.defines.map(function(macro){
-    macro.url = url_for_entity_detail(macro.containerId, macro.id);
-    if (macro.params) {
-        macro.paramsString = [];
-        macro.params.map(function (param)
-        {
-            macro.paramsString.push(param.defname);
-        });
-        macro.paramsString = macro.paramsString.join(", ");
-    }
+    setup_macro_info_obj(macro);
 });
 module.defines.sort(sort_api_entity_by_name);
 module.typedefs.map(function(typedef){
@@ -48,6 +40,10 @@ module.enums.map(function(enumitem){
 module.funcs.map(function(func){
    setup_func_info_obj(func);
 //    console.log(func);
+});
+module.variables.map(function(variable){
+    setup_var_info_obj(variable);
+    //    console.log(func);
 });
 module.mpaths = mpaths;
 %>

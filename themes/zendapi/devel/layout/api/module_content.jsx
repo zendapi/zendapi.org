@@ -55,11 +55,11 @@ class ApiModuleConetentPage extends React.Component
                   <EnumSection enums = {content.enums}/>
                   <FuncSection funcs = {content.funcs}/>
                   <VariableSection variables = {content.variables}/>
-                  <MacrosInfoSection macros = {content.defines}/>
-                  <TypedefsInfoSection typedefs = {content.typedefs}/>
-                  <EnumsInfoSection enums = {content.enums}/>
-                  <FuncsInfoSection funcs = {content.funcs}/>
-                  <VariableInfoSection variables = {content.variables}/>
+                  <MacrosInfoSection defines = {content.defines} containerId = {content.refid}/>
+                  <TypedefsInfoSection typedefs = {content.typedefs} containerId = {content.refid}/>
+                  <EnumsInfoSection enums = {content.enums} containerId = {content.refid}/>
+                  <FuncsInfoSection funcs = {content.funcs} containerId = {content.refid}/>
+                  <VariableInfoSection variables = {content.variables} containerId = {content.refid}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
@@ -84,5 +84,15 @@ $(function ()
             .animate({scrollTop: Math.round($(location.hash).offset().top)}, 0);
          }
       }
+      $(".page-scroll-trigger").each(function(){
+         let targetUrl = $(this).attr('href');
+         targetUrl = targetUrl.split('#');
+         if (targetUrl) {
+            targetUrl = targetUrl[0];
+         }
+         if (targetUrl == location.pathname) {
+            Uikit.scroll(this)
+         }
+      });
    });
 });

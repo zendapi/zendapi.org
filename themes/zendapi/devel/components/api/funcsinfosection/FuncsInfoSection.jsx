@@ -8,11 +8,19 @@ export default class FuncsInfoSection extends React.Component
    render()
    {
       let funcs = this.props.funcs;
-      return <div className={funcs.length != 0 ? "uk-margin-medium-top info-section-container funcs-info-section-container" : "uk-hidden"}>
+      let cid = this.props.containerId;
+      let tobeRendered = [];
+      funcs.map(function (item)
+      {
+         if (item.containerId == cid) {
+            tobeRendered.push(item);
+         }
+      });
+      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top info-section-container funcs-info-section-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>函数类型详细文档</h3>
          </div>
-         {funcs.map((item, index) =>
+         {tobeRendered.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"funcsinfosectionitem"+index}>
                <a id={item.id}/>
                <div className="uk-flex uk-flex-wrap uk-flex-wrap-around section-item-name-wrapper">

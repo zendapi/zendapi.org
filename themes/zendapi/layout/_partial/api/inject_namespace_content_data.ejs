@@ -35,6 +35,10 @@ namespace.funcs.map(function(func){
  setup_func_info_obj(func);
  //    console.log(func);
 });
+namespace.variables.map(function(variable){
+ setup_var_info_obj(variable);
+ //    console.log(func);
+});
 namespace.npaths = npaths;
 %>
 window.API_NAMESPACE_CONTENT_DATA = <%- JSON.stringify(namespace)%>
