@@ -46,10 +46,10 @@ class ApiNamespaceConetentPage extends React.Component
                   </div>}
                   <NamespaceSection namespaces = {content.namespaces} showSimpleName = {true}/>
                   <ClassSection classes = {content.classes} showSimpleName = {true}/>
-                  <TypedefSection typedefs = {content.typedefs}/>
+                  <TypedefSection typedefs = {content.typedefs} showSimpleName = {true}/>
                   <EnumSection enums = {content.enums} showSimpleName = {true}/>
                   <FuncSection funcs = {content.funcs} showSimpleName = {true}/>
-                  <VariableSection variables = {content.variables}/>
+                  <VariableSection variables = {content.variables} showSimpleName = {true}/>
                   <TypedefsInfoSection typedefs = {content.typedefs} containerId = {content.refid}/>
                   <EnumsInfoSection enums = {content.enums} containerId = {content.refid}/>
                   <FuncsInfoSection funcs = {content.funcs} containerId = {content.refid}/>

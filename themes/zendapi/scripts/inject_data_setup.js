@@ -57,31 +57,6 @@ hexo.extend.helper.register('setup_class_info_obj', function(cls){
    }
 });
 
-hexo.extend.helper.register('setup_typedef_info_obj', function(typedef){
-   let url_for_entity_detail = hexo.extend.helper.get('url_for_entity_detail');
-   let url_for_api_entity = hexo.extend.helper.get('url_for_api_entity');
-   let is_array = hexo.extend.helper.get('is_array');
-   typedef.url = url_for_entity_detail.call(hexo, typedef.containerId, typedef.id);
-   typedef.rawDefinition = typedef.definition;
-   typedef.definitionWithoutSelfLink = typedef.rawDefinition;
-   typedef.definition = typedef.definition.replace(typedef.name,
-      "<a href='"+typedef.url+"' class='page-scroll-trigger'>"+typedef.name+"</a>");
-   // 替换type
-   if (typedef.refs && is_array.call(hexo, typedef.refs)) {
-      typedef.refs.map(function(item){
-         if (item.kindref == "member") {
-            item.url = url_for_entity_detail.call(hexo, item.containerId, item.id)
-         } else {
-            item.url = url_for_api_entity.call(hexo, item.refid);
-         }
-         typedef.definition = typedef.definition.replace(item.name,
-            "<a href='"+item.url+"'>"+item.name+"</a>");
-         typedef.definitionWithoutSelfLink = typedef.definitionWithoutSelfLink.replace(item.name,
-            "<a href='"+item.url+"'>"+item.name+"</a>");
-      });
-   }
-});
-
 hexo.extend.helper.register('setup_macro_info_obj', function(macro){
    let url_for_entity_detail = hexo.extend.helper.get('url_for_entity_detail');
    macro.url = url_for_entity_detail.call(hexo, macro.containerId, macro.id);

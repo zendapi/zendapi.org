@@ -7,9 +7,7 @@ file.namespaces.map(function(namespace){
 file.classes.map(function(cls){
     setup_class_info_obj(cls)
 });
-file.typedefs.map(function(typedef){
-    setup_typedef_info_obj(typedef);
-});
+
 file.enums.map(function(enumitem){
     enumitem.url = url_for_entity_detail(enumitem.containerId, enumitem.id);
 });
