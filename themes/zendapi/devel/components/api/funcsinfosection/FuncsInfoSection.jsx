@@ -26,7 +26,7 @@ export default class FuncsInfoSection extends React.Component
                <div className="uk-flex uk-flex-wrap uk-flex-wrap-around section-item-name-wrapper">
                   <div className="uk-width-1-1 uk-width-1-2@s section-item-name">
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
-                     <span>{item.name}</span></div>
+                     <span>{item.simpleName || item.name}()</span></div>
                   {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                </div>
                <div className="uk-background-muted uk-text-break func-definition definition"

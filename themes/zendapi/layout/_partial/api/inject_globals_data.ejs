@@ -42,13 +42,8 @@ _.forOwn(items, function (container, key)
                 briefDescription: item.briefDescription,
                 url: item.refid ? url_for_api_entity(item.refid) : url_for_entity_detail(item.containerId, item.id)
             };
-            if (item.params) {
-                ret.paramsString = [];
-                item.params.map(function (param)
-                {
-                    ret.paramsString.push(param.defname);
-                });
-                ret.paramsString = ret.paramsString.join(", ");
+            if (item.paramsString) {
+                ret.paramsString = item.paramsString;
             }
             if (item.initializer) {
                 ret.initializer = item.initializer;
@@ -70,29 +65,12 @@ _.forOwn(items, function (container, key)
                 tags: [],
                 isTemplate: item.isTemplate
             }
-            if (ret.isTemplate) {
-                ret.tags.push("template");
-            }
-            if (ret.isStatic) {
-                ret.tags.push("static");
-            }
-            if (ret.isConst) {
-                ret.tags.push("const");
-            }
-            if (ret.isInline) {
-                ret.tags.push("inline");
+            if (item.tags) {
+               ret.tags = item.tags;
             }
             ret.url = url_for_entity_detail(item.containerId, item.id);
-            if (item.isTemplate) {
-                ret.tplParamsString = [];
-                item.templateParams.map(function(param){
-                    if (param.defValue) {
-                        ret.tplParamsString.push(param.type + " = " + param.defValue);
-                    } else {
-                        ret.tplParamsString.push(param.type);
-                    }
-                });
-                ret.tplParamsString = ret.tplParamsString.join(", ");
+            if (item.tplParamsString) {
+                ret.tplParamsString = item.tplParamsString;
             }
             return ret;
         } else if (key == "typedefs") {
@@ -103,20 +81,7 @@ _.forOwn(items, function (container, key)
                 briefDescription: item.briefDescription
             };
             ret.url = url_for_entity_detail(item.containerId, item.id);
-            ret.definition = item.definition.replace(item.name,
-                    "<a href='"+ret.url+"'>"+item.name+"</a>");
-            // 替换type
-            if (item.refs && is_array(item.refs)) {
-                item.refs.map(function(ref){
-                    if (ref.kindref == "member") {
-                        ref.url = url_for_entity_detail(ref.containerId, ref.id)
-                    } else {
-                        ref.url = url_for_api_entity(ref.refid);
-                    }
-                    ret.definition = ret.definition.replace(ref.name,
-                            "<a href='"+ref.url+"'>"+ref.name+"</a>");
-                });
-            }
+            ret.definition = item.definition;
             return ret;
         } else if (key == "variables") {
             return {
@@ -124,25 +89,7 @@ _.forOwn(items, function (container, key)
                 defineStr: item.defineStr
             }
         } else if (key == "classes" || key == "structs") {
-            let ret = clone(item);
-            ret.tags = [];
-            if (ret.isTemplate) {
-                ret.tags.push("template");
-            }
-            if (ret.isTemplate) {
-                ret.tplParamsString = [];
-                ret.templateParams.map(function(param){
-                    if (param.defValue) {
-                        ret.tplParamsString.push(param.type + " = " + param.defValue);
-                    } else {
-                        ret.tplParamsString.push(param.type);
-                    }
-                });
-                delete ret.templateParams;
-                ret.tplParamsString = ret.tplParamsString.join(", ");
-            }
-            ret.url = url_for_api_entity(ret.refid);
-            return ret;
+            return clone(item);
         } else if (key == "enums"){
             return {
                 containerId: item.containerId,

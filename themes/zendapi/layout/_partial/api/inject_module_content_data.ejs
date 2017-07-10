@@ -16,33 +16,11 @@ mpaths.unshift({
     name: moduleIndex.name,
     url: url_for(moduleIndex.url)
 });
-module.modules.map(function(submodule){
-    submodule.url = url_for_api_entity(submodule.refid);
-});
-module.namespaces.map(function(namespace){
-    namespace.url = url_for_api_entity(namespace.refid);
-});
-module.classes.map(function(cls){
-    setup_class_info_obj(cls)
-});
-module.defines.map(function(macro){
-    setup_macro_info_obj(macro);
-});
+
+
 module.defines.sort(sort_api_entity_by_name);
 
-
-module.enums.map(function(enumitem){
-    enumitem.url = url_for_entity_detail(enumitem.containerId, enumitem.id);
-});
-
-module.funcs.map(function(func){
-   setup_func_info_obj(func);
-//    console.log(func);
-});
-module.variables.map(function(variable){
-    setup_var_info_obj(variable);
-    //    console.log(func);
-});
+//console.log(module.classes)
 module.mpaths = mpaths;
 %>
 

@@ -11,7 +11,7 @@ export default class ClassSection extends React.Component
          <h3>类列表</h3>
          {classes.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"classsection"+index}>
-               {item.tags.length > 0 && this.renderTags(item.tags)}
+               {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
                <div className="uk-width-1-1">
                   <span className="entity-type uk-text-right">{item.isStruct?"struct":"class"}</span>

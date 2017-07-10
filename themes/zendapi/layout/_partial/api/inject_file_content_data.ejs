@@ -1,16 +1,6 @@
 <%
 let file = page.file;
 let files = page.files;
-file.namespaces.map(function(namespace){
-    namespace.url = url_for_api_entity(namespace.refid);
-});
-file.classes.map(function(cls){
-    setup_class_info_obj(cls)
-});
-
-file.enums.map(function(enumitem){
-    enumitem.url = url_for_entity_detail(enumitem.containerId, enumitem.id);
-});
 if (!file.includes) {
     file.includes = [];
 }
@@ -19,15 +9,6 @@ file.includes.map(function(include){
        include.url = url_for_api_entity(include.refid);
    }
 });
-file.funcs.map(function(func){
-    setup_func_info_obj(func);
-});
-file.defines.map(function(macro){
-    setup_macro_info_obj(macro);
-});
-file.variables.map(function(variable){
-    setup_var_info_obj(variable);
-    //    console.log(func);
-});
+
 %>
 window.API_FILE_CONTENT_DATA = <%- JSON.stringify(file)%>
