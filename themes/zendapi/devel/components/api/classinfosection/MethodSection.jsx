@@ -2,18 +2,18 @@ import "./ClassSection.scss";
 import "./MethodSection.scss";
 import React from "react";
 
-export default class FuncSection extends React.Component
+export default class MethodSection extends React.Component
 {
    render()
    {
       let title = this.props.title;
       let methods = this.props.methods;
       let showSimpleName = true;
-      return <div className={methods.length != 0 ? "method-section-container class-section-item" : "uk-hidden"}>
+      return <div className={methods && methods.length != 0 ? "method-class-section-item-container class-section-item-container" : "uk-hidden"}>
          <h3>{title}</h3>
-         {methods.map((item, index) =>
+         {methods && methods.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"classmethodsection"+index}>
-               {item.tags.length > 0 && this.renderTags(item.tags)}
+               {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
                <div className="uk-width-1-1 uk-text-break signature" 
                     dangerouslySetInnerHTML={{__html:showSimpleName?item.simpleSignature:item.signature}}>

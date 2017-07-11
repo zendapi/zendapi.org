@@ -9,7 +9,7 @@ export default class TypeSection extends React.Component
       let types = this.props.types;
       let showSimpleName = true;
       let title = this.props.title;
-      return  <div className={types.length != 0 ? "type-section-container class-section-item" : "uk-hidden"}>
+      return  <div className={types && types.length != 0 ? "type-class-section-item-container class-section-item-container" : "uk-hidden"}>
          <h3>{title}</h3>
          {types && types.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"classtypesection"+index}>

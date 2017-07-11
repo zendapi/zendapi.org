@@ -1,25 +1,22 @@
 .apidoc-class-content-page {
-  .class-section-item {
+  .class-section-item-container {
     margin-top: 20px;
     @media (min-width: 640px) {
       margin-top: 40px;
-    }
-    a {
-      font-size: 1.2em;
     }
     .uk-grid-small > * {
       padding-left: 1px!important;
       padding-right: 1px!important;
     }
     .uk-table td{
-      padding-left: 0px;
+      padding-left: 0;
     }
     .uk-label {
-      height: 15px !important;
-      line-height: 15px !important;
+      height:13px!important;
+      line-height: 13px!important;
       padding-top: 2px;
-      font-size: 10px !important;
-      margin-right: 5px !important;
+      font-size: 10px!important;
+      margin-right: 5px!important;
     }
   }
 }
