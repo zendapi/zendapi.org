@@ -16,19 +16,19 @@ export default class MacrosInfoSection extends React.Component
             tobeRendered.push(item);
          }
       });
-      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top info-section-container macro-info-section-container" : "uk-hidden"}>
+      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top section-info-item-container macro-section-info-item-container " : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>宏定义详细文档</h3>
          </div>
          {tobeRendered.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"macroinfosectionitem"+index}>
                <a id={item.id}/>
-               <div className="uk-flex uk-flex-wrap section-item-name-wrapper">
+               <div className="uk-flex uk-flex-wrap section-item-name-wrapper uk-margin-small-top">
                   <div className="uk-width-1-1 section-item-name">
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
                      <span className="uk-text-break">{item.name}</span></div>
                </div>
-               <div className="uk-background-muted uk-text-break macro-definition definition uk-flex uk-flex-left uk-flex-wrap">
+               <div className="uk-background-muted uk-margin-small-top uk-text-break macro-definition definition uk-flex uk-flex-left uk-flex-wrap">
                   <span className="define-keyword">#define</span>
                   <div className="uk-text-break name">
                      <span>
@@ -40,7 +40,7 @@ export default class MacrosInfoSection extends React.Component
                      <span dangerouslySetInnerHTML={{__html:item.initializer}}/>
                   </div>}
                </div>
-               <div className="uk-text-break">
+               <div className="uk-text-break uk-margin-small-top">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;
                </div>
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}

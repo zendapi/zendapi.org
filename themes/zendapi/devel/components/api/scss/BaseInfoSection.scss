@@ -9,19 +9,7 @@
     height: 35px;
     line-height: 35px;
   }
-  .section-item-name {
-    a,span {
-      height: 30px;
-      line-height: 30px;
-    }
-    span {
-      font-size: 1.5em;
-    }
-    img {
-      margin-top: -4px;
-      margin-right: 3px;
-    }
-  }
+  
   .tags {
     line-height: 30px;
     height: 30px;
@@ -44,5 +32,28 @@
     span {
       font-size: 1em;
     }
+  }
+}
+
+.section-info-item-container{
+  .section-item-name {
+    a,span {
+      height: 30px;
+      line-height: 30px;
+    }
+    span {
+      font-size: 1.5em;
+    }
+    img {
+      margin-top: -4px;
+      margin-right: 3px;
+    }
+  }
+  a {
+    font-size: 1.1em;
+    font-family: $global-font-family;
+  }
+  span {
+    font-size: 1em;
   }
 }

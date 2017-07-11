@@ -1,11 +1,5 @@
-.macro-info-section-container {
+.macro-section-info-item-container {
   .macro-definition {
-    .define {
-      a,span {
-        height: 23px;
-        line-height: 23px;
-      }
-    }
     .name {
       margin-right: 20px;
       a,span {
@@ -18,5 +12,8 @@
       height: 23px;
       line-height: 23px;
     }
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 }
