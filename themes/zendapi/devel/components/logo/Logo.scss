@@ -1,6 +1,8 @@
 .logo {
-  color:#ffffff;
-  font-family: "Gotham Rounded";
-  font-weight: bold;
-  font-size: 16px;
+  img {
+    height: 20px;
+    @media (min-width: 640px) {
+      height: 30px;
+    }
+  }
 }

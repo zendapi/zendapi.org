@@ -1,5 +1,6 @@
 import React from "react";
 import qcoreteam from "./images/qcoreteam.svg";
+import zendapi from "./images/zendapi-logo.svg";
 
 export default class AboutUsDescription extends React.Component
 {
@@ -14,7 +15,7 @@ export default class AboutUsDescription extends React.Component
             <a href="https://www.github.com/qcoreteam">qcoreteam 项目库</a>
          </div>
          <hr className="uk-divider-icon"/>
-         <div className="uk-text-center zendapi-logo">zendAPI</div>
+         <div className="uk-text-center uk-margin-large-top zendapi-logo"><img src = {zendapi}/></div>
          <div className="text uk-margin-medium-top">
             zendAPI 项目是针对 Zend Engine 的 C 接口使用 C++11 进行而面向对象的封装，从而屏蔽了底层 Zend Engine API 的接口复杂性，加快开发 PHP 扩展的效率。我们不是对 Zend Engine 进行重新实现
             只是在它的基础上对其接口进行分类简化，对上层应用提供一个易用的编程接口。<br/>

@@ -87,13 +87,9 @@
      
     }
     .zendapi-logo {
-      font-family: "Gotham Rounded"!important;
-      color: $zapi-base-color;
-      font-size:2em;
-      @media (min-width: 640px) {
-        font-size:4em;
+      img {
+        height: 60px;
       }
-      font-weight:bold;
     }
     a {
       text-decoration: underline;
