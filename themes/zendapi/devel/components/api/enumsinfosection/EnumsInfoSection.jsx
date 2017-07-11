@@ -16,23 +16,23 @@ export default class EnumsInfoSection extends React.Component
             tobeRendered.push(item);
          }
       });
-      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top info-section-container enum-info-section-container" : "uk-hidden"}>
+      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top section-info-item-container enum-section-info-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>枚举类型详细文档</h3>
          </div>
          {tobeRendered.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"enuminfosectionitem"+index}>
                <a id={item.id}/>
-               <div className="uk-flex uk-flex-wrap section-item-name-wrapper">
-                  <div className="uk-width-1-2 section-item-name">
+               <div className="uk-flex uk-flex-wrap section-item-name-wrapper uk-margin-small-top">
+                  <div className="uk-width-1-1 uk-width-1-2@s section-item-name uk-text-break">
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
                      <span>{item.name}</span></div>
                   {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                </div>
-               <div className="uk-background-muted uk-text-break enum-definition definition uk-flex uk-flex-left uk-flex-wrap">
+               <div className="uk-background-muted uk-text-break uk-margin-small-top enum-definition definition uk-flex uk-flex-left uk-flex-wrap">
                   enum&nbsp;{item.name}&nbsp;{item.isStrong && " : "+item.underType}
                </div>
-               <div className="uk-text-break">
+               <div className="uk-text-break uk-margin-small-top">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;
                </div>
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
@@ -63,7 +63,7 @@ export default class EnumsInfoSection extends React.Component
    }
    renderTags(tags)
    {
-      return <div className="uk-width-1-2 tags uk-flex uk-flex-right uk-text-middle">
+      return <div className="uk-width-1-1 uk-width-1-2@s tags uk-flex uk-flex-right uk-text-middle">
          {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"enumsinfosectiontags"+index}>{tag}</span>)}
       </div>;
    }

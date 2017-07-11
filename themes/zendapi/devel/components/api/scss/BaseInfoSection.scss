@@ -56,4 +56,20 @@
   span {
     font-size: 1em;
   }
+  .uk-grid-small > * {
+    padding-left: 1px!important;
+    padding-right: 1px!important;
+  }
+  .definition {
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .uk-label {
+    height:13px!important;
+    line-height: 13px!important;
+    padding-top: 2px;
+    font-size: 10px!important;
+    margin-left: 5px!important;
+  }
 }

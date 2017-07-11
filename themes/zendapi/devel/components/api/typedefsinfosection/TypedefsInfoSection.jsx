@@ -16,7 +16,7 @@ export default class TypedefsInfoSection extends React.Component
             tobeRendered.push(item);
          }
       });
-      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top info-section-container typedef-info-section-container" : "uk-hidden"}>
+      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top section-info-item-container typedef-section-info-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>Typedef 详细文档</h3>
          </div>
@@ -28,10 +28,10 @@ export default class TypedefsInfoSection extends React.Component
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
                      <span>{item.name}</span></div>
                </div>
-               <div className="uk-background-muted uk-text-break typedef-definition definition uk-flex uk-flex-left uk-flex-wrap">
+               <div className="uk-background-muted uk-text-break uk-margin-small-top typedef-definition definition uk-flex uk-flex-left uk-flex-wrap">
                   <div className="define uk-text-break" dangerouslySetInnerHTML={{__html:item.definitionWithoutSelfLink}}></div>
                </div>
-               <div className="uk-text-break">
+               <div className="uk-text-break uk-margin-small-top">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;
                </div>
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
