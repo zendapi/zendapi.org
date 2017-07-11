@@ -26,6 +26,7 @@ import VariableInfoSection from "Components/api/VariableInfoSection/VariableInfo
 import TypeSection from "Components/api/classinfosection/TypeSection";
 import BaseClassSection from "Components/api/classinfosection/BaseClassSection";
 import MethodSection from "Components/api/classinfosection/MethodSection";
+import FriendSection from "Components/api/classinfosection/FriendSection";
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 
 class ApiClassConetentPage extends React.Component
@@ -51,6 +52,7 @@ class ApiClassConetentPage extends React.Component
                   <BaseClassSection baseClasses = {content.baseClasses}/>
                   <TypeSection types = {content.publicTypes} title = {"公共类型定义"}/>
                   <MethodSection title = "公共方法" methods = {content.publicFuncs}/>
+                  <FriendSection friends = {content.friends}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
