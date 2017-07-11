@@ -21,11 +21,14 @@
     }
     font-family: $global-font-family;
     .uk-label {
-      height:15px!important;
-      line-height: 15px!important;
+      height:13px!important;
+      line-height: 13px!important;
       padding-top: 2px;
       font-size: 10px!important;
       margin-right: 5px!important;
     }
+  }
+  .tpl-params {
+    margin-top: 5px!important;
   }
 }
