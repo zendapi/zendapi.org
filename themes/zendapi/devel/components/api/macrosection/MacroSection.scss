@@ -3,20 +3,16 @@
   @media (min-width: 640px) {
     margin-top: 40px;
   }
-  a {
-    font-size: 1.2em;
-  }
-  .define {
-    a ,span{
-      height: 23px;
-      line-height: 23px;
+  .list-item {
+    .define {
+      a ,span{
+        height: 23px;
+        line-height: 23px;
+      }
+      margin-left: 20px;
+    }
+    .name {
     }
   }
-  .name {
-    margin-right: 20px;
-  }
-  .uk-grid-small > * {
-    padding-left: 1px!important;
-    padding-right: 1px!important;
-  }
+  
 }

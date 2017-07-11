@@ -1,12 +1,13 @@
-.info-section-container
+@import "../../../scss/variables.scss";
+.section-item-container
 {
+  .uk-grid-small > * {
+    padding-left: 1px!important;
+    padding-right: 1px!important;
+  }
   .section-title {
     height: 35px;
     line-height: 35px;
-  }
-  .section-item-name-wrapper
-  {
-    
   }
   .section-item-name {
     a,span {
@@ -21,34 +22,27 @@
       margin-right: 3px;
     }
   }
-  .definition {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    .define {
-      a, span {
-        height: 23px;
-        line-height: 23px;
-      }
-    }
-    .name {
-      margin-right: 20px;
+  .tags {
+    line-height: 30px;
+    height: 30px;
+    span {
+      margin-top: 7px;
     }
   }
-  .section-item {
-    .uk-label {
-      height:15px!important;
-      line-height: 15px!important;
-      padding-top: 2px;
-      font-size: 10px!important;
-      margin-right: 5px!important;
+  .uk-label {
+    height:13px!important;
+    line-height: 13px!important;
+    padding-top: 2px;
+    font-size: 10px!important;
+    margin-right: 5px!important;
+  }
+  .list-item {
+    a {
+      font-size: 1.1em;
+      font-family: $global-font-family;
     }
-    .tags {
-      line-height: 30px;
-      height: 30px;
-      span {
-        margin-top: 7px;
-      }
+    span {
+      font-size: 1em;
     }
   }
 }

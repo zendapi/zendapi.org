@@ -7,7 +7,7 @@ export default class ClassSection extends React.Component
    {
       let classes = this.props.classes;
       let showSimpleName = !!this.props.showSimpleName;
-      return <div className={classes.length != 0 ? "class-section-container" : "uk-hidden"}>
+      return <div className={classes.length != 0 ? "section-item-container class-section-container" : "uk-hidden"}>
          <h3>类列表</h3>
          {classes.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"classsection"+index}>

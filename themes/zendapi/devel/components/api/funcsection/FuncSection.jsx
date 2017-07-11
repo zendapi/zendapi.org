@@ -7,7 +7,7 @@ export default class FuncSection extends React.Component
    {
       let funcs = this.props.funcs;
       let showSimpleName = !!this.props.showSimpleName;
-      return <div className={funcs.length != 0 ? "func-section-container" : "uk-hidden"}>
+      return <div className={funcs.length != 0 ? "section-item-container func-section-container" : "uk-hidden"}>
          <h3>函数列表</h3>
          {funcs.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"funcsection"+index}>

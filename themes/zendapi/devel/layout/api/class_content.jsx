@@ -50,8 +50,8 @@ class ApiClassConetentPage extends React.Component
                      {content.detailDescription.trim()}
                   </div>}
                   <BaseClassSection baseClasses = {content.baseClasses}/>
-                  <TypeSection types = {content.publicTypes} title = {"公共类型定义"}/>
-                  <MethodSection title = "公共方法" methods = {content.publicFuncs}/>
+                  <TypeSection types = {content.publicTypes} title = {"公有类型定义"}/>
+                  <MethodSection title = "公有方法" methods = {content.publicFuncs}/>
                   <FriendSection friends = {content.friends}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>

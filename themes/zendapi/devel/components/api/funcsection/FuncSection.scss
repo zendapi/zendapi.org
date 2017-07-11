@@ -4,32 +4,10 @@
   @media (min-width: 640px) {
     margin-top: 40px;
   }
-  a {
-    font-size: 1.2em;
-  }
   .signature {
-    font-size: 1em;
-    a {
-      font-size: 1.2em;
-    }
+    margin-top: 5px!important;
   }
   .tpl-params {
-    a {
-      font-size: 1em;
-    }
-  }
-  .list-item {
-    .uk-label {
-      height:15px!important;
-      line-height: 15px!important;
-      padding-top: 2px;
-      font-size: 10px!important;
-      margin-right: 5px!important;
-      margin-top: 2px!important;
-    }
-  }
-  .uk-grid-small > * {
-    padding-left: 1px!important;
-    padding-right: 1px!important;
+    margin-top: 5px!important;
   }
 }

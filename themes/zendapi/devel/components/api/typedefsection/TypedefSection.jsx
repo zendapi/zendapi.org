@@ -7,7 +7,7 @@ export default class TypedefSection extends React.Component
    {
       let typedefs = this.props.typedefs;
       let showSimpleName = !!this.props.showSimpleName;
-      return <div className={typedefs.length != 0 ? "typedef-section-container" : "uk-hidden"}>
+      return <div className={typedefs.length != 0 ? "section-item-container typedef-section-container" : "uk-hidden"}>
          <h3>Typedef 定义列表</h3>
          {typedefs.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"typedefsection"+index}>

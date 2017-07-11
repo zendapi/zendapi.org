@@ -6,7 +6,7 @@ export default class ModuleSection extends React.Component
    render()
    {
       let modules = this.props.modules;
-      return <div className={modules.length != 0 ? "module-section-container": "uk-hidden"}>
+      return <div className={modules.length != 0 ? "section-item-container module-section-container": "uk-hidden"}>
          <h3>子模块列表</h3>
          {modules.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"modulesection"+index}>

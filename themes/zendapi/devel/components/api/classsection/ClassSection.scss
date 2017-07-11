@@ -3,24 +3,11 @@
   @media (min-width: 640px) {
     margin-top: 40px;
   }
-  a {
-    font-size: 1.2em;
-  }
   .entity-type {
     font-size: 1.2em;
     padding-right:10px;
   }
-  .list-item {
-    .uk-label {
-      height:15px!important;
-      line-height: 15px!important;
-      padding-top: 2px;
-      font-size: 10px!important;
-      margin-right: 5px!important;
-    }
-  }
-  .uk-grid-small > * {
-    padding-left: 1px!important;
-    padding-right: 1px!important;
+  .tpl-params {
+    margin-top: 5px!important;
   }
 }
