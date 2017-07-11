@@ -7,12 +7,12 @@ export default class EnumSection extends React.Component
    {
       let enums = this.props.enums;
       let showSimpleName = !!this.props.showSimpleName;
-      return <div className={enums.length != 0 ? "enum-section-container" : "uk-hidden"}>
+      return <div className={enums.length != 0 ? "section-item-container enum-section-container" : "uk-hidden"}>
          <h3>枚举类型列表</h3>
          {enums.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"enumsection"+index}>
                {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
-               <div className="uk-width-1-1 uk-width-1-4@s">
+               <div className="uk-width-1-1 uk-width-1-4@s define">
                   enum {item.isStrong && "class"} <a className="uk-text-break page-scroll-trigger" href = {item.url}>{showSimpleName ? item.simpleName : item.name}
                   </a>
                   {item.underType && " : "+item.underType}
