@@ -22,6 +22,10 @@ import TypedefsInfoSection from "Components/api/typedefsinfosection/TypedefsInfo
 import EnumsInfoSection from "Components/api/enumsinfosection/EnumsInfoSection";
 import FuncsInfoSection from "Components/api/funcsinfosection/FuncsInfoSection";
 import VariableInfoSection from "Components/api/VariableInfoSection/VariableInfoSection";
+
+import TypeSection from "Components/api/classinfosection/TypeSection";
+import BaseClassSection from "Components/api/classinfosection/BaseClassSection";
+import MethodSection from "Components/api/classinfosection/MethodSection";
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 
 class ApiClassConetentPage extends React.Component
@@ -37,18 +41,34 @@ class ApiClassConetentPage extends React.Component
                </div>
                <div className="uk-width-expand apidoc-info-container apidoc-class-content-info-container">
                   <h3 className="title uk-text-break">{content.name}</h3>
+                  {content.includes && content.includes.length > 0 && this.renderIncludesList(content.includes)}
                   {content.briefDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
                      {content.briefDescription.trim()}
                   </div>}
                   {content.detailDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
                      {content.detailDescription.trim()}
                   </div>}
-                  asdasdadasda
+                  <BaseClassSection baseClasses = {content.baseClasses}/>
+                  <TypeSection types = {content.publicTypes} title = {"公共类型定义"}/>
+                  <MethodSection title = "公共方法" methods = {content.publicFuncs}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
          </div>
       </div>;
+   }
+
+   renderIncludesList(includes)
+   {
+      return <ul className="include-files">
+         {includes.map((include, index) =>
+            <li key = {"apiclasscontentincludes"+index} className="uk-text-break">
+               #include {include.local ? '"' : "<"}
+               {include.url ? <a href={include.url}>{include.name}</a>:<span>{include.name}</span>}
+               {include.local ? '"': ">"}
+            </li>
+         )}
+      </ul>
    }
 }
 
