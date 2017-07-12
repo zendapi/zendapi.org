@@ -14,9 +14,11 @@ import TypeSection from "Components/api/classinfosection/TypeSection";
 import BaseClassSection from "Components/api/classinfosection/BaseClassSection";
 import MethodSection from "Components/api/classinfosection/MethodSection";
 import AttributeSection from "Components/api/classinfosection/AttributeSection";
+import FriendSection from "Components/api/classinfosection/FriendSection";
 import TypeInfoSection from "Components/api/classinfosection/TypeInfoSection";
 import MethodInfoSection from "Components/api/classinfosection/MethodInfoSection";
-import FriendSection from "Components/api/classinfosection/FriendSection";
+import FriendInfoSection from "Components/api/classinfosection/FriendInfoSection";
+
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 
 class ApiClassConetentPage extends React.Component
@@ -50,6 +52,7 @@ class ApiClassConetentPage extends React.Component
                   <MethodSection title = "静态保护方法列表" methods = {content.protectedStaticFuncs}/>
                   <AttributeSection title = "保护字段列表" attributes = {content.protectedAttributes}/>
                   <AttributeSection title = "静态保护字段列表" attributes = {content.protectedStaticAttributes}/>
+                  <FriendSection friends = {content.friends}/>
                   <h3>详细描述文档</h3>
                   <div className="uk-margin-small-top uk-text-break">
                      在文件&nbsp;<span className="uk-text-success">{content.location.file.substring(8)}</span>&nbsp;的第
@@ -57,7 +60,7 @@ class ApiClassConetentPage extends React.Component
                   </div>
                   <TypeInfoSection typesPool = {[content.publicTypes, content.protectedTypes]}/>
                   <MethodInfoSection methodsPool = {[content.publicFuncs, content.publicStaticFuncs,content.protectedFuncs, content.protectedStaticFuncs]}/>
-                  <FriendSection friends = {content.friends}/>
+                  <FriendInfoSection friends = {content.friends}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
@@ -97,12 +100,15 @@ $(function ()
       }
       $(".page-scroll-trigger").each(function(){
          let targetUrl = $(this).attr('href');
-         targetUrl = targetUrl.split('#');
-         if (targetUrl) {
-            targetUrl = targetUrl[0];
+         let parts = targetUrl.split('#');
+         if (parts) {
+            targetUrl = parts[0];
          }
          if (targetUrl == location.pathname) {
-            Uikit.scroll(this)
+            Uikit.scroll(this);
+            $(this).on('scrolled', function () {
+               location.hash = parts[1];
+            });
          }
       });
    });

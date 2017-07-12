@@ -20,12 +20,12 @@ export default class MethodInfoSection extends React.Component
             });
          }
       });
-      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top section-info-item-container function-section-info-item-container" : "uk-hidden"}>
+      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top class-info-section-item-container function-section-info-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>成员方法详细文档</h3>
          </div>
          {tobeRendered.map((item, index) =>
-            <div className="section-item uk-margin-medium-bottom" key = {"funcsinfosectionitem"+index}>
+            <div className="section-item uk-margin-medium-bottom" key = {"classmethodinfosectionitem"+index}>
                <a id={item.id}/>
                <div className="uk-flex uk-flex-wrap uk-flex-wrap-around uk-margin-small-top section-item-name-wrapper">
                   <div className="uk-width-1-1 uk-width-1-2@s section-item-name">
@@ -33,7 +33,7 @@ export default class MethodInfoSection extends React.Component
                      <span>{item.simpleName || item.name}()</span></div>
                   {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                </div>
-               <div className="uk-background-muted uk-text-break uk-margin-small-top func-definition definition"
+               <div className="uk-background-muted uk-text-break uk-margin-small-top method-definition definition"
                     dangerouslySetInnerHTML={{__html:item.signature}}>
                </div>
                <div className="uk-text-break uk-margin-small-top">
@@ -51,7 +51,7 @@ export default class MethodInfoSection extends React.Component
 
    renderTags(tags)
    {
-      return <div className="uk-width-1-1 uk-width-1-2@s tags uk-flex uk-flex-right uk-text-middle uk-flex-wrap-around">
+      return <div className="uk-width-1-1 uk-width-1-2@s tags uk-flex uk-flex-left uk-flex-right@s uk-text-middle uk-flex-wrap-around">
          {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"funcsinfosectiontags"+index}>{tag}</span>)}
       </div>;
    }

@@ -28,9 +28,11 @@ export default class FuncsInfoSection extends React.Component
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
                      <span>{item.simpleName || item.name}()</span></div>
                   {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
+                  
                </div>
-               <div className="uk-background-muted uk-text-break uk-margin-small-top func-definition definition"
-                  dangerouslySetInnerHTML={{__html:item.signature}}>
+               <div className="uk-background-muted uk-text-break uk-margin-small-top func-definition definition">
+                  {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
+                  <div dangerouslySetInnerHTML={{__html:item.signature}}></div>
                </div>
                <div className="uk-text-break uk-margin-small-top">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;
@@ -43,6 +45,12 @@ export default class FuncsInfoSection extends React.Component
             </div>
          )}
       </div>;
+   }
+
+   renderTemplateParams(tplParamsString)
+   {
+      let params = "template &lt;" +tplParamsString + "&gt";
+      return <div className="uk-width-1-1 tpl-params uk-margin-small-top" dangerouslySetInnerHTML={{__html:params}}/>;
    }
    
    renderTags(tags)

@@ -1,5 +1,5 @@
 import "./ClassSection.scss";
-import "./TypeSection.scss";
+import "./FriendSection.scss";
 import React from "react";
 
 export default class FriendSection extends React.Component

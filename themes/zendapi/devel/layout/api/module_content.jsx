@@ -87,12 +87,15 @@ $(function ()
       }
       $(".page-scroll-trigger").each(function(){
          let targetUrl = $(this).attr('href');
-         targetUrl = targetUrl.split('#');
-         if (targetUrl) {
-            targetUrl = targetUrl[0];
+         let parts = targetUrl.split('#');
+         if (parts) {
+            targetUrl = parts[0];
          }
          if (targetUrl == location.pathname) {
-            Uikit.scroll(this)
+            Uikit.scroll(this);
+            $(this).on('scrolled', function () {
+               location.hash = parts[1];
+            });
          }
       });
    });
