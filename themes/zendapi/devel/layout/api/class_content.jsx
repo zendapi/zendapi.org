@@ -17,6 +17,7 @@ import AttributeSection from "Components/api/classinfosection/AttributeSection";
 import FriendSection from "Components/api/classinfosection/FriendSection";
 import TypeInfoSection from "Components/api/classinfosection/TypeInfoSection";
 import MethodInfoSection from "Components/api/classinfosection/MethodInfoSection";
+import AttributeInfoSection from "Components/api/classinfosection/AttributeInfoSection";
 import FriendInfoSection from "Components/api/classinfosection/FriendInfoSection";
 
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
@@ -42,12 +43,12 @@ class ApiClassConetentPage extends React.Component
                      {content.detailDescription.trim()}
                   </div>}
                   <BaseClassSection baseClasses = {content.baseClasses}/>
-                  <TypeSection types = {content.publicTypes} title = {"公有类型定义"}/>
+                  <TypeSection types = {content.publicTypes} title = {"公有类型列表"}/>
                   <MethodSection title = "公有方法列表" methods = {content.publicFuncs}/>
                   <MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs}/>
                   <AttributeSection title = "公有字段列表" attributes = {content.publicAttributes}/>
                   <AttributeSection title = "静态公有字段列表" attributes = {content.publicStaticAttributes}/>
-                  <TypeSection types = {content.protectedTypes} title = {"保护类型定义"}/>
+                  <TypeSection types = {content.protectedTypes} title = {"保护类型列表"}/>
                   <MethodSection title = "保护方法列表" methods = {content.protectedFuncs}/>
                   <MethodSection title = "静态保护方法列表" methods = {content.protectedStaticFuncs}/>
                   <AttributeSection title = "保护字段列表" attributes = {content.protectedAttributes}/>
@@ -58,8 +59,16 @@ class ApiClassConetentPage extends React.Component
                      在文件&nbsp;<span className="uk-text-success">{content.location.file.substring(8)}</span>&nbsp;的第
                      &nbsp;<span className="uk-text-success">{content.location.line}</span>&nbsp;行定义
                   </div>
-                  <TypeInfoSection typesPool = {[content.publicTypes, content.protectedTypes]}/>
-                  <MethodInfoSection methodsPool = {[content.publicFuncs, content.publicStaticFuncs,content.protectedFuncs, content.protectedStaticFuncs]}/>
+                  <TypeInfoSection title = "公有类型文档" types = {content.publicTypes}/>
+                  <TypeInfoSection title = "保护类型文档" types = {content.protectedTypes}/>
+                  <MethodInfoSection title = "公有方法文档" methods = {content.publicFuncs}/>
+                  <MethodInfoSection title = "静态公有方法文档" methods = {content.publicStaticFuncs}/>
+                  <MethodInfoSection title = "保护方法文档" methods = {content.protectedFuncs}/>
+                  <MethodInfoSection title = "静态保护方法文档" methods = {content.protectedStaticFuncs}/>
+                  <AttributeInfoSection title = "公有字段文档" attributes = {content.publicAttributes}/>
+                  <AttributeInfoSection title = "公有静态字段文档" attributes = {content.publicStaticAttributes}/>
+                  <AttributeInfoSection title = "保护字段文档" attributes = {content.protectedAttributes}/>
+                  <AttributeInfoSection title = "保护静态字段文档" attributes = {content.protectedStaticAttributes}/>
                   <FriendInfoSection friends = {content.friends}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>

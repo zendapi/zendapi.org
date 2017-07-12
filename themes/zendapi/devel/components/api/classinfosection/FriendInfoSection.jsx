@@ -26,7 +26,6 @@ export default class FriendInfoSection extends React.Component
                   <div className={item.isTemplate ? "define uk-text-break" : "define uk-text-break"}
                        dangerouslySetInnerHTML={{__html:item.infoDefineStr}}></div>
                </div>
-              
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
                {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.detailDescription}</div>}
                <div className="uk-margin-small-top uk-text-break">
@@ -40,7 +39,7 @@ export default class FriendInfoSection extends React.Component
    renderTags(tags)
    {
       return <div className="uk-width-1-1 uk-width-1-2@s tags uk-flex uk-flex-left uk-flex-right@s uk-text-middle uk-flex-wrap-around">
-         {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"funcsinfosectiontags"+index}>{tag}</span>)}
+         {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"friendsinfosectiontags"+index}>{tag}</span>)}
       </div>;
    }
    

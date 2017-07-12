@@ -1,38 +1,29 @@
 import "../scss/BaseInfoSection.scss";
-import "./MethodInfoSection.scss";
+import "./AttributeInfoSection.scss";
 import React from "react";
 import linkSvg from "../images/link.svg";
 
-export default class MethodInfoSection extends React.Component
+export default class AttributeInfoSection extends React.Component
 {
    render()
    {
-      let methods = this.props.methods || [];
-      let tobeRendered = [];
-      methods.map(function (method)
-      {
-         if (method) {
-            if (!method.isConstructor && !method.isDesctructor) {
-               tobeRendered.push(method);
-            }
-         }
-      });
+      let attributes = this.props.attributes || [];
       let title = this.props.title;
-      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top class-info-section-item-container function-section-info-item-container" : "uk-hidden"}>
+      return <div className={attributes.length != 0 ? "uk-margin-medium-top class-info-section-item-container attribute-class-info-section-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>{title}</h3>
          </div>
-         {tobeRendered.map((item, index) =>
-            <div className="section-item uk-margin-medium-bottom" key = {"classmethodinfosectionitem"+index}>
+         {attributes.map((item, index) =>
+            <div className="section-item uk-margin-medium-bottom" key = {"attributeinfosectionitem"+index}>
                <a id={item.id}/>
-               <div className="uk-flex uk-flex-wrap uk-flex-wrap-around uk-margin-small-top section-item-name-wrapper">
+               <div className="uk-flex uk-flex-wrap uk-margin-small-top uk-flex-wrap-around section-item-name-wrapper">
                   <div className="uk-width-1-1 uk-width-1-2@s section-item-name">
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
-                     <span>{item.simpleName || item.name}()</span></div>
+                     <span>{item.simpleName}</span></div>
                   {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                </div>
-               <div className="uk-background-muted uk-text-break uk-margin-small-top method-definition definition"
-                    dangerouslySetInnerHTML={{__html:item.signature}}>
+               <div className="uk-background-muted uk-text-break uk-margin-small-top vars-definition definition"
+                    dangerouslySetInnerHTML={{__html:item.defineStr}}>
                </div>
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
                {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.detailDescription}</div>}
@@ -47,7 +38,7 @@ export default class MethodInfoSection extends React.Component
    renderTags(tags)
    {
       return <div className="uk-width-1-1 uk-width-1-2@s tags uk-flex uk-flex-left uk-flex-right@s uk-text-middle uk-flex-wrap-around">
-         {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"funcsinfosectiontags"+index}>{tag}</span>)}
+         {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"attributesinfosectiontags"+index}>{tag}</span>)}
       </div>;
    }
 };

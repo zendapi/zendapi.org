@@ -7,22 +7,13 @@ export default class TypeInfoSection extends React.Component
 {
    render()
    {
-      let typesPool = this.props.typesPool;
-      let tobeRendered = [];
-      typesPool.map(function (types)
-      {
-         if (types) {
-            types.map(function (type)
-            {
-               tobeRendered.push(type);
-            });
-         }
-      });
-      return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top class-info-section-item-container type-class-info-section-item-container" : "uk-hidden"}>
+      let types = this.props.types || [];
+      let title = this.props.title;
+      return <div className={types.length != 0 ? "uk-margin-medium-top class-info-section-item-container type-class-info-section-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
-            <h3>成员类型定义详细文档</h3>
+            <h3>{title}</h3>
          </div>
-         {tobeRendered.map((item, index) =>
+         {types.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"typedefinfosectionitem"+index}>
                <a id={item.id}/>
                <div className="uk-flex uk-flex-wrap section-item-name-wrapper">
@@ -32,9 +23,6 @@ export default class TypeInfoSection extends React.Component
                </div>
                <div className="uk-background-muted uk-text-break uk-margin-small-top typedef-definition definition uk-flex uk-flex-left uk-flex-wrap">
                   <div className="define uk-text-break" dangerouslySetInnerHTML={{__html:item.definitionWithoutSelfLink}}></div>
-               </div>
-               <div className="uk-text-break uk-margin-small-top">
-                  #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;
                </div>
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
                {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.detailDescription}</div>}
