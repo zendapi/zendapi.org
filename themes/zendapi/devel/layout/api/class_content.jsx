@@ -14,6 +14,7 @@ import TypeSection from "Components/api/classinfosection/TypeSection";
 import BaseClassSection from "Components/api/classinfosection/BaseClassSection";
 import MethodSection from "Components/api/classinfosection/MethodSection";
 import AttributeSection from "Components/api/classinfosection/AttributeSection";
+import TypeInfoSection from "Components/api/classinfosection/TypeInfoSection";
 import FriendSection from "Components/api/classinfosection/FriendSection";
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 
@@ -40,20 +41,21 @@ class ApiClassConetentPage extends React.Component
                   <BaseClassSection baseClasses = {content.baseClasses}/>
                   <TypeSection types = {content.publicTypes} title = {"公有类型定义"}/>
                   <MethodSection title = "公有方法列表" methods = {content.publicFuncs}/>
-                  <MethodSection title = "公有静态方法列表" methods = {content.publicStaticFuncs}/>
+                  <MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs}/>
                   <AttributeSection title = "公有字段列表" attributes = {content.publicAttributes}/>
-                  <AttributeSection title = "公有静态字段列表" attributes = {content.publicStaticAttributes}/>
+                  <AttributeSection title = "静态公有字段列表" attributes = {content.publicStaticAttributes}/>
                   <TypeSection types = {content.protectedTypes} title = {"保护类型定义"}/>
                   <MethodSection title = "保护方法列表" methods = {content.protectedFuncs}/>
-                  <MethodSection title = "保护静态方法列表" methods = {content.protectedStaticFuncs}/>
+                  <MethodSection title = "静态保护方法列表" methods = {content.protectedStaticFuncs}/>
                   <AttributeSection title = "保护字段列表" attributes = {content.protectedAttributes}/>
-                  <AttributeSection title = "保护静态字段列表" attributes = {content.protectedStaticAttributes}/>
-                  <FriendSection friends = {content.friends}/>
+                  <AttributeSection title = "静态保护字段列表" attributes = {content.protectedStaticAttributes}/>
                   <h3>详细描述文档</h3>
                   <div className="uk-margin-small-top uk-text-break">
-                     在文件&nbsp;<span className="uk-text-success">{content.location.file.substring(8)}</span>&nbsp;的第 
+                     在文件&nbsp;<span className="uk-text-success">{content.location.file.substring(8)}</span>&nbsp;的第
                      &nbsp;<span className="uk-text-success">{content.location.line}</span>&nbsp;行定义
                   </div>
+                  <TypeInfoSection typesPool = {[content.publicTypes, content.protectedTypes]}/>
+                  <FriendSection friends = {content.friends}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>
             </div>
