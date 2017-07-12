@@ -20,7 +20,7 @@ export default class TypeInfoSection extends React.Component
       });
       return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top class-info-section-item-container type-class-info-section-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
-            <h3>类型定义详细文档</h3>
+            <h3>成员类型定义详细文档</h3>
          </div>
          {tobeRendered.map((item, index) =>
             <div className="section-item uk-margin-medium-bottom" key = {"typedefinfosectionitem"+index}>

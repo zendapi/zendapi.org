@@ -13,7 +13,7 @@ export default class MethodSection extends React.Component
          <h3>{title}</h3>
          {methods && methods.map((item, index) =>
             <div className="uk-grid-small list-item" data-uk-grid key = {"classmethodsection"+index}>
-               {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
+               
                {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
                <div className="uk-width-1-1 uk-text-break signature" 
                     dangerouslySetInnerHTML={{__html:showSimpleName?item.simpleSignature:item.signature}}>

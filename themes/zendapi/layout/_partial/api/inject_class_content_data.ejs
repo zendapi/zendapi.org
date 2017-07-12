@@ -2,13 +2,11 @@
 let cls = clone(page.cls);
 let classes = page.classes;
 let files = page.files;
-_.values(classes).map(function (cls)
-{
-    if (cls.includes) {
-        setup_cls_includes(cls);
-    }
-    sort_cls_methods(cls);
-});
+
+if (cls.includes) {
+    setup_cls_includes(cls);
+}
+sort_cls_methods(cls);
 
 function setup_cls_includes(cls)
 {
@@ -43,8 +41,8 @@ function sort_cls_methods(cls)
     {
         if (cls[prop] && is_array(cls[prop])) {
             cls[prop].sort(function (left, right) {
-               let leftName = left.simpleName;
-               let rightName = right.simpleName;
+                let leftName = left.simpleName;
+                let rightName = right.simpleName;
                 if (_.indexOf(special, leftName) != -1 && _.indexOf(special, rightName) != -1) {
                     return 0;
                 } else if (_.indexOf(special, leftName) != -1 && _.indexOf(special, rightName) == -1) {

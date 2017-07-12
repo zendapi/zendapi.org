@@ -15,6 +15,7 @@ import BaseClassSection from "Components/api/classinfosection/BaseClassSection";
 import MethodSection from "Components/api/classinfosection/MethodSection";
 import AttributeSection from "Components/api/classinfosection/AttributeSection";
 import TypeInfoSection from "Components/api/classinfosection/TypeInfoSection";
+import MethodInfoSection from "Components/api/classinfosection/MethodInfoSection";
 import FriendSection from "Components/api/classinfosection/FriendSection";
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 
@@ -55,6 +56,7 @@ class ApiClassConetentPage extends React.Component
                      &nbsp;<span className="uk-text-success">{content.location.line}</span>&nbsp;行定义
                   </div>
                   <TypeInfoSection typesPool = {[content.publicTypes, content.protectedTypes]}/>
+                  <MethodInfoSection methodsPool = {[content.publicFuncs, content.publicStaticFuncs,content.protectedFuncs, content.protectedStaticFuncs]}/>
                   <FriendSection friends = {content.friends}/>
                   <DoxygenInfo version = {API_DOXYGEN_VERSION}/>
                </div>

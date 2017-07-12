@@ -30,7 +30,7 @@ export default class EnumsInfoSection extends React.Component
                   {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
                </div>
                <div className="uk-background-muted uk-text-break uk-margin-small-top enum-definition definition uk-flex uk-flex-left uk-flex-wrap">
-                  enum&nbsp;{item.name}&nbsp;{item.isStrong && " : "+item.underType}
+                  enum&nbsp;{item.isStrong && "class"}&nbsp;{item.name}&nbsp;{item.underType && " : "+item.underType}
                </div>
                <div className="uk-text-break uk-margin-small-top">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;

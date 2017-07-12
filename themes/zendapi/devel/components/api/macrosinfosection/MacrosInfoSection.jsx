@@ -52,6 +52,7 @@ export default class MacrosInfoSection extends React.Component
          )}
       </div>;
    }
+   
    shouldRenderInitializer(initializer)
    {
       return initializer && initializer.indexOf("\n") == -1;
