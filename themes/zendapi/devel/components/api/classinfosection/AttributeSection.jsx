@@ -1,3 +1,4 @@
+import "../scss/BaseInfoSection.scss";
 import "./ClassSection.scss";
 import "./AttributeSection.scss";
 import React from "react";
@@ -11,7 +12,9 @@ export default class AttributeSection extends React.Component
       let inherits = this.props.inherits || {};
       let baseClasses = this.props.baseClasses || [];
       return  <div className={attributes && attributes.length != 0 ? "attribute-class-section-item-container class-section-item-container" : "uk-hidden"}>
-         <h3>{title}</h3>
+         <div className="section-title uk-margin-medium-bottom">
+            <h3>{title}</h3>
+         </div>
          {attributes && this.renderAttributes(attributes)}
          {inherits && this.renderInherits(inherits, baseClasses)}
       </div>

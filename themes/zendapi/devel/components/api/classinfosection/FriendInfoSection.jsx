@@ -1,3 +1,4 @@
+import "../scss/BaseInfoSection.scss";
 import "./ClassSection.scss";
 import "./FriendInfoSection.scss";
 import linkSvg from "../images/link.svg";

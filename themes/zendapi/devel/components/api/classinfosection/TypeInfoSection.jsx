@@ -1,4 +1,5 @@
 import "../scss/BaseInfoSection.scss";
+import "./ClassSection.scss";
 import "./TypeInfoSection.scss";
 import React from "react";
 import linkSvg from "../images/link.svg";

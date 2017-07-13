@@ -12,7 +12,9 @@ export default class TypeSection extends React.Component
       let inherits = this.props.inherits || {};
       let baseClasses = this.props.baseClasses || [];
       return  <div className={types && types.length != 0 ? "type-class-section-item-container class-section-item-container" : "uk-hidden"}>
-         <h3>{title}</h3>
+         <div className="section-title uk-margin-medium-bottom">
+            <h3>{title}</h3>
+         </div>
          {types && this.renderTypes(types, showSimpleName)}
          {inherits && this.renderInherits(inherits, baseClasses)}
       </div>

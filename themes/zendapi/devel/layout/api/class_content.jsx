@@ -48,18 +48,18 @@ class ApiClassConetentPage extends React.Component
                <div className="uk-width-expand apidoc-info-container apidoc-class-content-info-container">
                   <h3 className="title uk-text-break">{content.name}</h3>
                   {content.includes && content.includes.length > 0 && this.renderIncludesList(content.includes)}
-                  {content.briefDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.briefDescription.trim()}
+                  {content.briefDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top"
+                                                                 dangerouslySetInnerHTML={{__html:content.briefDescription.trim()}}>
                   </div>}
-                  {content.detailDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.detailDescription.trim()}
+                  {content.detailDescription.trim() != "" && <div className="uk-text-small description uk-text-break uk-margin-small-bottom uk-margin-small-top"
+                                                                  dangerouslySetInnerHTML={{__html:content.detailDescription.trim()}}>
                   </div>}
                   <BaseClassSection baseClasses = {content.baseClasses}/>
                   <TypeSection types = {content.publicTypes} title = {"公有类型列表"}
                                inherits = {publicTypes} baseClasses = {content.baseClasses}/>
-                  <MethodSection title = "公有方法列表" methods = {content.publicFuncs} 
+                  <MethodSection title = "公有方法列表" methods = {content.publicFuncs}
                                  inherits = {publicFuncInherits} baseClasses = {content.baseClasses}/>
-                  <MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs} 
+                  <MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs}
                                  inherits = {publicStaticFuncInherits} baseClasses = {content.baseClasses}/>
                   <AttributeSection title = "公有字段列表" attributes = {content.publicAttributes}
                                     inherits = {publicAttrsInherits} baseClasses = {content.baseClasses}/>
@@ -67,7 +67,7 @@ class ApiClassConetentPage extends React.Component
                                     inherits = {publicStaticAttrsInherits} baseClasses = {content.baseClasses}/>
                   <TypeSection types = {content.protectedTypes} title = {"保护类型列表"}
                                inherits = {protectedTypes} baseClasses = {content.baseClasses}/>
-                  <MethodSection title = "保护方法列表" methods = {content.protectedFuncs} 
+                  <MethodSection title = "保护方法列表" methods = {content.protectedFuncs}
                                  inherits = {protectedFuncInherits} baseClasses = {content.baseClasses}/>
                   <MethodSection title = "静态保护方法列表" methods = {content.protectedStaticFuncs}
                                  inherits = {protectedStaticFuncInherits} baseClasses = {content.baseClasses}/>
@@ -76,7 +76,9 @@ class ApiClassConetentPage extends React.Component
                   <AttributeSection title = "静态保护字段列表" attributes = {content.protectedStaticAttributes}
                                     inherits = {protectedStaticAttrsInherits} baseClasses = {content.baseClasses}/>
                   <FriendSection friends = {content.friends}/>
-                  <h3>详细描述文档</h3>
+                  <div className="uk-margin-medium-top">
+                     <h3>详细描述文档</h3>
+                  </div>
                   <div className="uk-margin-small-top uk-text-break">
                      在文件&nbsp;<span className="uk-text-success">{content.location.file.substring(8)}</span>&nbsp;的第
                      &nbsp;<span className="uk-text-success">{content.location.line}</span>&nbsp;行定义
@@ -112,7 +114,7 @@ class ApiClassConetentPage extends React.Component
          )}
       </ul>
    }
-   
+
    getConstructorAndDestructors(content)
    {
       let ret = [];

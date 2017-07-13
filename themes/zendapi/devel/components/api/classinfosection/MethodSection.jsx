@@ -12,7 +12,9 @@ export default class MethodSection extends React.Component
       let showSimpleName = true;
       let baseClasses = this.props.baseClasses || [];
       return <div className={methods && methods.length != 0 ? "method-class-section-item-container class-section-item-container" : "uk-hidden"}>
-         <h3>{title}</h3>
+         <div className="section-title uk-margin-medium-bottom">
+            <h3>{title}</h3>
+         </div>
          {methods && this.renderMethods(methods, showSimpleName)}
          {inherits && this.renderInherits(inherits, baseClasses)}
       </div>;
