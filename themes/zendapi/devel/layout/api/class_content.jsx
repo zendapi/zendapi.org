@@ -36,6 +36,8 @@ class ApiClassConetentPage extends React.Component
       let publicStaticAttrsInherits = inherits["public-static-attrib"] || {};
       let protectedAttrsInherits = inherits["protected-attrib"] || {};
       let protectedStaticAttrsInherits = inherits["protected-static-attrib"] || {};
+      let publicTypes = inherits["public-type"] || {};
+      let protectedTypes = inherits["protected-type"] || {};
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-class-content-page">
             <div className="manual-container uk-flex uk-flex-left">
@@ -52,7 +54,8 @@ class ApiClassConetentPage extends React.Component
                      {content.detailDescription.trim()}
                   </div>}
                   <BaseClassSection baseClasses = {content.baseClasses}/>
-                  <TypeSection types = {content.publicTypes} title = {"公有类型列表"}/>
+                  <TypeSection types = {content.publicTypes} title = {"公有类型列表"}
+                               inherits = {publicTypes} baseClasses = {content.baseClasses}/>
                   <MethodSection title = "公有方法列表" methods = {content.publicFuncs} 
                                  inherits = {publicFuncInherits} baseClasses = {content.baseClasses}/>
                   <MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs} 
@@ -61,7 +64,8 @@ class ApiClassConetentPage extends React.Component
                                     inherits = {publicAttrsInherits} baseClasses = {content.baseClasses}/>
                   <AttributeSection title = "静态公有字段列表" attributes = {content.publicStaticAttributes}
                                     inherits = {publicStaticAttrsInherits} baseClasses = {content.baseClasses}/>
-                  <TypeSection types = {content.protectedTypes} title = {"保护类型列表"}/>
+                  <TypeSection types = {content.protectedTypes} title = {"保护类型列表"}
+                               inherits = {protectedTypes} baseClasses = {content.baseClasses}/>
                   <MethodSection title = "保护方法列表" methods = {content.protectedFuncs} 
                                  inherits = {protectedFuncInherits} baseClasses = {content.baseClasses}/>
                   <MethodSection title = "静态保护方法列表" methods = {content.protectedStaticFuncs}
