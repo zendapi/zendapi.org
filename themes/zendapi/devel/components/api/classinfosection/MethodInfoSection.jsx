@@ -9,14 +9,19 @@ export default class MethodInfoSection extends React.Component
    {
       let methods = this.props.methods || [];
       let tobeRendered = [];
-      methods.map(function (method)
-      {
-         if (method) {
-            if (!method.isConstructor && !method.isDesctructor) {
-               tobeRendered.push(method);
+      let showConstructorAndDestructor = this.props.showConstructorAndDestructor;
+      if (!showConstructorAndDestructor) {
+         methods.map(function (method)
+         {
+            if (method) {
+               if (!method.isConstructor && !method.isDestructor) {
+                  tobeRendered.push(method);
+               }
             }
-         }
-      });
+         });
+      } else {
+         tobeRendered = methods;
+      }
       let title = this.props.title;
       return <div className={tobeRendered.length != 0 ? "uk-margin-medium-top class-info-section-item-container function-section-info-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">

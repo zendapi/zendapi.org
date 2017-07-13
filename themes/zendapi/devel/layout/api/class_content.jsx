@@ -38,6 +38,7 @@ class ApiClassConetentPage extends React.Component
       let protectedStaticAttrsInherits = inherits["protected-static-attrib"] || {};
       let publicTypes = inherits["public-type"] || {};
       let protectedTypes = inherits["protected-type"] || {};
+      let constructorAndDestructors = this.getConstructorAndDestructors(content);
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-class-content-page">
             <div className="manual-container uk-flex uk-flex-left">
@@ -82,6 +83,7 @@ class ApiClassConetentPage extends React.Component
                   </div>
                   <TypeInfoSection title = "公有类型文档" types = {content.publicTypes}/>
                   <TypeInfoSection title = "保护类型文档" types = {content.protectedTypes}/>
+                  <MethodInfoSection title = "构造与析构函数文档" methods = {constructorAndDestructors} showConstructorAndDestructor = {true}/>
                   <MethodInfoSection title = "公有方法文档" methods = {content.publicFuncs}/>
                   <MethodInfoSection title = "静态公有方法文档" methods = {content.publicStaticFuncs}/>
                   <MethodInfoSection title = "保护方法文档" methods = {content.protectedFuncs}/>
@@ -109,6 +111,42 @@ class ApiClassConetentPage extends React.Component
             </li>
          )}
       </ul>
+   }
+   
+   getConstructorAndDestructors(content)
+   {
+      let ret = [];
+      // 暂时就考虑 public 和 protected
+      this.doGetConstructorAndDestructors(content.publicFuncs || [], ret);
+      this.doGetConstructorAndDestructors(content.protectedFuncs || [], ret);
+      return ret;
+   }
+
+   doGetConstructorAndDestructors(funcs, ret)
+   {
+      funcs.map(function(item) {
+         if (item.isConstructor || item.isDestructor) {
+            ret.push(item);
+         }
+      });
+      // 排序
+      ret.sort(function(left, right) {
+         if (left.isConstructor && right.isDestructor) {
+            let l = left.definition + left.argsstring;
+            let r = right.definition + right.argsstring;
+            if (l < r) {
+               return -1;
+            } else if (l == r) {
+               return 0;
+            } else {
+               return 1;
+            }
+         } else if (left.isConstructor && right.isDestructor) {
+            return -1;
+         } else {
+            return 1;
+         }
+      });
    }
 }
 
