@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import "variables.scss";
 
 @import "~uikit/src/scss/variables-theme.scss";
@@ -30,6 +31,7 @@ a {
   transition: 0.1s ease-in-out;
   -webkit-transition-property: color;
   transition-property: color;
+  font-family: $global-font-family!important;
 }
 a:hover {
   color: $zapi-base-color;

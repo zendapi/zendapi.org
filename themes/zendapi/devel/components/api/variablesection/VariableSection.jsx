@@ -1,3 +1,4 @@
+import "../scss/BaseInfoSection.scss";
 import "./VariableSection.scss";
 import React from "react";
 

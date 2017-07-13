@@ -27,6 +27,8 @@ class ApiClassConetentPage extends React.Component
    render()
    {
       let content = this.props.content;
+      let inherits = content.inherits;
+      let publicFuncInherits = inherits["public-func"] || {};
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-class-content-page">
             <div className="manual-container uk-flex uk-flex-left">
@@ -44,7 +46,7 @@ class ApiClassConetentPage extends React.Component
                   </div>}
                   <BaseClassSection baseClasses = {content.baseClasses}/>
                   <TypeSection types = {content.publicTypes} title = {"公有类型列表"}/>
-                  <MethodSection title = "公有方法列表" methods = {content.publicFuncs}/>
+                  <MethodSection title = "公有方法列表" methods = {content.publicFuncs} inherits = {publicFuncInherits} baseClasses = {content.baseClasses}/>
                   <MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs}/>
                   <AttributeSection title = "公有字段列表" attributes = {content.publicAttributes}/>
                   <AttributeSection title = "静态公有字段列表" attributes = {content.publicStaticAttributes}/>

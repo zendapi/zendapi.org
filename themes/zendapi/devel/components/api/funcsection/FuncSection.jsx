@@ -1,3 +1,4 @@
+import "../scss/BaseInfoSection.scss";
 import "./FuncSection.scss";
 import React from "react";
 
