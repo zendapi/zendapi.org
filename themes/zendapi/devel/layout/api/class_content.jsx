@@ -29,6 +29,13 @@ class ApiClassConetentPage extends React.Component
       let content = this.props.content;
       let inherits = content.inherits;
       let publicFuncInherits = inherits["public-func"] || {};
+      let publicStaticFuncInherits = inherits["public-static-func"] || {};
+      let protectedFuncInherits = inherits["protected-func"] || {};
+      let protectedStaticFuncInherits = inherits["protected-static-func"] || {};
+      let publicAttrsInherits = inherits["public-attrib"] || {};
+      let publicStaticAttrsInherits = inherits["public-static-attrib"] || {};
+      let protectedAttrsInherits = inherits["protected-attrib"] || {};
+      let protectedStaticAttrsInherits = inherits["protected-static-attrib"] || {};
       return <div style={{width:"100%"}}>
          <div className="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-class-content-page">
             <div className="manual-container uk-flex uk-flex-left">
@@ -46,15 +53,23 @@ class ApiClassConetentPage extends React.Component
                   </div>}
                   <BaseClassSection baseClasses = {content.baseClasses}/>
                   <TypeSection types = {content.publicTypes} title = {"公有类型列表"}/>
-                  <MethodSection title = "公有方法列表" methods = {content.publicFuncs} inherits = {publicFuncInherits} baseClasses = {content.baseClasses}/>
-                  <MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs}/>
-                  <AttributeSection title = "公有字段列表" attributes = {content.publicAttributes}/>
-                  <AttributeSection title = "静态公有字段列表" attributes = {content.publicStaticAttributes}/>
+                  <MethodSection title = "公有方法列表" methods = {content.publicFuncs} 
+                                 inherits = {publicFuncInherits} baseClasses = {content.baseClasses}/>
+                  <MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs} 
+                                 inherits = {publicStaticFuncInherits} baseClasses = {content.baseClasses}/>
+                  <AttributeSection title = "公有字段列表" attributes = {content.publicAttributes}
+                                    inherits = {publicAttrsInherits} baseClasses = {content.baseClasses}/>
+                  <AttributeSection title = "静态公有字段列表" attributes = {content.publicStaticAttributes}
+                                    inherits = {publicStaticAttrsInherits} baseClasses = {content.baseClasses}/>
                   <TypeSection types = {content.protectedTypes} title = {"保护类型列表"}/>
-                  <MethodSection title = "保护方法列表" methods = {content.protectedFuncs}/>
-                  <MethodSection title = "静态保护方法列表" methods = {content.protectedStaticFuncs}/>
-                  <AttributeSection title = "保护字段列表" attributes = {content.protectedAttributes}/>
-                  <AttributeSection title = "静态保护字段列表" attributes = {content.protectedStaticAttributes}/>
+                  <MethodSection title = "保护方法列表" methods = {content.protectedFuncs} 
+                                 inherits = {protectedFuncInherits} baseClasses = {content.baseClasses}/>
+                  <MethodSection title = "静态保护方法列表" methods = {content.protectedStaticFuncs}
+                                 inherits = {protectedStaticFuncInherits} baseClasses = {content.baseClasses}/>
+                  <AttributeSection title = "保护字段列表" attributes = {content.protectedAttributes}
+                                    inherits = {protectedAttrsInherits} baseClasses = {content.baseClasses}/>
+                  <AttributeSection title = "静态保护字段列表" attributes = {content.protectedStaticAttributes}
+                                    inherits = {protectedStaticAttrsInherits} baseClasses = {content.baseClasses}/>
                   <FriendSection friends = {content.friends}/>
                   <h3>详细描述文档</h3>
                   <div className="uk-margin-small-top uk-text-break">
