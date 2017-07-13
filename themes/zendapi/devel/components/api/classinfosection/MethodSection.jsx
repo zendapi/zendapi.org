@@ -48,7 +48,7 @@ export default class MethodSection extends React.Component
 
    renderInherits(inherits, baseClasses)
    {
-      return <ul data-uk-accordion className="uk-margin-medium-top inherits-container">
+      return <ul data-uk-accordion="multiple: true" className="uk-margin-medium-top inherits-container">
          {this.renderInheritItems(inherits, baseClasses)}
       </ul>
    }
@@ -60,7 +60,11 @@ export default class MethodSection extends React.Component
          let baseCls = baseClasses[i];
          let key = baseCls.name;
          ret.push(<li className="inherit-item" key = {"classmethodinherititems"+key+i}>
-            <span className="uk-accordion-title uk-text-break">查看继承自 {key} 类的方法</span>
+            <div className="uk-accordion-title uk-width-1-1 uk-text-middle uk-text-left">
+               <span className="uk-text-break">
+                  查看继承自 {key} 类的方法
+               </span>
+            </div>
             <div className="uk-accordion-content">
                {this.renderMethods(inherits[key], true)}
             </div>

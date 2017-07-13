@@ -20,6 +20,13 @@
     .inherit-item {
       .uk-accordion-title {
         font-size: 1.2em!important;
+        span {
+          width:90%!important;
+          @media (min-width: 640px) {
+            width:95%!important;
+          }
+          display: inline-block;
+        }
       }
     }
   }
