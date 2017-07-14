@@ -27,7 +27,7 @@ export default class AttributeInfoSection extends React.Component
                     dangerouslySetInnerHTML={{__html:item.defineStr}}>
                </div>
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
-               {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.detailDescription}</div>}
+               {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break detail-description">{item.detailDescription}</div>}
                <div className="uk-margin-small-top uk-text-break">
                   在文件 <span className="uk-text-success">{item.location.file.substring(8)}</span> 的第 <span className="uk-text-success">{item.location.line}</span> 行定义
                </div>
