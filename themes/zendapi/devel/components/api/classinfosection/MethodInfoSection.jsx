@@ -41,7 +41,7 @@ export default class MethodInfoSection extends React.Component
                     dangerouslySetInnerHTML={{__html:item.signature}}>
                </div>
                {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break"
-                  dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>}
+                                                         dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>}
                {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break"
                                                           dangerouslySetInnerHTML={{__html:item.detailDescription}}></div>}
                <div className="uk-margin-small-top uk-text-break">

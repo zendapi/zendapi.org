@@ -18,7 +18,7 @@ export default class EnumSection extends React.Component
                   </a>
                   {item.underType && " : "+item.underType}
                </div>
-               <div className="uk-width-1-1 uk-width-3-4@s"><span>{item.briefDescription}</span></div>
+               <div className="uk-width-1-1 uk-width-3-4@s"><span dangerouslySetInnerHTML={{__html:item.briefDescription}}></span></div>
             </div>
          )}
       </div>;

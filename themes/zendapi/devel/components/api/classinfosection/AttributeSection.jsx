@@ -19,14 +19,15 @@ export default class AttributeSection extends React.Component
          {inherits && this.renderInherits(inherits, baseClasses)}
       </div>
    }
-   
+
    renderAttributes(attributes)
    {
       return attributes.map((item, index) =>
          <div className="uk-grid-small list-item" data-uk-grid key = {"classpropertysection"+index}>
             <div className="uk-width-1-1">
                <div className="define uk-text-break" dangerouslySetInnerHTML={{__html:item.simpleDefineStr}}></div>
-               <div className="uk-text-break">{item.briefDescription}</div>
+               <div className="uk-text-break"
+                    dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
             </div>
          </div>
       )
@@ -38,7 +39,7 @@ export default class AttributeSection extends React.Component
          {this.renderInheritItems(inherits, baseClasses)}
       </ul>
    }
-   
+
    renderInheritItems(inherits, baseClasses)
    {
       let ret = [];

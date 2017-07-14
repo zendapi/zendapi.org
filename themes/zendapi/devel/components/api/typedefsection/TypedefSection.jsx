@@ -13,7 +13,8 @@ export default class TypedefSection extends React.Component
             <div className="uk-grid-small list-item" data-uk-grid key = {"typedefsection"+index}>
                <div className="uk-width-1-1">
                   <div className="define uk-text-break" dangerouslySetInnerHTML={{__html:showSimpleName? item.simpleDefinition : item.definition}}></div>
-                  <div className="uk-text-break">{item.briefDescription}</div>
+                  <div className="uk-text-break"
+                       dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
                </div>
             </div>
          )}

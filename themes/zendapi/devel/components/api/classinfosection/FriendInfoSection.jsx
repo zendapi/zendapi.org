@@ -27,8 +27,10 @@ export default class FriendInfoSection extends React.Component
                   <div className={item.isTemplate ? "define uk-text-break" : "define uk-text-break"}
                        dangerouslySetInnerHTML={{__html:item.infoDefineStr}}></div>
                </div>
-               {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
-               {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.detailDescription}</div>}
+               {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break"
+                                                         dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>}
+               {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break"
+                                                          dangerouslySetInnerHTML={{__html:item.detailDescription}}></div>}
                <div className="uk-margin-small-top uk-text-break">
                   在文件 <span className="uk-text-success">{item.location.file.substring(8)}</span> 的第 <span className="uk-text-success">{item.location.line}</span> 行定义
                </div>
@@ -43,7 +45,7 @@ export default class FriendInfoSection extends React.Component
          {tags.map((tag, index) => <span className="uk-label uk-label-success" key = {"friendsinfosectiontags"+index}>{tag}</span>)}
       </div>;
    }
-   
+
    renderTemplateParams(tplParamsString)
    {
       let params = "template &lt;" +tplParamsString + "&gt";

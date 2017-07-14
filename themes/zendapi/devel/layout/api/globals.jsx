@@ -156,4 +156,18 @@ $(function ()
    ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
    ReactDOM.render(<GlobalsIndexPage data = {API_GLOBAL_LIST_DATA}/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
+   $(document).ready(function ()
+   {
+      $(".detail-description table").each(function ()
+      {
+         $(this).addClass("uk-table uk-table-divider uk-table-small uk-table-striped");
+      });
+      $(".highlight").each(function(){
+         PerfectScroller.initialize(this, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+         });
+      });
+   });
 });

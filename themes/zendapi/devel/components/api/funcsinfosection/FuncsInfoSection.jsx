@@ -28,7 +28,7 @@ export default class FuncsInfoSection extends React.Component
                      <a href={"#"+item.id}><img src={linkSvg}/></a>
                      <span>{item.simpleName || item.name}()</span></div>
                   {item.tags && item.tags.length > 0 && this.renderTags(item.tags)}
-                  
+
                </div>
                <div className="uk-background-muted uk-text-break uk-margin-small-top func-definition definition">
                   {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
@@ -37,8 +37,10 @@ export default class FuncsInfoSection extends React.Component
                <div className="uk-text-break uk-margin-small-top">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;
                </div>
-               {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
-               {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.detailDescription}</div>}
+               {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break"
+                                                         dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>}
+               {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break"
+                                                          dangerouslySetInnerHTML={{__html:item.detailDescription}}></div>}
                <div className="uk-margin-small-top uk-text-break">
                   在文件 <span className="uk-text-success">{item.location.file.substring(8)}</span> 的第 <span className="uk-text-success">{item.location.line}</span> 行定义
                </div>
@@ -52,7 +54,7 @@ export default class FuncsInfoSection extends React.Component
       let params = "template &lt;" +tplParamsString + "&gt";
       return <div className="uk-width-1-1 tpl-params uk-margin-small-top" dangerouslySetInnerHTML={{__html:params}}/>;
    }
-   
+
    renderTags(tags)
    {
       return <div className="uk-width-1-1 uk-width-1-2@s tags uk-flex uk-flex-right uk-text-middle uk-flex-wrap-around">

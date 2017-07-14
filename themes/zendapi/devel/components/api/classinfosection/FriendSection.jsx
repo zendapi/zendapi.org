@@ -17,8 +17,9 @@ export default class FriendSection extends React.Component
                <div className="uk-width-1-1">
                   {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
                   <div className={item.isTemplate ? "define uk-text-break uk-margin-small-top" : "define uk-text-break"}
-                     dangerouslySetInnerHTML={{__html:item.defineStr}}></div>
-                  <div className="uk-text-break uk-margin-small-top">{item.briefDescription}</div>
+                       dangerouslySetInnerHTML={{__html:item.defineStr}}></div>
+                  <div className="uk-text-break uk-margin-small-top"
+                       dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
                </div>
             </div>
          )}

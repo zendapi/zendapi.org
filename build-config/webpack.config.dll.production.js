@@ -25,7 +25,8 @@ const config = {
          "react-dom",
          "uikit",
          "uikit/dist/js/uikit-icons",
-         "perfect-scrollbar"
+         "perfect-scrollbar",
+         "highlight.js"
       ]
    },
    output : {

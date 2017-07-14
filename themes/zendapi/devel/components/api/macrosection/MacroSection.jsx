@@ -18,7 +18,8 @@ export default class MacroSection extends React.Component
                      <span className="define uk-text-break uk-text-primary" dangerouslySetInnerHTML={{__html:item.initializer}}/>}
                </div>
                <div className="uk-width-1-1">
-                  <div className="uk-text-break">{item.briefDescription}</div>
+                  <div className="uk-text-break"
+                     dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
                </div>
             </div>
          )}

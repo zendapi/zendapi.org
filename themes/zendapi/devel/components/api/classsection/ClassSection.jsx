@@ -17,7 +17,7 @@ export default class ClassSection extends React.Component
                   <span className="entity-type uk-text-right">{item.isStruct?"struct":"class"}</span>
                   <a className="uk-text-break" href = {item.url}>{showSimpleName ? item.simpleName : item.name}</a></div>
                <div className="uk-width-1-1">
-                  <span>{item.briefDescription}</span>
+                  <span dangerouslySetInnerHTML={{__html:item.briefDescription}}></span>
                </div>
             </div>
          )}

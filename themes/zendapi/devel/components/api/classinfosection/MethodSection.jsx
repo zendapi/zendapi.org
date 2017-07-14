@@ -29,7 +29,8 @@ export default class MethodSection extends React.Component
             <div className="uk-width-1-1 uk-text-break signature"
                  dangerouslySetInnerHTML={{__html:showSimpleName?item.simpleSignature:item.signature}}>
             </div>
-            <div className="uk-width-1-1 uk-width-3-4@s uk-text-break"><span>{item.briefDescription}</span></div>
+            <div className="uk-width-1-1 uk-width-3-4@s uk-text-break"
+                 dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
          </div>
       );
    }

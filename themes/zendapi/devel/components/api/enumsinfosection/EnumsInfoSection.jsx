@@ -35,8 +35,10 @@ export default class EnumsInfoSection extends React.Component
                <div className="uk-text-break uk-margin-small-top">
                   #include &lt;<a href={item.containerRef.url}>{item.location.file}</a>&gt;
                </div>
-               {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.briefDescription}</div>}
-               {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break">{item.detailDescription}</div>}
+               {item.briefDescription.length > 0 && <div className="uk-margin-small-top uk-text-break"
+                                                         dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>}
+               {item.detailDescription.length > 0 && <div className="uk-margin-small-top uk-text-break"
+                                                          dangerouslySetInnerHTML={{__html:item.detailDescription}}></div>}
 
                <table className="uk-table uk-table-responsive uk-table-small uk-table-divider">
                   <thead>
@@ -49,7 +51,7 @@ export default class EnumsInfoSection extends React.Component
                   {item.enumValues && item.enumValues.map(function(enumItem, index){
                      return <tr key={"enuminfosectionenumitem"+index}>
                         <td className="uk-width-1-3 uk-text-break"><a id={item.id}/>{enumItem.name}</td>
-                        <td className="uk-width-2-3">{enumItem.briefDescription}</td>
+                        <td className="uk-width-2-3" dangerouslySetInnerHTML={{__html:enumItem.briefDescription}}></td>
                      </tr>;
                   })}
                   </tbody>

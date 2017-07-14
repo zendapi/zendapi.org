@@ -19,6 +19,7 @@ import TypeInfoSection from "Components/api/classinfosection/TypeInfoSection";
 import MethodInfoSection from "Components/api/classinfosection/MethodInfoSection";
 import AttributeInfoSection from "Components/api/classinfosection/AttributeInfoSection";
 import FriendInfoSection from "Components/api/classinfosection/FriendInfoSection";
+import PerfectScroller from "perfect-scrollbar";
 
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 
@@ -184,6 +185,13 @@ $(function ()
       $(".detail-description table").each(function ()
       {
          $(this).addClass("uk-table uk-table-divider uk-table-small uk-table-striped");
+      });
+      $(".highlight").each(function(){
+         PerfectScroller.initialize(this, {
+            wheelSpeed: 2,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+         });
       });
    });
 });
