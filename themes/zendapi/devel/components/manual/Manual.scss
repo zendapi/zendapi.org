@@ -45,7 +45,10 @@
     }
   }
   .catalog {
-    width: 200px;
+    width: 220px;
+    padding: 20px;
+    margin-right: 25px;
+    background-color: #ffffff;
     .uk-active a{
       color: $zapi-base-color!important;
     }

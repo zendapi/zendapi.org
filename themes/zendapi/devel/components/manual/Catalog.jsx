@@ -6,7 +6,7 @@ export default class Catalog extends React.Component
    {
       let catalog = this.props.catalog;
       let me = this;
-      return <div className="catalog uk-visible@m uk-margin-small-right">
+      return <div className="catalog uk-visible@m">
          <ul className="uk-nav-default uk-nav-parent-icon" data-uk-nav="multiple: false">
             {catalog.map(function(parent, index) {
                let titleCls = "";
