@@ -79,7 +79,8 @@ class GlobalsIndexPage extends React.Component
             {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
             <div className="uk-width-1-1 uk-text-break signature" dangerouslySetInnerHTML={{__html:item.signature}}>
             </div>
-            <div className="uk-width-1-1 uk-width-3-4@s uk-text-break desc">{item.briefDescription}</div>
+            <div className="uk-width-1-1 uk-width-3-4@s uk-text-break desc"
+                 dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
          </div>
       )
    }
@@ -106,7 +107,8 @@ class GlobalsIndexPage extends React.Component
                <a className="uk-text-break" href = {item.url}>{item.name}</a>
                {item.underType && " : "+item.underType}
             </div>
-            <div className="uk-width-1-1 uk-width-3-4@s desc uk-text-break">{item.briefDescription}</div>
+            <div className="uk-width-1-1 uk-width-3-4@s desc uk-text-break"
+                 dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
          </div>
       )
    }
@@ -118,7 +120,8 @@ class GlobalsIndexPage extends React.Component
             {item.tags&& item.tags.length > 0 && this.renderTags(item.tags)}
             {item.isTemplate && this.renderTemplateParams(item.tplParamsString)}
             <div className="uk-width-1-1 uk-width-1-3@s"><a className="uk-text-break" href = {item.url}>{item.name}</a></div>
-            <div className="uk-width-1-1 uk-width-2-3@s desc uk-text-break">{item.briefDescription}</div>
+            <div className="uk-width-1-1 uk-width-2-3@s desc uk-text-break"
+               dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
          </div>
       );
    }
@@ -131,7 +134,8 @@ class GlobalsIndexPage extends React.Component
             </div>
             <div className="uk-width-1-1 uk-width-3-4@s">
                {(item.initializer && item.initializer.indexOf("\n") == -1) && <div className="define uk-text-break uk-text-primary" dangerouslySetInnerHTML={{__html:item.initializer}}></div>}
-               <div className="desc uk-text-break">{item.briefDescription}</div>
+               <div className="desc uk-text-break"
+                    dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
             </div>
          </div>
       );
@@ -143,7 +147,8 @@ class GlobalsIndexPage extends React.Component
          <div className="uk-grid-small list-item" data-uk-grid key = {"apidocglobalsvariables"+index}>
             <div className="uk-width-1-1">
                <div className="define uk-text-break" dangerouslySetInnerHTML={{__html:item.defineStr}}></div>
-               <div className="uk-text-break desc">{item.briefDescription}</div>
+               <div className="uk-text-break desc"
+                    dangerouslySetInnerHTML={{__html:item.briefDescription}}></div>
             </div>
          </div>
       )
