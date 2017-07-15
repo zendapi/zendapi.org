@@ -104,7 +104,7 @@ class GlobalsIndexPage extends React.Component
             {item.tags&& item.tags.length > 0 && this.renderTags(item.tags)}
             <div className="uk-width-1-1 uk-width-1-4@s">
                <a className="uk-text-break" href = {item.url}>{item.name}</a>
-               {item.isStrong && " : "+item.underType}
+               {item.underType && " : "+item.underType}
             </div>
             <div className="uk-width-1-1 uk-width-3-4@s desc uk-text-break">{item.briefDescription}</div>
          </div>

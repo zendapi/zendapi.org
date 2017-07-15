@@ -41,13 +41,13 @@ class ApiModuleConetentPage extends React.Component
                <div className="uk-width-expand apidoc-info-container apidoc-module-content-info-container">
                   {mpaths && <Path pathList = {mpaths}/>}
                   <h3 className="title uk-text-break">{content.name}</h3>
-                  {content.briefDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.briefDescription.trim()}
+                  {content.briefDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top"
+                                                                 dangerouslySetInnerHTML={{__html:content.briefDescription}}>
                   </div>}
-                  {content.detailDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top">
-                     {content.detailDescription.trim()}
+                  {content.detailDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top"
+                                                                  dangerouslySetInnerHTML={{__html:content.detailDescription}}>
                   </div>}
-                  
+
                   <ModuleSection modules = {content.modules}/>
                   <NamespaceSection namespaces = {content.namespaces}/>
                   <ClassSection classes = {content.classes}/>
