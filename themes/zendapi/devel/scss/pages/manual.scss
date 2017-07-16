@@ -23,5 +23,8 @@ $zapi-manual-page-width: 1200px;
     padding: 0!important;
     margin: 0!important;
     border: none;
+    code {
+      padding-bottom: 10px;
+    }
   }
 }
