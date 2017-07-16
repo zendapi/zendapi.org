@@ -9,7 +9,6 @@ export default class FriendInfoSection extends React.Component
    render()
    {
       let friends = this.props.friends;
-      console.log(friends)
       return  <div className={friends && friends.length != 0 ? "uk-margin-medium-top class-info-section-item-container friend-section-info-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">
             <h3>友元详细文档</h3>

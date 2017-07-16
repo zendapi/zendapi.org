@@ -9,7 +9,6 @@ export default class TypeInfoSection extends React.Component
    render()
    {
       let types = this.props.types || [];
-      console.log(types)
       let title = this.props.title;
       return <div className={types.length != 0 ? "uk-margin-medium-top class-info-section-item-container type-class-info-section-item-container" : "uk-hidden"}>
          <div className="section-title uk-margin-medium-bottom">

@@ -110,12 +110,12 @@ $(function ()
       {
          $(this).addClass("uk-table uk-table-divider uk-table-small uk-table-striped");
       });
-      $(".highlight").each(function(){
-         PerfectScroller.initialize(this, {
-            wheelSpeed: 2,
-            wheelPropagation: true,
-            minScrollbarLength: 20
-         });
-      });
+      // $(".hljs").each(function(){
+      //    PerfectScroller.initialize(this, {
+      //       wheelSpeed: 2,
+      //       wheelPropagation: true,
+      //       minScrollbarLength: 20
+      //    });
+      // });
    });
 });

@@ -52,7 +52,7 @@ class ApiClassConetentPage extends React.Component
                   {content.briefDescription.trim() != "" && <div className="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top"
                                                                  dangerouslySetInnerHTML={{__html:content.briefDescription.trim()}}>
                   </div>}
-                  {content.detailDescription.trim() != "" && <div className="uk-text-small detail-description uk-text-break uk-margin-small-bottom uk-margin-small-top"
+                  {content.detailDescription.trim() != "" && <div className="uk-text-small detail-description uk-margin-small-bottom uk-margin-small-top"
                                                                   dangerouslySetInnerHTML={{__html:content.detailDescription.trim()}}>
                   </div>}
                   <BaseClassSection baseClasses = {content.baseClasses}/>
@@ -186,12 +186,9 @@ $(function ()
       {
          $(this).addClass("uk-table uk-table-divider uk-table-small uk-table-striped");
       });
-      $(".highlight").each(function(){
-         PerfectScroller.initialize(this, {
-            wheelSpeed: 2,
-            wheelPropagation: true,
-            minScrollbarLength: 20
-         });
-      });
+      // $(".hljs").each(function(){
+      //    $(this).addClass(".uk-text-nowrap");
+      // });
    });
+
 });
