@@ -15,7 +15,7 @@ import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
 import ManualPanel from "Components/manual/ManualPanel";
-
+let hljs = require('highlight.js');
 
 class ManualPage extends React.Component
 {
@@ -35,4 +35,9 @@ $(function ()
    ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
    ReactDOM.render(<ManualPage/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
+   $(document).ready(function() {
+      $('pre code').each(function(i, block) {
+         hljs.highlightBlock(block);
+      });
+   });
 });

@@ -1,4 +1,5 @@
 @import "../variables.scss";
+@import "~highlight.js/styles/railscasts.css";
 body {
   background-color: #FAFAFA!important;
 }
@@ -17,5 +18,10 @@ $zapi-manual-page-width: 1200px;
     padding-right: 40px!important;
     margin-top: 40px!important;
     margin-bottom: 40px!important;
+  }
+  pre {
+    padding: 0!important;
+    margin: 0!important;
+    border: none;
   }
 }

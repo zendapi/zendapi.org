@@ -19,7 +19,6 @@ import TypeInfoSection from "Components/api/classinfosection/TypeInfoSection";
 import MethodInfoSection from "Components/api/classinfosection/MethodInfoSection";
 import AttributeInfoSection from "Components/api/classinfosection/AttributeInfoSection";
 import FriendInfoSection from "Components/api/classinfosection/FriendInfoSection";
-import PerfectScroller from "perfect-scrollbar";
 
 import DoxygenInfo from "Components/api/doxygen/DoxygenInfo";
 
