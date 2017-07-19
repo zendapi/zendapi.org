@@ -8,6 +8,7 @@
  */
 import "Scss/base.scss";
 import "Scss/pages/article.scss"
+require("Js/fakeloader");
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
 import React from "react";
@@ -18,6 +19,7 @@ import Header from "Components/header/Header";
 import Footer from "Components/footer/Footer";
 import SitePath from "Components/sitepath/SitePath";
 import PerfectScroller from "perfect-scrollbar";
+
 class ArticlePage extends React.Component
 {
    render()
@@ -43,6 +45,12 @@ class ArticlePage extends React.Component
    }
 }
 
+let loader = $("#fakeLoader").fakeLoader({
+   zIndex:"999",//Default zIndex
+   spinner:"spinner6",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+   bgColor:"#00AB6B", //Hex, RGB or RGBA colors
+});
+
 $(function ()
 {
    Uikit.use(UikitIcons);
@@ -63,5 +71,9 @@ $(function ()
          wheelPropagation: true,
          minScrollbarLength: 20
       });
+   });
+   $(document).ready(function ()
+   {
+      loader.fadeOut();
    });
 });

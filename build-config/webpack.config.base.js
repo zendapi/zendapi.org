@@ -61,6 +61,12 @@ const config = {
       extensions: [".js", ".jsx"]
    },
    plugins : [
+      new webpack.ProvidePlugin({
+         $: "jquery",
+         jQuery: "jquery",
+         "window.jQuery": "jquery",
+         "window.$": "jquery"
+      }),
       new webpack.optimize.CommonsChunkPlugin({
          name: "common",
          filename: "statics/js/common.js"
@@ -77,12 +83,6 @@ const config = {
          context: DIST_PATH+"/statics",
          manifest: require(DIST_PATH+"/statics/manifest.json"),
          name: "vendors",
-      }),
-      new webpack.ProvidePlugin({
-         $: "jquery",
-         jQuery: "jquery",
-         "window.jQuery": "jquery",
-         "window.$": "jquery"
       })
    ],
    devtool: "eval-source-map"

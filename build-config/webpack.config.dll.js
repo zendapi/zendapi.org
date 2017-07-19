@@ -40,6 +40,12 @@ const config = {
          context : DIST_PATH+"/statics",
          path: DIST_PATH+"/statics/manifest.json",
          name: "[name]"
+      }),
+      new webpack.ProvidePlugin({
+         $: "jquery",
+         jQuery: "jquery",
+         "window.jQuery": "jquery",
+         "window.$": "jquery"
       })
    ]
 };
