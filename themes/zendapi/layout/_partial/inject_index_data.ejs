@@ -7,9 +7,21 @@
         }
        items.push({
           title: item.title,
-           url: url_for(item.canonical_path)
+           url: url_for(item.canonical_path),
+           date: item.date
        });
        count++;
+    });
+    items.sort(function(left, right){
+       let l = left.date.unix();
+       let r = right.date.unix();
+       if (l < r) {
+          return 1;
+       } else if (l == r) {
+          return 0;
+       } else {
+          return -1;
+       }
     });
 %>
 window.INDEX_PAGE_DATA = {
