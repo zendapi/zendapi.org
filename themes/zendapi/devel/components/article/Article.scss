@@ -38,6 +38,17 @@
         border-left: 10px solid #cccccc;
         padding-left: 20px;
       }
+      
+    }
+    ol {
+      li {
+        list-style-type: decimal!important;
+      }
+    }
+    ul {
+      li {
+        list-style-type:square!important;
+      }
     }
     a {
       text-decoration: underline;

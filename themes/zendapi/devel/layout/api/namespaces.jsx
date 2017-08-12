@@ -4,7 +4,6 @@ import "./namespaces.scss";
 
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
-require("Js/fakeloader");
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
@@ -38,20 +37,10 @@ class NamespacesIndexPage extends React.Component
    }
 }
 
-let loader = $("#fakeLoader").fakeLoader({
-   zIndex:"999",//Default zIndex
-   spinner:"spinner6",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
-   bgColor:"#00AB6B", //Hex, RGB or RGBA colors
-});
-
 $(function ()
 {
    Uikit.use(UikitIcons);
    ReactDOM.render(<Header items = {SITE_CATEGORIES}/>, document.getElementById("header-wrapper"));
    ReactDOM.render(<NamespacesIndexPage namespaces = {API_NAMESPACES_LIST_DATA}/>, document.getElementById("container"));
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
-   $(document).ready(function ()
-   {
-      loader.fadeOut();
-   });
 });

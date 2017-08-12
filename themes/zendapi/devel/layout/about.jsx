@@ -10,7 +10,6 @@ import "Scss/base.scss";
 import "Scss/pages/about.scss";
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
-require("Js/fakeloader");
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -43,12 +42,6 @@ class AboutPage extends React.Component
    }
 }
 
-let loader = $("#fakeLoader").fakeLoader({
-   zIndex:"999",//Default zIndex
-   spinner:"spinner6",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
-   bgColor:"#00AB6B", //Hex, RGB or RGBA colors
-});
-
 $(function ()
 {
    Uikit.use(UikitIcons);
@@ -57,9 +50,5 @@ $(function ()
    ReactDOM.render(<Footer/>, document.getElementById("footer-wrapper"));
    $(".about-container .about-nav a").click(function(){
       window.location.assign($(this).attr("href"));
-   });
-   $(document).ready(function ()
-   {
-      loader.fadeOut();
    });
 });

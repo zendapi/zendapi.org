@@ -5,7 +5,6 @@ import "./module_content.scss";
 
 const Uikit = require("uikit");
 const UikitIcons = require("uikit/dist/js/uikit-icons");
-require("Js/fakeloader");
 import React from "react";
 import ReactDOM from "react-dom";
 import Header from "Components/header/Header";
@@ -70,12 +69,6 @@ class ApiModuleConetentPage extends React.Component
    }
 }
 
-let loader = $("#fakeLoader").fakeLoader({
-   zIndex:"999",//Default zIndex
-   spinner:"spinner6",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
-   bgColor:"#00AB6B", //Hex, RGB or RGBA colors
-});
-
 $(function ()
 {
    Uikit.use(UikitIcons);
@@ -109,6 +102,5 @@ $(function ()
       {
          $(this).addClass("uk-table uk-table-divider uk-table-small uk-table-striped");
       });
-      loader.fadeOut();
    });
 });

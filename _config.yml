@@ -84,7 +84,11 @@ api_generator:
 apidoc_path: api
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+#deploy:
+#  - type: git
+#    repo: zendapi:zendapi/zendapi.github.io
+#    branch: master
 deploy:
   - type: git
-    repo: zendapi:zendapi/zendapi.github.io
+    repo: git@aliyun-zendapi:/data/repo/zendapisite.git
     branch: master

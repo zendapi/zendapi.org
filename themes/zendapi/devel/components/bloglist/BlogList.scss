@@ -74,6 +74,16 @@
     color: #808080;
     line-height: 25px;
     font-size: 1.2em;
+    ol {
+      li {
+        list-style-type: decimal!important;
+      }
+    }
+    ul {
+      li {
+        list-style-type:square!important;
+      }
+    }
   }
   .goto-detail-btn {
     color: #999999!important;
