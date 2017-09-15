@@ -1,7 +1,25 @@
 .footer {
   background: #36434D;
-  height: 35px;
-  line-height: 35px;
+  height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 40px;
   //box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.16);
   color: #cccccc;
+  div {
+    height:20px;
+    line-height: 20px;
+    a {
+      color: #cccccc;
+      font-size: 0.9em;
+    }
+    a:hover {
+      color: #ffffff;
+      text-decoration: none;
+      -webkit-transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out;
+      -webkit-transition-property: color;
+      transition-property: color;
+    }
+  }
 }

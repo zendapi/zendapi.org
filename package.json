@@ -56,7 +56,8 @@
   },
   "scripts": {
     "generate-theme": "node build-config/webpack.config.devel.js",
-    "generate-site": "node build-config/webpack.config.devel.js && hexo generate --with-apidoc",
+    "generate-site": "node build-config/webpack.config.devel.js && hexo generate",
+    "generate-site-and-api": "node build-config/webpack.config.devel.js && hexo generate --with-apidoc",
     "generate-site-production": "webpack --config build-config/webpack.config.dll.production.js && node build-config/webpack.config.production.js && hexo generate --with-apidoc",
     "generate-dll": "webpack --config build-config/webpack.config.dll.js"
   }

@@ -19,8 +19,18 @@ export default class AboutUsDescription extends React.Component
          <div className="text uk-margin-medium-top">
             zendAPI 项目是针对 Zend Engine 的 C 接口使用 C++11 进行而面向对象的封装，从而屏蔽了底层 Zend Engine API 的接口复杂性，加快开发 PHP 扩展的效率。我们不是对 Zend Engine 进行重新实现
             只是在它的基础上对其接口进行分类简化，对上层应用提供一个易用的编程接口。<br/>
-            <span className="uk-label uk-label-success">项目 github </span> 
-            <a href="https://www.github.com/qcoreteam/zendapi">zendAPI 项目库</a>
+            <div>
+               <span className="uk-label uk-label-success uk-text-center" style={{width:80}}>360官方开源库</span>
+               <a href="https://github.com/Qihoo360/zendAPI">zendAPI 360官方开源库</a>
+            </div>
+            <div>
+               <span className="uk-label uk-label-success uk-text-center" style={{width:80}}>项目 github </span>
+               <a href="https://www.github.com/qcoreteam/zendapi">zendAPI 项目库</a>
+            </div>
+            <div>
+               <span className="uk-label uk-label-success uk-text-center" style={{width:80}}>项目 码云库 </span>
+               <a href="https://gitee.com/zendapi/zendapi">zendAPI 码云项目库</a>
+            </div>
          </div>
       </div>;
    }
