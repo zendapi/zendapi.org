@@ -3,6 +3,11 @@
 .manual-container {
   min-height: 600px;
   .manual-doc-container {
+    ol {
+      li {
+        list-style-type: decimal!important;
+      }
+    }
     background-color: #ffffff;
     padding:20px;
     @media (min-width: 640px) {

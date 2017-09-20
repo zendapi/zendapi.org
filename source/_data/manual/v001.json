@@ -2,14 +2,33 @@
   "text": "序言",
   "key": "prologue",
   "children": [{
-    "text": "发布说明",
+    "text": "zendAPI 项目介绍",
+    "key": "introduction"
+  },{
+    "text": "版本发布说明",
     "key": "releasenotes"
   }, {
-    "text": "升级指南",
-    "key": "upgradeguide"
+    "text": "版本库分支标准",
+    "key": "repobranchdesc"
   }, {
     "text": "如何贡献代码",
     "key": "contributionguide"
+  }]
+}, {
+  "text": "编译与部署",
+  "key": "compileanddeploy",
+  "children": [{
+    "text": "依赖环境详细说明",
+    "key": "dependdesc"
+  },{
+    "text": "开发环境构建",
+    "key": "preparedevelhost"
+  },{
+    "text": "CMake参数详解",
+    "key": "cmakevardesc"
+  },{
+    "text": "升级指南",
+    "key": "upgradeguide"
   }]
 }, {
   "text":"快速入门",

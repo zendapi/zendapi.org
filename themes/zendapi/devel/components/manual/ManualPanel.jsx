@@ -11,7 +11,7 @@ export default class ManualPanel extends React.Component
          <Catalog catalog={this.props.catalog}/>
          <div className="uk-width-expand manual-doc-container">
             <h1 className="uk-article-title manual-title">{doc.title}</h1>
-            <div className="uk-article manual-content uk-margin-medium-bottom" dangerouslySetInnerHTML={{__html:doc.content.join("\n")}}></div>
+            <div className="uk-article manual-content uk-margin-medium-bottom uk-text-break" dangerouslySetInnerHTML={{__html:doc.content.join("\n")}}></div>
          </div>
       </div>;
    }
