@@ -4,7 +4,7 @@ subtype: normal
 title: zendAPI 项目简介
 ---
 #### 项目Logo
-<div style="width:240px; height: 40px;">![](introduction/zendapi.svg)</div>
+<div style="width:240px; height: 40px;">![](/statics/images/zendapi.svg)</div>
 
 #### zendAPI 是什么？
 
