@@ -24,11 +24,11 @@
     "text": "开发环境构建",
     "key": "preparedevelhost"
   },{
-    "text": "CMake参数详解",
+    "text": "CMake 参数详解",
     "key": "cmakevardesc"
   },{
-    "text": "升级指南",
-    "key": "upgradeguide"
+    "text": "编译 zendAPI",
+    "key": "compilezendapi"
   }]
 }, {
   "text":"快速入门",
