@@ -89,4 +89,5 @@ function sort_cls_methods(cls)
 }
 
 %>
-window.API_CLASS_CONTENT_DATA = <%- JSON.stringify(cls)%>
+window.ENTITY_NAME = "<%- cls.name %>";
+window.API_CLASS_CONTENT_DATA = <%- JSON.stringify(cls)%>;

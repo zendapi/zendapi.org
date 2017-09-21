@@ -188,5 +188,5 @@ $(function ()
       //    $(this).addClass(".uk-text-nowrap");
       // });
    });
-
+   $(document).attr("title", window.ENTITY_NAME+" 类详细文档");
 });

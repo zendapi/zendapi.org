@@ -11,4 +11,5 @@ file.includes.map(function(include){
 });
 
 %>
+window.ENTITY_NAME = "<%- file.name %>";
 window.API_FILE_CONTENT_DATA = <%- JSON.stringify(file)%>

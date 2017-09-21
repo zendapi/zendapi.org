@@ -103,4 +103,5 @@ $(function ()
          $(this).addClass("uk-table uk-table-divider uk-table-small uk-table-striped");
       });
    });
+   $(document).attr("title", window.ENTITY_NAME+" 模块详细文档");
 });

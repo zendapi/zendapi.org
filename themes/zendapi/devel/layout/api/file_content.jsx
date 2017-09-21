@@ -119,4 +119,5 @@ $(function ()
       //    });
       // });
    });
+   $(document).attr("title", window.ENTITY_NAME+" 文件详细文档");
 });

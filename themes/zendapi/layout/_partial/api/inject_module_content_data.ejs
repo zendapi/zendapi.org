@@ -23,5 +23,5 @@ module.defines.sort(sort_api_entity_by_name);
 //console.log(module.classes)
 module.mpaths = mpaths;
 %>
-
+window.ENTITY_NAME = "<%- module.name %>";
 window.API_MODULE_CONTENT_DATA = <%- JSON.stringify(module)%>
