@@ -213,3 +213,15 @@ a:hover {
 li {
   list-style-type: none;
 }
+* + h1, * + .uk-h1, * + h2, * + .uk-h2, * + h3, * + .uk-h3, * + h4, * + .uk-h4, * + h5, * + .uk-h5, * + h6, * + .uk-h6 {
+  margin-top: 0;
+}
+
+:not(pre) > code, :not(pre) > kbd, :not(pre) > samp {
+  font-size: 0.875rem;
+  font-family: Consolas, monaco, monospace;
+  color: $zapi-base-color;
+  white-space: nowrap;
+  padding: 2px 6px;
+  background: #f8f8f8;
+}

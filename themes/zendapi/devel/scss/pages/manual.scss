@@ -22,9 +22,14 @@ $zapi-manual-page-width: 1200px;
   pre {
     padding: 0!important;
     margin: 0!important;
+    margin-bottom: 10px!important;
     border: none;
     code {
-      padding-bottom: 10px;
+      padding-bottom: 15px;
+      padding-top: 15px;
+      @media (max-width: 640px) {
+        width: 1300px;
+      }
     }
   }
 }

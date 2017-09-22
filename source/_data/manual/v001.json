@@ -31,13 +31,28 @@
     "key": "compilezendapi"
   }]
 }, {
-  "text":"快速入门",
+  "text":"新手学堂",
   "key": "getstarted",
   "children": [{
-    "text": "安装zendAPI",
-    "key": "installation"
+    "text": "项目准备工作",
+    "key": "prenewproject"
+  },{
+    "text": "定义模块入口",
+    "key": "definehellozapientry"
+  },{
+    "text": "定义名称空间",
+    "key": "definehellozapinamespace"
+  },{
+    "text": "定义常量",
+    "key": "definehellozapiconst"
   }, {
-    "text": "编译参数配置",
-    "key": "compileconfigure"
+    "text": "定义原生函数",
+    "key": "definehellozapifunction"
+  },{
+    "text": "自定义原生class",
+    "key": "definehellozapiclass"
+  },{
+    "text": "安装 hello zapi 项目",
+    "key": "installhellozapiproject"
   }]
 }]
