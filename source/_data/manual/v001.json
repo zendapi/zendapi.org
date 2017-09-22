@@ -37,6 +37,9 @@
     "text": "项目准备工作",
     "key": "prenewproject"
   },{
+    "text": "项目编译脚本详解",
+    "key": "buildscriptdesc"
+  },{
     "text": "定义模块入口",
     "key": "definehellozapientry"
   },{
