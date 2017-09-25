@@ -16,7 +16,7 @@ export default class InfoList extends React.Component
                   <div className="panel-title uk-text-center uk-text-left@s uk-margin-small-top">
                      <img className="title-icon" src={ManualSvg} />推荐阅读</div>
                   <ul className="info-list uk-text-left uk-margin-small-top uk-list uk-list-divider">
-                     {(manuals && manuals.length != 0) && news.map((item, index) => this.renderInfoItem(item.title, item.url, index))}
+                     {(manuals && manuals.length != 0) && manuals.map((item, index) => this.renderInfoItem(item.title, item.url, index))}
                      {(!manuals || manuals.length == 0) && this.renderEmpty()}
                   </ul>
                </div>

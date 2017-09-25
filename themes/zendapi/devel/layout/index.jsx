@@ -20,10 +20,27 @@ class IndexPage extends React.Component
       return <div style={{width:"100%"}}>
          <HotArea/>
          <Features/>
-         <InfoList newsItems = {INDEX_PAGE_DATA.newsList}/>
+         <InfoList newsItems = {INDEX_PAGE_DATA.newsList} manualItems = {this.getManualItems()}/>
          <Sponsor/>
          <Teamwork/>
       </div>;
+   }
+
+   getManualItems()
+   {
+      return [{
+         title: "新手学堂之自定义项目预定义常量",
+         url: "/manual/0.0.1/getstarted/definehellozapiconst.html"
+      },{
+         title: "新手学堂之 hello zapi 项目准备工作",
+         url: "/manual/0.0.1/getstarted/prenewproject.html"
+      },{
+         title: "开始准备工作, 编译 zendAPI",
+         url: "/manual/0.0.1/compileanddeploy/compilezendapi.html"
+      },{
+         title: "zendAPI 详细介绍",
+         url: "/manual/0.0.1/prologue/introduction.html"
+      }];
    }
 }
 
