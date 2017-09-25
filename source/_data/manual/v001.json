@@ -43,9 +43,6 @@
     "text": "定义模块入口",
     "key": "definehellozapientry"
   },{
-    "text": "定义名称空间",
-    "key": "definehellozapinamespace"
-  },{
     "text": "定义常量",
     "key": "definehellozapiconst"
   }, {
@@ -54,6 +51,9 @@
   },{
     "text": "自定义原生class",
     "key": "definehellozapiclass"
+  },{
+    "text": "引入名称空间",
+    "key": "definehellozapinamespace"
   },{
     "text": "安装 hello zapi 项目",
     "key": "installhellozapiproject"
