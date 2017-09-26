@@ -42,10 +42,9 @@ ZAPI_DECL_EXPORT void *get_module()
 1. php_cli_startup
 2. php_module_startup
 3. php_ini_register_extensions
-4. zend_llist_apply
-5. php_load_extension
-6. get_module = (zend_module_entry *(*)(void)) DL_FETCH_SYMBOL(handle, "_get_module");
-7. 调用 get_module，获取﻿zend_module_entry 对象指针
+4. php_load_extension
+5. get_module = (zend_module_entry *(*)(void)) DL_FETCH_SYMBOL(handle, "_get_module");
+6. 调用 get_module，获取﻿zend_module_entry 对象指针
 
 简单来说我们可以这样理解，在 `PHP` 模块初始化的时候，`PHP` 会去读取我们在 `php.ini` 文件中注册的扩展, 比如咱们的 `hellozapi` 就在 `php.ini` 注册了一行 `extension=hellozapi.so`。如果相关的扩展文件存在，`PHP` 使用 `﻿dlopen` 平台接口进行动态加载，成功的话, 获取 `_get_module` 符号，然后进行调用，最终获取一个 `﻿zend_module_entry` 指针。
 

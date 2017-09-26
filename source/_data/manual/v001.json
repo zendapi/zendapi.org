@@ -52,7 +52,7 @@
     "text": "自定义原生class",
     "key": "definehellozapiclass"
   },{
-    "text": "引入名称空间",
+    "text": "引入命名空间",
     "key": "definehellozapinamespace"
   },{
     "text": "安装 hello zapi 项目",

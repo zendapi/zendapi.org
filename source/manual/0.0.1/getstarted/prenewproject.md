@@ -26,7 +26,7 @@ zendAPI库: 版本 `0.0.1`, 安装的位置 `/usr/local`
 │   └── php.ini    // 用于测试的 PHP 配置文件
 └── hellozapi      // 项目代码文件夹
     ├── defs.h     // hellozapi 头文件
-    ├── defs.cpp   // hellozapi 实现文件
+    ├── impls.cpp   // hellozapi 实现文件
     └── entry.cpp  // hellozapi 入口文件
 ```
 
@@ -42,7 +42,7 @@ touch CMakeLists.txt
 touch README.md
 touch assets/php.ini
 touch hellozapi/defs.h
-touch hellozapi/defs.cpp
+touch hellozapi/impls.cpp
 touch hellozapi/entry.cpp
 ```
 创建项目编译文件夹

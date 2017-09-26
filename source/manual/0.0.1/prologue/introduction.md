@@ -17,7 +17,7 @@ zendAPI 是对 Zend Engine 的 C 接口使用 C++ 的最新标准 C++11 进行�
 
 #### 为什么项目名叫做 zendAPI
 
-考虑到项目本身就是对 PHP 语言引擎的开发接口的封装已经 PHP 的语言引擎叫做 Zend Engine，为了方便大家记住我便将项目命名为 zendAPI，官方网站使用 zendapi.org 
+考虑到项目本身就是对 PHP 语言引擎的开发接口的封装, 以及 PHP 的语言引擎叫做 Zend Engine，为了方便大家记住我便将项目命名为 zendAPI，官方网站使用 zendapi.org 
 
 #### zendAPI 的特性
 
