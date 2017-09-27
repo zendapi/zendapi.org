@@ -49,11 +49,14 @@
     "text": "定义原生函数",
     "key": "definehellozapifunction"
   },{
-    "text": "自定义原生class",
+    "text": "自定义原生Class",
     "key": "definehellozapiclass"
   },{
     "text": "引入命名空间",
     "key": "definehellozapinamespace"
+  },{
+    "text": "注册 INI 变量",
+    "key": "registerinivars"
   },{
     "text": "安装 hello zapi 项目",
     "key": "installhellozapiproject"
