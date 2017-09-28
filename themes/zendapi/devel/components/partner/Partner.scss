@@ -1,0 +1,60 @@
+@import "../../scss/variables.scss";
+.partner-panel {
+  min-height:250px;
+  max-width: $zapi-page-max-width;
+  .partner-title {
+    img {
+      height:60px;
+      width: 60px;
+      @media (min-width: 640px) {
+        height:80px;
+        width: 80px;
+      }
+      padding-right: 10px;
+    }
+    padding-bottom: 10px;
+    height: 60px;
+    line-height: 60px;
+    @media (min-width: 640px) {
+      height: 80px;
+      line-height: 80px;
+    }
+    font-size: 25px;
+    font-family: -apple-system, BlinkMacSystemFont, "微软雅黑", "黑体";
+    color: #363b40;
+    font-weight: bold;
+  }
+  .partner-logo {
+    img {
+      height: 60px;
+      max-height: 60px;
+    }
+    margin-bottom: 10px;
+    @media (min-width: 640px) {
+      margin-bottom: 30px;
+    }
+    opacity: 0.6;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    &:hover {
+      opacity: 1;
+      -webkit-transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out;
+      -webkit-transition-property: opacity;
+      transition-property: opacity;
+    }
+  }
+}
+.become-partner-btn {
+  color: $zapi-base-color!important;
+  height: 40px;
+  border-color: $zapi-base-color;
+  font-weight: lighter;
+  &:hover {
+    color: #ffffff!important;
+    background: $zapi-base-color;
+    border-color: $zapi-base-color;
+  }
+}

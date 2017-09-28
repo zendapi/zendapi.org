@@ -11,7 +11,7 @@ title: hello zapi 项目准备工作
 #### hellozapi 开发环境详解
 
 操作系统: `MacOS 10.12.6`
-PHP: 安装的位置是 `/usr/local/php7` 版本号: `7.1.5`
+PHP: 安装的位置是 `/usr/local/php-7.1.5` 版本号: `7.1.5`
 编译器: `clang 3.5`, 安装的位置 `/usr/local/llvm-3.5`
 CMake: 版本号: `3.7.2`
 编辑器: `Qt Creator ﻿4.3.1`

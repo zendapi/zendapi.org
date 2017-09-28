@@ -4,9 +4,10 @@
   background: $zapi-base-color;
   font-family: "Gotham Rounded";
   color: #ffffff;
-  height: 390px;
+  height: 430px;
 }
 /* Phone landscape and bigger */
+
 @media (min-width: 640px) {
   .hot-area {
     height: 290px;
@@ -23,6 +24,10 @@
   }
   .btn {
     height: 35px;
+    @media (min-width: 640px) {
+      width: 520px;
+      margin: 0 auto;
+    }
     .start-btn {
       color: $zapi-base-color!important;
       background: #ffffff;

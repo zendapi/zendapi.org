@@ -63,5 +63,5 @@ return hellozapi;
 
 #### 文章使用的编程文档的引用连接
 
-> [ZAPI_DECL_EXPORT](/api/file_compiler_detection_8h.html#1a6483198f166d8060fb07d99604ef1cfe)
-> [zapi::lang::Extension](/api/classzapi_1_1lang_1_1_extension.html)
+> [ZAPI_DECL_EXPORT 参考手册](/api/file_compiler_detection_8h.html#1a6483198f166d8060fb07d99604ef1cfe)
+> [zapi::lang::Extension 参考手册](/api/classzapi_1_1lang_1_1_extension.html)

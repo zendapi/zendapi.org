@@ -12,6 +12,7 @@ import Footer from "Components/footer/Footer";
 import InfoList from "Components/infolist/InfoList";
 import Sponsor from "Components/sponsors/Sponsor";
 import Teamwork from "Components/teamwork/Teamwork";
+import Partner from "Components/partner/Partner";
 
 class IndexPage extends React.Component
 {
@@ -23,12 +24,19 @@ class IndexPage extends React.Component
          <InfoList newsItems = {INDEX_PAGE_DATA.newsList} manualItems = {this.getManualItems()}/>
          <Sponsor/>
          <Teamwork/>
+         <Partner/>
       </div>;
    }
 
    getManualItems()
    {
       return [{
+         title: "新手学堂之自定义Class",
+         url: "/manual/0.0.1/getstarted/definehellozapiclass.html"
+      },{
+         title: "新手学堂之定义原生函数",
+         url: "/manual/0.0.1/getstarted/definehellozapifunction.html"
+      },{
          title: "新手学堂之自定义项目预定义常量",
          url: "/manual/0.0.1/getstarted/definehellozapiconst.html"
       },{
@@ -37,9 +45,6 @@ class IndexPage extends React.Component
       },{
          title: "开始准备工作, 编译 zendAPI",
          url: "/manual/0.0.1/compileanddeploy/compilezendapi.html"
-      },{
-         title: "zendAPI 详细介绍",
-         url: "/manual/0.0.1/prologue/introduction.html"
       }];
    }
 }

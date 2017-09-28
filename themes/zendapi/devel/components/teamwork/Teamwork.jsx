@@ -2,7 +2,7 @@ import React from "react";
 import teamSvg from "./images/team.svg";
 import "./Teamwork.scss";
 import zzusoftboy from "./images/zzu_softboy.jpeg";
-import liaosanity from "./images/liaosanity.jpeg";
+import shies from "./images/shies.jpeg";
 
 export default class Teamwork extends React.Component
 {
@@ -17,7 +17,7 @@ export default class Teamwork extends React.Component
          <div className="uk-flex uk-flex-center uk-margin-small-top">
             <div className="uk-margin-medium-top uk-flex uk-flex-center" data-uk-grid>
                <a className="developer-logo uk-width-auto"><img src={zzusoftboy}/></a>
-               <a className="developer-logo uk-width-auto"><img src={liaosanity}/></a>
+               <a className="developer-logo uk-width-auto"><img src={shies}/></a>
             </div>
          </div>
          <div className="sponsor-title uk-flex uk-flex-center uk-margin-medium-top">
