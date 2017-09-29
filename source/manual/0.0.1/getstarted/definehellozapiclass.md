@@ -199,11 +199,11 @@ personClass.registerMethod<decltype(&Person::setAge), &Person::setAge>
   });
 personClass.registerMethod<decltype(&Person::setAddress), &Person::setAddress>
   ("setAddress", {
-     ValueArgument("address", Type::Long)
+     ValueArgument("address", Type::String)
   });
 personClass.registerMethod<decltype(&Person::getName), &Person::getName>("getName");
-personClass.registerMethod<decltype(&Person::getName), &Person::getName>("getAge");
-personClass.registerMethod<decltype(&Person::getName), &Person::getName>("getAddress");
+personClass.registerMethod<decltype(&Person::getAge), &Person::getName>("getAge");
+personClass.registerMethod<decltype(&Person::getAddress), &Person::getName>("getAddress");
 ```
 在这里我就不解释注册方法的使用了，基本上跟我们上一篇中注册函数是一样的，大家找找规律就能看懂了。
 
