@@ -80,6 +80,6 @@ echo ini_get("enable_log");
 // you will get output
 // /var/cache
 // 123
-// 1
+// On
 ```
 怎么样，没什么难度吧。

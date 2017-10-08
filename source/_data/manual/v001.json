@@ -61,4 +61,147 @@
     "text": "安装 hello zapi 项目",
     "key": "installhellozapiproject"
   }]
+}, {
+  "text": "zendAPI 设计解析",
+  "key": "zendapidesignentry",
+  "children": [{
+    "text": "术语解释",
+    "key": "vocabularydesc"
+  },{
+    "text": "整体架构设计解剖",
+    "key": "zendapiwholedesign"
+  },{
+    "text": "模块初始化",
+    "key": "moduleinit"
+  },{
+    "text": "常见数据类型设计",
+    "key": "datasturcturedesign"
+  },{
+    "text": "普通函数派发机制",
+    "key": "commonfunctiondispatch"
+  },{
+    "text": "类方法派发机制",
+    "key": "commonmethoddispatch"
+  }, {
+    "text": "内部接口的实现",
+    "key": "internalinterfaceimplemention"
+  }, {
+    "text": "内核错误处理机制",
+    "key": "kernelerrorprocess"
+  }]
+},{
+  "text": "扩展模块详解",
+  "key": "moduleinitentry",
+  "children": [{
+    "text": "定义扩展模块",
+    "key": "defineextmodule"
+  },{
+    "text": "模块初始化回调函数",
+    "key": "moduleinitcallback"
+  }]
+},{
+  "text": "命名空间",
+  "key": "namespacedefentry",
+  "children": [{
+    "text": "定义命名空间",
+    "key": "definenamespace"
+  },{
+    "text": "命名空间的运用",
+    "key": "namespaceapply"
+  }]
+},{
+  "text": "常量定义",
+  "key": "rawconstdefentry",
+  "children": [{
+    "text": "常量定义",
+    "key": "rawconstdef"
+  },{
+    "text": "常量与命名空间",
+    "key": "constandnamespace"
+  }]
+},{
+  "text": "PHP 常见数据类型",
+  "key": "commondatastureentry",
+  "children": [{
+    "text": "通用变量容器",
+    "key": "generalvarwrapper"
+  },{
+    "text": "整型数据类型",
+    "key": "numericvariantwrapper"
+  }, {
+    "text": "字符串数据类型",
+    "key": "stringvariantwrapper"
+  },{
+    "text": "浮点数据类型",
+    "key": "floatvariantwrapper"
+  }, {
+    "text": "布尔数据类型",
+    "key": "boolvariantwrapper"
+  }, {
+    "text": "函数数据类型",
+    "key": "functionvariantwrapper"
+  }, {
+    "text": "对象数据类型",
+    "key": "objectvariantwrapper"
+  }]
+},{
+  "text": "原生函数定义",
+  "key": "internalfuncdefineentry",
+  "children": [{
+    "text": "函数概述",
+    "key": "functionoverview"
+  },{
+    "text": "函数参数定义",
+    "key": "argumentoffunction"
+  },{
+    "text": "函数返回值",
+    "key": "functionreturn"
+  },{
+    "text": "函数与命名空间",
+    "key": "functionandnamespace"
+  }]
+}, {
+  "text": "面向对象特性支持",
+  "key": "oopfeaturesupportentry",
+  "children": [{
+    "text": "类入门定义",
+    "key": "simpleclassdefine"
+  },{
+    "text": "类属性定义",
+    "key": "classpropertydefine"
+  },{
+    "text": "类方法定义",
+    "key": "classmethoddefine"
+  },{
+    "text": "魔术方法支持",
+    "key": "classmagicsupport"
+  },{
+    "text": "抽象类和抽象方法的定义",
+    "key": "abstractclassandmethod"
+  },{
+    "text": "final 类定义",
+    "key": "finalclassdef"
+  }, {
+    "text": "类继承定义",
+    "key": "classextenddef"
+  },{
+    "text": "类自定义 ArrayAccess 支持",
+    "key": "classarrayacesssupport"
+  }, {
+    "text": "类迭代器支持",
+    "key": "classiteratorsupport"
+  }, {
+    "text": "countable 支持",
+    "key": "classcountablesupport"
+  }, {
+    "text": "类序列化/反序列化支持",
+    "key": "classsserializablesupport"
+  }]
+},{
+  "text": "扩展配置支持",
+  "key": "extconfigsupportentry",
+  "children": [{
+    "text": "定义 INI 配置",
+    "key": "definiconfig"
+  }]
 }]

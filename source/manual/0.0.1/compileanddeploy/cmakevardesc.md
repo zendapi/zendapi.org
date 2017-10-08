@@ -41,26 +41,11 @@ zendAPI 是采用 CMake 进行编译的，我们在项目中定义了一些 CMak
 默认值：`OFF`
 描述：控制 `zendAPI` 是否输出一些调试信息，这个选项只在 `Debug` 模式下指定，在其他模式下请设置为 `OFF`。
 
-#### ZAPI_OPT_PHP_ROOT_PATH
+#### ZAPI_OPT_PHPCFG_PATH
 类型：字符串
 默认值：无
-描述：当我们开发的时候 `PHP` 的安装路径没有在标准的路径下，`zendAPI` 的编译系统可能探测不到您的 `PHP`， 这个时候您可以将您的自定义的路径指定到这个变量。
-例如我们编译的 `PHP` 版本是 `7.1.5`, 我们的安装路径可能指定为 `/usr/local/php-7.1.5`, 那么我们可以在 `CMake` 命令行指定 `cmake -DZAPI_OPT_PHP_ROOT_PATH=/usr/local/php-7.1.5`。
-
-#### ZAPI_OPT_PHP_INCLUDE_PATH
-类型：字符串
-默认值：无
-描述：在一些 `Linux` 发行版里面，有时候头文件会被安装到一个特殊的路径中, 比如 `Ubuntu` 里面有可能在 `/usr/local/include/php/` 后面跟有一串数字，这个时候 `zendAPI` 的编译系统探测不到 `PHP`的头文件，这个时候您可以指定这个选项，指定您系统中特殊的 `PHP` 头文件路径。
-
-#### ZAPI_OPT_PHP_LIB_PATH
-类型：字符串
-默认值：无
-描述：参考 `ZAPI_OPT_PHP_INCLUDE_PATH` 当 `libphp` 库在非主流的路径下的时候可以指定这个变量，帮助 `zendAPI` 编译系统进行探测。
-
-#### ZAPI_OPT_PHP_BIN_PATH
-类型：字符串
-默认值：无
-描述：参考 `ZAPI_OPT_PHP_INCLUDE_PATH` 当 `PHP` 可执行文件在非主流的路径下的时候可以指定这个变量，帮助 `zendAPI` 编译系统进行探测。
+描述：当我们开发的时候 `PHP` 的安装路径没有在标准的路径下，`zendAPI` 的编译系统可能探测不到您的 `php-config` 脚本， 这个时候您可以将您的自定义的 `php-config` 脚本路径指定到这个变量。
+例如我们编译的 `PHP` 版本是 `7.1.5`, 我们的安装路径可能指定为 `/usr/local/php-7.1.5/bin/php-config`, 那么我们可以在 `CMake` 命令行指定 `cmake -DZAPI_OPT_PHPCFG_PATH=/usr/local/php-7.1.5/bin/php-config`。
 
 ### 高级
 以下的文档如果不是研究 `zendAPI` 源码就不需要了解。

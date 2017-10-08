@@ -2,7 +2,7 @@
 let items = [];
 page.posts.forEach(function(doc){
    //获取第一张图片
-    let matches = doc.content.match(/<img\s*?src\s*?=\s*['"]([^'"]+)['"]/i);
+    let matches = doc.content.match(/<img.*?src\s*?=\s*['"]([^'"]+)['"]/i);
     items.push({
         title: doc.title,
         date: doc.date.format("YYYY/MM/DD HH:mm:ss"),
