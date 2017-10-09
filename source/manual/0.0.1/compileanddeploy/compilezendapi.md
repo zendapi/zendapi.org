@@ -4,7 +4,7 @@ subtype: normal
 title: 编译 zendAPI
 ---
 
-操作系统我们假定是类 `unix` 操作系统，采用非源码文件夹编译。
+操作系统我们假定是类`unix`操作系统，采用非源码文件夹编译。
 
 #### 创建工作目录
 
@@ -15,14 +15,14 @@ cd workspace
 mkdir build-zendapi
 ```
 #### 获取源码
-您可以直接 `clone` 指定的分支，比如 `master` 分支。到目前为止 `zendAPI` 发布了一个版本 `zapi-0.0.2-snapshot`。
+您可以直接`clone`指定的分支，比如`master`分支。到目前为止`zendAPI`发布了一个版本`zapi-0.0.2-snapshot`。
 ```
 git clone https://github.com/qcoreteam/zendapi.git zendapidevel
 git checkout master
 ```
 
 #### 默认参数编译
-如果您的 `PHP` 安装在标准路径，可以用下面的命令进行编译
+如果您的`PHP`安装在标准路径，可以用下面的命令进行编译
 ```
 cd build-zendapi
 cmake ../zendapidevel
@@ -33,24 +33,24 @@ cd build-zendapi
 cmake -DCMAKE_INSTALL_PREFIX=/usr/local/zapi ../zendapidevel
 ```
 
-如果您的 `PHP` 没有安装在标准路径，假定您安装在 `/usr/local/php-7.1.5` 目录下，那么您可以使用下面的命令进行编译
+如果您的`PHP`没有安装在标准路径，假定您安装在`/usr/local/php-7.1.5`目录下，那么您可以使用下面的命令进行编译
 ```
 cd build-zendapi
 cmake -DZAPI_OPT_PHP_ROOT_PATH=/usr/local/php-7.1.5 ../zendapidevel
 ```
-如果您想给编译器指定额外的选项参数，比如您想用 `c++14` 标准进行编译，您可以使用下面的命令进行编译
+如果您想给编译器指定额外的选项参数，比如您想用`c++14`标准进行编译，您可以使用下面的命令进行编译
 ```
 cd build-zendapi
 cmake -DCMAKE_CXX_FLAGS="-std=c++14" ../zendapidevel
 ```
-如果您想使用特定版本的编译器进行编译，比如我自己，我自己编译了 `clang 3.5`， 按照路径为 `/usr/local/llvm-3.5/bin/clang++`，这个路径没有在 `PATH` 环境变量里面，那么我们可以使用下面的命令进行编译
+如果您想使用特定版本的编译器进行编译，比如我自己，我自己编译了`clang 3.5`， 按照路径为`/usr/local/llvm-3.5/bin/clang++`，这个路径没有在`PATH`环境变量里面，那么我们可以使用下面的命令进行编译
 ```
 cd build-zendapi
 cmake -DCMAKE_C_COMPILER=/usr/local/llvm-3.5/bin/clang \
       -DCMAKE_CXX_COMPILER=/usr/local/llvm-3.5/bin/clang++ ../zendapidevel
 ```
 
-现在我假定在我本机使用如下命令进行编译, `PHP` 安装在 `/usr/local/php7/`, 操作系统为 `MacOS`
+现在我假定在我本机使用如下命令进行编译,`PHP`安装在`/usr/local/php7/`, 操作系统为`MacOS`
 ```
 cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc-6 \
       -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-6 -DCMAKE_BUILD_TYPE=Debug ../zendapidevel
@@ -92,7 +92,7 @@ cmake -DCMAKE_C_COMPILER=/usr/local/bin/gcc-6 \
 -- Build files have been written to: ~/workspace/build-zendapi
 ```
 如果有错误，您可以根据具体的错误信息进行排查，如果不能解决，您可以到我们的 segmentfault 技术圈进行交流讨论
-如果没有错误输入一下命名进行编译, `-j` 指定编译进程数，根据 `CPU` 线程数定
+如果没有错误输入一下命名进行编译,`-j`指定编译进程数，根据`CPU`线程数定
 ```
 make -j 8
 ```

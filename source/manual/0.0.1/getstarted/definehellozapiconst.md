@@ -3,10 +3,10 @@ layout: manual
 subtype: normal
 title: 听说每个扩展都会定义自己常量，不要担心我们也行
 ---
-大家如果经常阅读 `PHP` 官方手册的话会发现，在扩展那一章里面的每个扩展的介绍的时候，都有一节是 `Predefined Constants` 预定义常量，这些常量是不需要您在 `PHP` 里面进行定义就可以使用的。
-> 比如 `Mysqli` 扩展的 Predefined Constants [http://php.net/manual/en/mysqli.constants.php](http://php.net/manual/en/mysqli.constants.php)
+大家如果经常阅读`PHP`官方手册的话会发现，在扩展那一章里面的每个扩展的介绍的时候，都有一节是`Predefined Constants`预定义常量，这些常量是不需要您在`PHP`里面进行定义就可以使用的。
+> 比如`Mysqli`扩展的 Predefined Constants [http://php.net/manual/en/mysqli.constants.php](http://php.net/manual/en/mysqli.constants.php)
 
-那么我们必须也在我们 `hellozapi` 扩展中也定义几个常量玩玩啊，其实真的很简单，不信？那咱们走着看。
+那么我们必须也在我们`hellozapi`扩展中也定义几个常量玩玩啊，其实真的很简单，不信？那咱们走着看。
 
 回到我们上节介绍的定义项目入口代码：
 
@@ -30,7 +30,7 @@ ZAPI_DECL_EXPORT void *get_module()
 4. HELLO_ZAPI_PI (double)
 
 #### zendAPI 常量描述类简单介绍
-在 `zendAPI` 里面我们使用 `zapi::lang::Constant` 来描述一个常量的元信息，使用起来很简单，他的构造函数接受两个参数，第一个参数是常量名称，第二个参数是常量的值。例如我们使用下面代码去定义一个 `ROOT_DIR` 常量, 常量值是 `/srv/www`。
+在`zendAPI`里面我们使用`zapi::lang::Constant`来描述一个常量的元信息，使用起来很简单，他的构造函数接受两个参数，第一个参数是常量名称，第二个参数是常量的值。例如我们使用下面代码去定义一个`ROOT_DIR`常量, 常量值是`/srv/www`。
 
 ```cpp
 using zapi::lang::Constant;
@@ -63,10 +63,10 @@ ZAPI_DECL_EXPORT void *get_module()
 
 }
 ```
-如果您对 `std::move` 感到陌生，您可以阅读 cpp reference 手册
+如果您对`std::move`感到陌生，您可以阅读 cpp reference 手册
 > [std::move 用户手册](http://en.cppreference.com/w/cpp/utility/move)
 
-怎么样，就这么几行，咱们的预定义常量就算定义好了，现在当执行我们 `PHP` 脚本的时候就可以直接使用了。
+怎么样，就这么几行，咱们的预定义常量就算定义好了，现在当执行我们`PHP`脚本的时候就可以直接使用了。
 
 ##### PHP Code
 ```php

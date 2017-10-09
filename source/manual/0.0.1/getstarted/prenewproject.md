@@ -3,19 +3,19 @@ layout: manual
 subtype: normal
 title: hello zapi 项目准备工作
 ---
-在新手学堂里面，我们将从零基于 `zendAPI` 开发一个简单的 `PHP` 扩展，这个扩展的名字叫做 `hellozapi` , 现在我们着手准备开发需要的环境吧。
+在新手学堂里面，我们将从零基于`zendAPI`开发一个简单的`PHP`扩展，这个扩展的名字叫做`hellozapi`, 现在我们着手准备开发需要的环境吧。
 
 > demo 的项目库地址 https://github.com/zendapi/demo
 > 大家可以自行下载学习
 
 #### hellozapi 开发环境详解
 
-操作系统: `MacOS 10.12.6`
-PHP: 安装的位置是 `/usr/local/php-7.1.5` 版本号: `7.1.5`
-编译器: `clang 3.5`, 安装的位置 `/usr/local/llvm-3.5`
-CMake: 版本号: `3.7.2`
-编辑器: `Qt Creator ﻿4.3.1`
-zendAPI库: 版本 `0.0.1`, 安装的位置 `/usr/local`
+操作系统:`MacOS 10.12.6`
+PHP: 安装的位置是`/usr/local/php-7.1.5`版本号:`7.1.5`
+编译器:`clang 3.5`, 安装的位置`/usr/local/llvm-3.5`
+CMake: 版本号:`3.7.2`
+编辑器:`Qt Creator ﻿4.3.1`
+zendAPI库: 版本`0.0.1`, 安装的位置`/usr/local`
 
 #### hellzapi 的项目结构
 
@@ -30,7 +30,7 @@ zendAPI库: 版本 `0.0.1`, 安装的位置 `/usr/local`
     └── entry.cpp  // hellozapi 入口文件
 ```
 
-现在我们开始着手准备 `hellozapi` 的开发文件夹
+现在我们开始着手准备`hellozapi`的开发文件夹
 
 ```bash
 cd ~/
@@ -50,4 +50,4 @@ touch hellozapi/entry.cpp
 cd ../
 mkdir build-zendapidemo-debug
 ```
-到此我们的项目结构就准备完成，让我们开始我们的 `zendAPI` 扩展开发之旅吧。
+到此我们的项目结构就准备完成，让我们开始我们的`zendAPI`扩展开发之旅吧。

@@ -74,7 +74,7 @@
     "text": "命名空间说明",
     "key": "zendapinamespacedesc"
   },{
-    "text": "模块初始化",
+    "text": "PHP 标准模块生命周期",
     "key": "moduleinit"
   },{
     "text": "常见数据类型设计",
