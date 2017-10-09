@@ -21,7 +21,7 @@ title: 都 PHP7 啦，别告诉我你没用过命名空间
 
 zapi::lang::Namespace zapi("zapi");
 ```
-一个名叫 `zapi` 的命名空间就定义好了，然后我们就可以调用相应的注册方法给这个名称空间添加常量，函数和类了，是不是很简单啊, 下面我们开始我们的命名空间之旅。
+一个名叫 `zapi` 的命名空间就定义好了，然后我们就可以调用相应的注册方法给这个命名空间添加常量，函数和类了，是不是很简单啊, 下面我们开始我们的命名空间之旅。
 
 > [zapi::lang::Namespace 参考手册](/api/classzapi_1_1lang_1_1_namespace.html)
 > [zapi::lang::Namespace::registerConstant 参考手册](/api/classzapi_1_1lang_1_1_namespace.html#1a05c185dcf4aa979b5136ddfa38ab9e86)
@@ -89,7 +89,7 @@ hellozapiNs.﻿registerNamespace(kernelNs);
 ```
 上面代码完成了一个嵌套命名空间 `kernel`，并且向里面注册了常量 `KERNEL_VERSION` 和函数 `print_develop_team`, 然后将 `kernel` 命名空间注册到 `hellozapi` 命名空间里面。
 
-#### 将名称空间注册到 `hellozapi` 扩展中
+#### 将命名空间注册到 `hellozapi` 扩展中
 ```cpp
 ﻿hellozapi.registerNamespace(hellozapiNs);
 ```

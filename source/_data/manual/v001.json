@@ -71,6 +71,9 @@
     "text": "整体架构设计解剖",
     "key": "zendapiwholedesign"
   },{
+    "text": "命名空间说明",
+    "key": "zendapinamespacedesc"
+  },{
     "text": "模块初始化",
     "key": "moduleinit"
   },{
