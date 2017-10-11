@@ -1,9 +1,9 @@
 ---
 layout: manual
 subtype: normal
-title: PHP 模块初始化过程文档
+title: PHP 标准模块生命周期
 ---
-`PHP`在单线程，多进程和多线程的`SAPI`环境下加载扩展的时候都有标准的初始化和销毁过程，我们将其称为扩展模块的生命周期(module cycle)。现在我们简单的说一下`PHP`两种模式下的初始化和销毁的流程。
+`PHP`在单线程，多进程和多线程的`SAPI`环境下加载扩展的时候都有标准的初始化和销毁过程，我们将其称为扩展模块的生命周期(module cycle)。现在我们简单的说一下`PHP`在这三种模式下的初始化和销毁的流程。
 说明：我们这篇文章中大量引用了 《深入理解PHP内核》这本书中的`PHP 生命周期`章节, 感谢 TIPI 团队为我们提供这么优质的文章。
 > [阅读《深入理解PHP内核》原文](http://www.php-internals.com/book/?p=chapt02/02-01-php-life-cycle-and-zend-engine)
 

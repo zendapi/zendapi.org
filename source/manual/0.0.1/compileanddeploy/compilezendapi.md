@@ -19,6 +19,8 @@ mkdir build-zendapi
 ```
 git clone https://github.com/qcoreteam/zendapi.git zendapidevel
 git checkout master
+git submodule init
+git submodule update
 ```
 
 #### 默认参数编译
@@ -30,13 +32,13 @@ cmake ../zendapidevel
 如果您想安装到特定的路径，可以使用下面的命名进行编译
 ```
 cd build-zendapi
-cmake -DCMAKE_INSTALL_PREFIX=/usr/local/zapi ../zendapidevel
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local ../zendapidevel
 ```
 
 如果您的`PHP`没有安装在标准路径，假定您安装在`/usr/local/php-7.1.5`目录下，那么您可以使用下面的命令进行编译
 ```
 cd build-zendapi
-cmake -DZAPI_OPT_PHP_ROOT_PATH=/usr/local/php-7.1.5 ../zendapidevel
+cmake -D﻿ZAPI_OPT_PHPCFG_PATH=/usr/local/php-7.1.5/bin/php-config ../zendapidevel
 ```
 如果您想给编译器指定额外的选项参数，比如您想用`c++14`标准进行编译，您可以使用下面的命令进行编译
 ```

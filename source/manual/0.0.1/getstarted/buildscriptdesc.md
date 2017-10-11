@@ -21,6 +21,7 @@ add_library(hellozapi MODULE
     hellozapi/entry.cpp)
 set_target_properties(hellozapi PROPERTIES 
     OUTPUT_NAME hellozapi
+    ﻿INSTALL_RPATH_USE_LINK_PATH ON
     PREFIX "")
 target_link_libraries(hellozapi ${ZAPI_LIBRARY})
 install(TARGETS hellozapi DESTINATION ${ZAPI_PHP_EXTENSION_DIR})

@@ -60,6 +60,9 @@
   },{
     "text": "安装 hello zapi 项目",
     "key": "installhellozapiproject"
+  },{
+    "text": "使用 Docker 进行体验",
+    "key": "installbydocker"
   }]
 }, {
   "text": "zendAPI 设计解析",
@@ -75,7 +78,10 @@
     "key": "zendapinamespacedesc"
   },{
     "text": "PHP 标准模块生命周期",
-    "key": "moduleinit"
+    "key": "phpmoduleinitcycle"
+  },{
+    "text": "初始化流程详解",
+    "key": "zendapiinitcycle"
   },{
     "text": "常见数据类型设计",
     "key": "datasturcturedesign"
