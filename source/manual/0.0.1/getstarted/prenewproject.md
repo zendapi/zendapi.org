@@ -17,7 +17,7 @@ CMake: 版本号:`3.7.2`
 编辑器:`Qt Creator ﻿4.3.1`
 zendAPI库: 版本`0.0.1`, 安装的位置`/usr/local`
 
-#### hellzapi 的项目结构
+#### hellozapi 的项目结构
 
 ```bash
 ├── CMakeLists.txt // 项目主编译脚本
