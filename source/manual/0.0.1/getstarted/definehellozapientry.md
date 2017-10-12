@@ -24,7 +24,7 @@ ZAPI_DECL_EXPORT void *get_module()
 ```cpp
 ﻿#include "zapi/ZendApi.h"
 ```
-在开发基于`zendAPI`的项目时候，我们只需要包含这个头文件就可以了，在这个头文件中，我们会引入`zendAPI`日常开发需要的必要的头文件，您不用自己一个一个自己去引入。
+在开发基于`zendAPI`的项目时候，我们只需要包含这个头文件就可以了，在这个头文件中，我们会引入`zendAPI`日常开发需要的必要的头文件，您不用自己再一个一个去引入。
 
 ```cpp
 ﻿extern "C"

@@ -18,9 +18,11 @@ mkdir build-zendapi
 您可以直接`clone`指定的分支，比如`master`分支。到目前为止`zendAPI`发布了一个版本`zapi-0.0.2-snapshot`。
 ```
 git clone https://github.com/qcoreteam/zendapi.git zendapidevel
+cd zendapidevel
 git checkout master
 git submodule init
 git submodule update
+cd ..
 ```
 
 #### 默认参数编译
@@ -105,7 +107,7 @@ make -j 8
 ```
 最后输入以下命令进行安装
 ```
-make install
+sudo make install
 ```
 安装完成后您将看到如下输出
 ```

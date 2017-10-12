@@ -1,7 +1,7 @@
 ---
 layout: manual
 subtype: normal
-title: 终于快完成了，安装测试我们的 hellzapi 扩展
+title: 终于快完成了，安装测试我们的 hellozapi 扩展
 ---
 大家看到这篇文章的时候证明您已经基本掌握了`zendAPI`开发`PHP`扩展的基本知识了，我们已经完成了`hellozapi`的扩展开发，如果您是使用`CMake`进行编译的话，那么恭喜您，您再最后运行下面的代码：
 ```cmake
