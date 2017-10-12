@@ -95,8 +95,8 @@
     "text": "内部接口的实现",
     "key": "internalinterfaceimplemention"
   }, {
-    "text": "内核错误处理机制",
-    "key": "kernelerrorprocess"
+    "text": "标准数据输出流",
+    "key": "stddatastream"
   }]
 },{
   "text": "扩展模块详解",
@@ -135,18 +135,21 @@
     "text": "通用变量容器",
     "key": "generalvarwrapper"
   },{
+    "text": "布尔数据类型",
+    "key": "boolvariantwrapper"
+  },{
     "text": "整型数据类型",
     "key": "numericvariantwrapper"
   }, {
     "text": "字符串数据类型",
     "key": "stringvariantwrapper"
   },{
+    "text": "数组数据类型",
+    "key": "arrayvariantwrapper"
+  },{
     "text": "浮点数据类型",
     "key": "floatvariantwrapper"
-  }, {
-    "text": "布尔数据类型",
-    "key": "boolvariantwrapper"
-  }, {
+  },  {
     "text": "函数数据类型",
     "key": "functionvariantwrapper"
   }, {
