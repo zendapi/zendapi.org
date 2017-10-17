@@ -102,7 +102,7 @@ void CallablePrivate::initialize(zend_internal_function_info *info,
    info->_is_variadic = false;
 }
 ```
-上面的代码意思已经很明显了，在这里主要是设置`zend_function_entry`对象的函数名字，参数相关信息已经参数的格式等等相关信息，感兴趣的同学可以自己去研究相关代码，都是根据函数元信息描述对象去设置一些字段的繁琐的信息设置，这里我们就不再深入了。
+上面的代码意思已经很明显了，在这里主要是设置`zend_function_entry`对象的函数名字，参数相关信息以及参数的格式等等相关信息，感兴趣的同学可以自己去研究相关代码，都是根据函数元信息描述对象去设置一些字段的繁琐的信息设置，这里我们就不再深入了。
 
 #### `Zend Engine`将请求传递给`zapi::vm::InvokeBridge`然后调用对应的原生函数
 在`zapi::vm::InvokeBridge`中我们将原生函数分成了下面的几种类型：
