@@ -7,6 +7,7 @@ import sponsorSvg from "./images/sponsor.svg";
 import unicornteam from "./images/unicornteam.png";
 import qcoreteam from "./images/qcoreteam.svg";
 import qihoodaxue from "./images/360daxue.png";
+import wirelessresearch from "./images/wirelessresearch.svg";
 
 export default class Sponsor extends React.Component
 {
@@ -22,6 +23,7 @@ export default class Sponsor extends React.Component
             <a className="sponsor-logo uk-width-auto"><img src={unicornteam}/></a>
             <a className="sponsor-logo uk-width-auto"><img src={qihoodaxue} style={{width:200,height:60,paddingTop:10}}/></a>
             <a className="sponsor-logo uk-width-auto"><img src={qcoreteam} style={{width:200,height:60,paddingTop:10}}/></a>
+            <a className="sponsor-logo uk-width-auto"><img src={wirelessresearch} style={{height:80}}/></a>
          </div>
          <div className="uk-flex uk-flex-center uk-margin-medium-top">
             <div className="sponsor-title uk-flex uk-flex-center">
