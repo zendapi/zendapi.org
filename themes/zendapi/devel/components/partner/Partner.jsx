@@ -28,9 +28,13 @@ export default class Partner extends React.Component
          </div>
          <div className="uk-flex uk-flex-center uk-margin-medium-top">
             <div className="partner-title uk-flex uk-flex-center">
-               <button className="uk-button uk-button-default become-partner-btn">如何成为合作伙伴</button>
+               <button className="uk-button uk-button-default become-partner-btn" onClick={this.gotoTargetUrl}>如何成为合作伙伴</button>
             </div>
          </div>
       </div>;
+   }
+   gotoTargetUrl()
+   {
+      window.location.assign("/about/becomedeveloper.html")
    }
 };

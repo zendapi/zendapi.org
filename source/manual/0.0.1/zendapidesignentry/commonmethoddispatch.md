@@ -26,7 +26,8 @@ Extension &Extension::registerClass(const Class<T> &nativeClass)
       return *this;
    }
    // just shadow copy 
-   implPtr->m_classes.push_back(std::shared_ptr<AbstractClass>(new Class<T>(nativeClass)));
+   implPtr->m_classes.push_back(
+        std::shared_ptr<AbstractClass>(new Class<T>(nativeClass)));
    return *this;
 }
 ```
@@ -81,8 +82,9 @@ iterateClasses([moduleNumber](AbstractClass &cls) {
 在这里我们遍历我们注册的元信息描述对象，然后依次调用`initialize`方法。
 下面我们分析下`initialize`方法，这个方法还是有一点小复杂
 ```cpp
-﻿zend_class_entry *AbstractClassPrivate::initialize(AbstractClass *cls, 
-                                                   const std::string &ns, int moduleNumber)
+﻿zend_class_entry *AbstractClassPrivate::initialize(
+    AbstractClass *cls, 
+    const std::string &ns, int moduleNumber)
 {
    m_apiPtr = cls;
    zend_class_entry entry;
@@ -90,7 +92,8 @@ iterateClasses([moduleNumber](AbstractClass &cls) {
       m_name = ns + "\\" + m_name;
    }
    // initialize the class entry
-   INIT_CLASS_ENTRY_EX(entry, m_name.c_str(), m_name.size(), getMethodEntries().get());
+   INIT_CLASS_ENTRY_EX(entry, m_name.c_str(), m_name.size(), 
+                       getMethodEntries().get());
    entry.create_object = &AbstractClassPrivate::createObject;
    entry.get_static_method = &AbstractClassPrivate::getStaticMethod;
    // check if traversable
@@ -106,10 +109,12 @@ iterateClasses([moduleNumber](AbstractClass &cls) {
    // check if serializable
    if (m_parent) {
       if (m_parent->m_implPtr->m_classEntry) {
-         m_classEntry = zend_register_internal_class_ex(&entry, 
-                                                        m_parent->m_implPtr->m_classEntry);
+         m_classEntry = zend_register_internal_class_ex(
+            &entry, 
+            m_parent->m_implPtr->m_classEntry);
       } else {
-         std::cerr << "Derived class " << m_name << " is initialized before base class " 
+         std::cerr << "Derived class " << m_name 
+                   << " is initialized before base class " 
                    << m_parent->m_implPtr->m_name
                    << ": base class is ignored" << std::endl;
          // ignore base class
@@ -122,11 +127,14 @@ iterateClasses([moduleNumber](AbstractClass &cls) {
    
    for (std::shared_ptr<AbstractClass> &interface : m_interfaces) {
       if (interface->m_implPtr->m_classEntry) {
-         zend_do_implement_interface(m_classEntry, interface->m_implPtr->m_classEntry);
+         zend_do_implement_interface(m_classEntry, 
+                                     interface->m_implPtr->m_classEntry);
       } else {
          // interface that want to implement is not initialized
-         std::cerr << "Derived class " << m_name << " is initialized before base class "
-                   << interface->m_implPtr->m_name << ": interface is ignored"
+         std::cerr << "Derived class " << m_name 
+                   << " is initialized before base class "
+                   << interface->m_implPtr->m_name
+                   << ": interface is ignored"
                    << std::endl;
       }
    }
@@ -204,8 +212,10 @@ entry.create_object = &AbstractClassPrivate::createObject;
    if (!nativeObject) {
       zend_error(E_ERROR, "Unable to instantiate %s", entry->name->val);
    }
-   ObjectBinder *binder = new ObjectBinder(entry, nativeObject, 
-                                           abstractClsPrivatePtr->getObjectHandlers(), 1);
+   ObjectBinder *binder = new ObjectBinder(entry, 
+                                           nativeObject, 
+                                           abstractClsPrivatePtr->getObjectHandlers(), 
+                                           1);
    return binder->getZendObject();
 }
 ```
@@ -228,7 +238,8 @@ entry.create_object = &AbstractClassPrivate::createObject;
 下面我们看看`AbstractClassPrivate::getMethod`函数，这个方法是`zendAPI`与`Zend Engine`的结合之处。
 ```cpp
 ﻿zend_function *AbstractClassPrivate::getMethod(zend_object **object, 
-                                               zend_string *methodName, const zval *key)
+                                               zend_string *methodName, 
+                                               const zval *key)
 {
    zend_function *defaultFuncInfo = std_object_handlers.get_method(object, methodName, key);
    if (defaultFuncInfo) {
@@ -388,8 +399,10 @@ func->fn_flags = ZEND_ACC_CALL_VIA_HANDLER | ZEND_ACC_STATIC;
 这个字段的具体意思我们在本篇的**[原生类元信息的注册，让Zend Engine知道我们自定义的原生类的存在](commonmethoddispatch.html#yuan-sheng-lei-yuan-xin-xi-de-zhu-ce-rang-zend-engine-zhi-dao-wo-men-zi-ding-yi-de-yuan-sheng-lei-de-cun-zai)**有介绍，大家可以查看。
 下面我们具体看看`AbstractClassPrivate::getClosure`函数：
 ```cpp
-﻿int AbstractClassPrivate::getClosure(zval *object, zend_class_entry **entry, z
-                                     end_function **retFunc, zend_object **objectPtr)
+﻿int AbstractClassPrivate::getClosure(zval *object, 
+                                     zend_class_entry **entry, z
+                                     end_function **retFunc, 
+                                     zend_object **objectPtr)
 {
    // @mark is this really right ?
    zend_class_entry *defClassEntry = Z_OBJCE_P(object);

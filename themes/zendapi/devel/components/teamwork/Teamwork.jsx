@@ -25,8 +25,12 @@ export default class Teamwork extends React.Component
             </div>
          </div>
          <div className="sponsor-title uk-flex uk-flex-center uk-margin-medium-top">
-            <button className="uk-button uk-button-default become-developer-btn">如何成为开发者</button>
+            <button className="uk-button uk-button-default become-developer-btn" onClick={this.gotoTargetUrl}>如何成为开发者</button>
          </div>
       </div>;
+   }
+   gotoTargetUrl()
+   {
+      window.location.assign("/about/becomedeveloper.html")
    }
 };

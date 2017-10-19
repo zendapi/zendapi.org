@@ -27,9 +27,13 @@ export default class Sponsor extends React.Component
          </div>
          <div className="uk-flex uk-flex-center uk-margin-medium-top">
             <div className="sponsor-title uk-flex uk-flex-center">
-               <button className="uk-button uk-button-default become-sponsor-btn">如何成为赞助者</button>
+               <button className="uk-button uk-button-default become-sponsor-btn" onClick={this.gotoTargetUrl}>如何成为赞助者</button>
             </div>
          </div>
       </div>;
+   }
+   gotoTargetUrl()
+   {
+      window.location.assign("/about/becomesponsor.html")
    }
 };
