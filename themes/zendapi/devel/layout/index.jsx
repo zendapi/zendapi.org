@@ -13,6 +13,7 @@ import InfoList from "Components/infolist/InfoList";
 import Sponsor from "Components/sponsors/Sponsor";
 import Teamwork from "Components/teamwork/Teamwork";
 import Partner from "Components/partner/Partner";
+import Linker from "Components/links/Linkers";
 
 class IndexPage extends React.Component
 {
@@ -25,6 +26,7 @@ class IndexPage extends React.Component
          <Sponsor/>
          <Teamwork/>
          <Partner/>
+         <Linker/>
       </div>;
    }
 
