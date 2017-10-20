@@ -1,4 +1,4 @@
 ---
-layout: about
-subtype: becomepartner
+layout: about/become_partner
+maintype: about
 ---

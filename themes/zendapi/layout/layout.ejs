@@ -30,7 +30,6 @@
         layout = "blog";
     }
     if (layout == "post") { %>
-    <%- partial("_partial/inject_post_data") %>
     <%
     } else if (layout == "manual") { %>
    
@@ -98,7 +97,7 @@
                     <%}%>
                 </div>
                 <%
-                } else if (layout == "about") { %>
+                } else if (page.maintype == "about") { %>
                 <ul class = "uk-text-left extra-items uk-width-1-1">
                     <li class="uk-width-1-1"><a href = "/about/changelog.html">Changelog</a></li>
                     <li class="uk-width-1-1"><a href = "/about/becomesponsor.html">成为赞助者</a></li>

@@ -1,4 +1,4 @@
 ---
-layout: about
-subtype: about
+layout: about/index
+maintype: about
 ---

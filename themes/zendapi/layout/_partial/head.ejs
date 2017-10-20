@@ -15,8 +15,13 @@ if (layout == "post") {
 } else if (layout == "manual") {
  title = page.title + "-zendAPI 手册";
  cssfilename = "manual.css";
-} else if (layout == "about") {
- title = "关于我们-zendAPI";
+} else if (page.maintype == "about") {
+ if (layout == "about/index") {
+  title = "关于我们-zendAPI";
+ } else if (layout == "about/changelog"){
+  title = "项目变更大事记-zendAPI";
+ }
+ cssfilename = "about.css";
 }else if (layout == "blog") {
  cssfilename = "blog.css";
  title = "欢迎访问 zendAPI 开发博客";

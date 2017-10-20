@@ -1,4 +1,4 @@
 ---
-layout: about
-subtype: changelog
+layout: about/changelog
+maintype: about
 ---

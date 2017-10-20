@@ -1,4 +1,4 @@
 ---
-layout: about
-subtype: becomedeveloper
+layout: about/become_developer
+maintype: about
 ---
