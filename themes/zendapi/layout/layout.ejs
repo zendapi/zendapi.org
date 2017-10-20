@@ -38,7 +38,6 @@
     } else if (layout == "blog") { %>
     <%- partial("_partial/inject_blog_list_data")%>
     <%} else if (layout == "index") { %>
-    <%- partial("_partial/inject_index_data") %>
     <%} else if (layout == "apiindex") { %>
     <%- partial("_partial/api/inject_index_data") %>
     <%} else if (layout == "apimodules") {%>
@@ -58,7 +57,6 @@
     <% } else if (layout == "apiclasscontent") {%>
     <%- partial("_partial/api/inject_class_content_data") %>
     <% } %>
-    window.SITE_CATEGORIES = <%- JSON.stringify(menuItems)%>
             <%
             let apiCatalog = [];
             if (_.indexOf(apilayouts, layout) != -1) {
@@ -125,6 +123,5 @@
 </div>
 <script type="text/javascript" async="async" src ="http://s13.cnzz.com/z_stat.php?id=1264578420"></script>
 <script type="text/javascript" async="async" src ="http://c.cnzz.com/core.php?web_id=1264578420&t=z"></script>
-
 </body>
 </html>

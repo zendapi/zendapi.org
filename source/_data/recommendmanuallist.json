@@ -1,0 +1,16 @@
+[{
+  "title": "新手学堂之自定义Class",
+  "url": "/manual/0.0.1/getstarted/definehellozapiclass.html"
+},{
+  "title": "新手学堂之定义原生函数",
+  "url": "/manual/0.0.1/getstarted/definehellozapifunction.html"
+},{
+  "title": "新手学堂之自定义项目预定义常量",
+  "url": "/manual/0.0.1/getstarted/definehellozapiconst.html"
+},{
+  "title": "新手学堂之 hello zapi 项目准备工作",
+  "url": "/manual/0.0.1/getstarted/prenewproject.html"
+},{
+  "title": "开始准备工作, 编译 zendAPI",
+  "url": "/manual/0.0.1/compileanddeploy/compilezendapi.html"
+}]
