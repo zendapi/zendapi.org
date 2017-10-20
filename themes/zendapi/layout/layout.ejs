@@ -4,7 +4,6 @@
 <%- partial('_partial/head') %>
 </head>
 <body>
-<div id="fakeLoader"></div>
 <script type="application/javascript">
     <%
     let apilayouts = [
@@ -60,8 +59,6 @@
             if (_.indexOf(apilayouts, layout) != -1) {
                 apiCatalog = get_api_catalog(page, config, site);
             %>
-       window.API_CATALOG_CATEGORIES = <%- JSON.stringify(get_api_catalog(page, config, site))%>
-          window.API_DOXYGEN_VERSION = <%- JSON.stringify(get_doxygen_version())%>
     <%}%>
 </script>
 <div class="uk-offcanvas-content">

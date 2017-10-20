@@ -1,0 +1,22 @@
+<%
+let apiSidePanelitems = get_api_catalog(page, config, site);
+
+let imgs = [
+    "home.svg",
+    "module.svg",
+    "namespace.svg",
+    "global.svg",
+    "files.svg"
+];
+%>
+<ul class="side-panel uk-visible@m" uk-sticky="offset: 70">
+    <% for (let i in apiSidePanelitems) {
+       let item = apiSidePanelitems[i];
+       let cls = "";
+       if (item.isActive) {
+          cls = "active-item";
+       }
+    %>
+    <li class="<%- cls %>"><img src ="<%- "/statics/images/api/"+imgs[i] %>"/><a href="<%- item.url %>"><%- item.name %></a></li>
+    <% } %>
+</ul>
