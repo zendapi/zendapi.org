@@ -3,15 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.3.7"
+    "version": "3.3.9"
   },
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-deployer-git": "^0.3.0",
     "hexo-excerpt": "^1.1.2",
     "hexo-filter-highlight": "0.0.3",
-    "hexo-generator-apidoc": "^0.0.1",
-    "hexo-prism-plugin": "^2.1.2",
+    "hexo-generator-apidoc": "https://github.com/zendapi/hexo-generator-apidoc",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-stylus": "^0.3.1",
@@ -38,6 +37,7 @@
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
+    "hexo-pagination": "^0.1.0",
     "html-webpack-plugin": "^2.28.0",
     "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
@@ -52,7 +52,8 @@
     "svg-inline-loader": "^0.7.1",
     "uikit": "^3.0.0-beta.25",
     "url-loader": "^0.5.9",
-    "webpack": "^2.6.1"
+    "webpack": "^2.6.1",
+    "xml2js": "^0.4.19"
   },
   "scripts": {
     "generate-theme": "node build-config/webpack.config.devel.js",
