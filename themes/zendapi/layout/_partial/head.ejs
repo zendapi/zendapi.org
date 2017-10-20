@@ -8,6 +8,7 @@ if (page.layout) {
  layout = "blog";
 }
 let title = "";
+let cssfilename = "";
 if (layout == "post") {
  title = page.title + "-zendAPI 博客";
 } else if (layout == "manual") {
@@ -17,6 +18,7 @@ if (layout == "post") {
 }else if (layout == "blog") {
  title = "欢迎访问 zendAPI 开发博客";
 } else if (layout == "index") {
+ cssfilename = "index.css";
  title = "zendAPI - The C++ layer for Zend Engine";
 } else if (layout == "apiindex") {
  title = "欢迎访问 zendAPI 接口文档栏目";
@@ -32,13 +34,16 @@ if (layout == "post") {
  title = "正在为您加载页面-zendAPI";
 }
 %>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title><%- title %></title>
-<link rel="stylesheet" href="/statics/css/common.css" />
 <link rel="icon" href="/zendapi.ico" type="image/ico"/>
-<script type="text/javascript" src = "/statics/js/manifest.js"></script>
-<script type="text/javascript" src = "/statics/js/vendors.js"></script>
-<script type="text/javascript" src = "/statics/js/common.js"></script>
-
+<link rel="stylesheet" href="/statics/js/uikit/css/uikit.min.css" />
+<link rel="stylesheet" href="/statics/css/base.css" />
+<% if (cssfilename)  {%>
+<link rel="stylesheet" href="/statics/css/<%- cssfilename %>" />
+<%}%>
+<link rel="stylesheet" href="/statics/css/index.css" />
+<script type="text/javascript" src = "/statics/js/jquery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src = "/statics/js/uikit/js/uikit.min.js"></script>
+<script type="text/javascript" src = "/statics/js/uikit/js/uikit-icons.min.js"></script>

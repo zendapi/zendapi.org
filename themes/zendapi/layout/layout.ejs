@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- partial('_partial/head') %>
+<%- partial('_partial/head') %>
 </head>
 <body>
 <div id="fakeLoader"></div>
@@ -69,9 +69,9 @@
     <%}%>
 </script>
 <div class="uk-offcanvas-content">
-    <div id="header-wrapper" class="uk-container uk-margin-remove uk-container-expand site-header" uk-sticky="show-on-up: true; animation: uk-animation-slide-top;"></div>
+    <%- partial("_partial/header") %>
     <%- body %>
-    <div id= "footer-wrapper"></div>
+    <%- partial("_partial/footer") %>
     <div id="offcanvas-push" uk-offcanvas="mode: slide; overlay: true">
         <div class="uk-offcanvas-bar" id = "sidebar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>

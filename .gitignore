@@ -8,6 +8,5 @@ public/
 .deploy*/
 .idea/
 cache/
-themes/zendapi/source/statics/
 themes/landscape/
 hexo-generator-apidoc
