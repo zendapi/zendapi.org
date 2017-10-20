@@ -13,6 +13,7 @@ if (layout == "post") {
  title = page.title + "-zendAPI 博客";
 } else if (layout == "manual") {
  title = page.title + "-zendAPI 手册";
+ cssfilename = "manual.css";
 } else if (layout == "about") {
  title = "关于我们-zendAPI";
 }else if (layout == "blog") {
@@ -46,3 +47,7 @@ if (layout == "post") {
 <script type="text/javascript" src = "/statics/js/jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src = "/statics/js/uikit/js/uikit.min.js"></script>
 <script type="text/javascript" src = "/statics/js/uikit/js/uikit-icons.min.js"></script>
+<% if (layout == "manual") { %>
+<script type="text/javascript" src = "/statics/js/highlight/highlight.pack.js"></script>
+<link rel="stylesheet" href="/statics/js/highlight/styles/railscasts.css" />
+<% } %>
