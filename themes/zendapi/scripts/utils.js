@@ -92,7 +92,7 @@ hexo.extend.helper.register('get_api_catalog', function(page, config, site){
 hexo.extend.helper.register('get_doxygen_version', function(){
    let ret = spawnSync("doxygen", ["--version"]);
    if (0 != ret.status) {
-      throw ret.stderr.toString(); 
+      throw ret.stderr.toString();
    } else {
       return _.trim(ret.stdout.toString());
    }
@@ -137,4 +137,28 @@ hexo.extend.helper.register('is_string',function(value)
 hexo.extend.helper.register('is_object',function(value)
 {
    return toString.call(value) === '[object Object]';
+});
+
+hexo.extend.helper.register('is_object',function(value)
+{
+   return toString.call(value) === '[object Object]';
+});
+
+hexo.extend.helper.register('generate_flat_module_list', function(modules, depth, prefix)
+{
+   let self = hexo.extend.helper.get('generate_flat_module_list');
+   let url_for_api_entity = hexo.extend.helper.get('url_for_api_entity');
+   let ret = [];
+   ++depth;
+   for(let i = 0; i < modules.length; i++) {
+      module = modules[i];
+      let name =  prefix != "" ? prefix+"/"+module.name: module.name;
+      ret.push({
+         name: name,
+         url: url_for_api_entity(module.refid),
+         level: depth
+      });
+      ret = _.concat(ret, module.modules ? self(module.modules, depth,  name) : []);
+   }
+   return ret;
 });

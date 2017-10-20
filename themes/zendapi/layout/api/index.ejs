@@ -12,27 +12,11 @@ _.values(page.modules).map(function(module){
         moduleModels.push(module);
     }
 });
-function generate_flat_module_list(modules, depth, prefix)
-{
-    let ret = [];
-    ++depth;
-    for(let i = 0; i < modules.length; i++) {
-        module = modules[i];
-        let name =  prefix != "" ? prefix+"/"+module.name: module.name;
-        ret.push({
-            name: name,
-            url: url_for_api_entity(module.refid),
-            level: depth
-        });
-        ret = _.concat(ret, module.modules ? generate_flat_module_list(module.modules, depth,  name) : []);
-    }
-    return ret;
-}
 let moduleList = generate_flat_module_list(moduleModels, 0, "");
 %>
-<div id="container">
+<div id="container" style="width:100%;">
     <div class="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-index-page">
-        <div class="manual-container uk-flex uk-flex-left">
+        <div class="apidoc-container uk-flex uk-flex-left">
             <div class="side-panel-container uk-visible@m">
                 <%- partial("_partial/api/sidepanel") %>
             </div>
