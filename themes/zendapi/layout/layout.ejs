@@ -37,17 +37,12 @@
     <%} else if (layout == "index") { %>
     <%} else if (layout == "apiindex") { %>
     <%} else if (layout == "apimodules") {%>
-    <%- partial("_partial/api/inject_modules_data") %>
     <%} else if (layout == "apinamespaces") {%>
-    <%- partial("_partial/api/inject_namespaces_data") %>
     <%} else if (layout == "apiglobals") {%>
-    <%- partial("_partial/api/inject_globals_data") %>
     <% } else if (layout == "apifiles") {%>
-    <%- partial("_partial/api/inject_files_data") %>
     <% } else if (layout == "apimodulecontent") {%>
     <%- partial("_partial/api/inject_module_content_data") %>
     <% } else if (layout == "apinamespacecontent") {%>
-    <%- partial("_partial/api/inject_namespace_content_data") %>
     <% } else if (layout == "apifilecontent") {%>
     <%- partial("_partial/api/inject_file_content_data") %>
     <% } else if (layout == "apiclasscontent") {%>

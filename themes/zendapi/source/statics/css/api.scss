@@ -6,6 +6,9 @@ body {
 $zapi-apidoc-page-width: 1300px;
 
 .apidoc-page-container {
+  .title {
+    font-family: $global-font-family;
+  }
   max-width: $zapi-apidoc-page-width;
   margin-top: 20px!important;
   margin-bottom: 20px!important;
@@ -420,3 +423,122 @@ $zapi-apidoc-page-width: 1300px;
     text-align: left;
   }
 }
+
+/**
+ * api doc path comp
+ */
+.apidoc-info-container
+{
+  .nav-path {
+    margin: 0!important;
+    padding: 0!important;
+    div {
+      height:35px;
+      line-height: 35px;
+      margin-right: 5px;
+    }
+    ul {
+      height:40px;
+      line-height: 40px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .nav-path-grid {
+    div {
+      height:20px;
+      line-height: 20px;
+      a {
+        margin-left: 2px;
+      }
+    }
+    margin-bottom: 20px!important;
+  }
+}
+
+/**
+ * namespace section style
+ */
+.namespace-section-container {
+  margin-top: 20px;
+  @media (min-width: 640px) {
+    margin-top: 40px;
+  }
+  a {
+    font-size: 1.2em;
+  }
+  .uk-grid-small > * {
+    padding-left: 1px!important;
+    padding-right: 1px!important;
+  }
+}
+
+/**
+ * class section style
+ */
+.class-section-container {
+  margin-top: 20px;
+  @media (min-width: 640px) {
+    margin-top: 40px;
+  }
+  .entity-type {
+    font-size: 1.2em;
+    padding-right:10px;
+  }
+  .tpl-params {
+    margin-top: 5px!important;
+  }
+
+}
+
+/**
+ * typedef section style
+ */
+.typedef-section-container {
+  margin-top: 20px;
+  @media (min-width: 640px) {
+    margin-top: 40px;
+  }
+  .define {
+    margin-bottom: 5px;
+  }
+}
+
+/**
+ * func section style
+ */
+.func-section-container {
+  margin-top: 20px;
+  @media (min-width: 640px) {
+    margin-top: 40px;
+  }
+  .signature {
+    margin-top: 5px!important;
+  }
+  .tpl-params {
+    margin-top: 5px!important;
+  }
+}
+/**
+ * enum section style
+ */
+.enum-section-container {
+  margin-top: 20px;
+  @media (min-width: 640px) {
+    margin-top: 40px;
+  }
+  .define {
+    margin-top: 5px;
+  }
+}
+
+/**
+ * variable section style
+ */
+.variable-section-container {
+  margin-top: 20px;
+  @media (min-width: 640px) {
+    margin-top: 40px;
+  }
+}
+

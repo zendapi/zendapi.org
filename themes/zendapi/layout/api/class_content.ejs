@@ -1,3 +1,95 @@
-<%- js("statics/js/pages/api/class_content.js") %>
-<%- css("statics/css/api/class_content.css") %>
-<div id="container"></div>
+<div id="container" style="width: 100%">
+    <div class="uk-container uk-margin-small-top uk-margin-small-bottom apidoc-page-container apidoc-class-content-page">
+        <div class="manual-container uk-flex uk-flex-left">
+            <div class="side-panel-container uk-visible@m">
+                <%- partial("_partial/api/sidepanel") %>
+            </div>
+            <!--<div class="uk-width-expand apidoc-info-container apidoc-class-content-info-container">-->
+                <!--<h3 class="title uk-text-break">{content.name}</h3>-->
+                <!--{content.includes && content.includes.length > 0 && this.renderIncludesList(content.includes)}-->
+                <!--{content.briefDescription.trim() != "" && <div class="uk-text-small uk-text-break uk-margin-small-bottom uk-margin-small-top"-->
+                                                               <!--dangerouslySetInnerHTML={{__html:content.briefDescription.trim()}}>-->
+                <!--</div>}-->
+                <!--{content.detailDescription.trim() != "" && <div class="uk-text-small detail-description uk-margin-small-bottom uk-margin-small-top"-->
+                                                                <!--dangerouslySetInnerHTML={{__html:content.detailDescription.trim()}}>-->
+                <!--</div>}-->
+                <!--<BaseClassSection baseClasses = {content.baseClasses}/>-->
+                    <!--<TypeSection types = {content.publicTypes} title = {"公有类型列表"}-->
+                                 <!--inherits = {publicTypes} baseClasses = {content.baseClasses}/>-->
+                        <!--<MethodSection title = "公有方法列表" methods = {content.publicFuncs}-->
+                                       <!--inherits = {publicFuncInherits} baseClasses = {content.baseClasses}/>-->
+                            <!--<MethodSection title = "静态公有方法列表" methods = {content.publicStaticFuncs}-->
+                                           <!--inherits = {publicStaticFuncInherits} baseClasses = {content.baseClasses}/>-->
+                                <!--<AttributeSection title = "公有字段列表" attributes = {content.publicAttributes}-->
+                                                  <!--inherits = {publicAttrsInherits} baseClasses = {content.baseClasses}/>-->
+                                    <!--<AttributeSection title = "静态公有字段列表" attributes = {content.publicStaticAttributes}-->
+                                                      <!--inherits = {publicStaticAttrsInherits} baseClasses = {content.baseClasses}/>-->
+                                        <!--<TypeSection types = {content.protectedTypes} title = {"保护类型列表"}-->
+                                                     <!--inherits = {protectedTypes} baseClasses = {content.baseClasses}/>-->
+                                            <!--<MethodSection title = "保护方法列表" methods = {content.protectedFuncs}-->
+                                                           <!--inherits = {protectedFuncInherits} baseClasses = {content.baseClasses}/>-->
+                                                <!--<MethodSection title = "静态保护方法列表" methods = {content.protectedStaticFuncs}-->
+                                                               <!--inherits = {protectedStaticFuncInherits} baseClasses = {content.baseClasses}/>-->
+                                                    <!--<AttributeSection title = "保护字段列表" attributes = {content.protectedAttributes}-->
+                                                                      <!--inherits = {protectedAttrsInherits} baseClasses = {content.baseClasses}/>-->
+                                                        <!--<AttributeSection title = "静态保护字段列表" attributes = {content.protectedStaticAttributes}-->
+                                                                          <!--inherits = {protectedStaticAttrsInherits} baseClasses = {content.baseClasses}/>-->
+                                                            <!--<FriendSection friends = {content.friends}/>-->
+                                                                <!--<div class="uk-margin-medium-top">-->
+                                                                    <!--<h3>详细描述文档</h3>-->
+                                                                <!--</div>-->
+                                                                <!--<div class="uk-margin-small-top uk-text-break">-->
+                                                                    <!--在文件&nbsp;<span class="uk-text-success">{content.location.file.substring(8)}</span>&nbsp;的第-->
+                                                                    <!--&nbsp;<span class="uk-text-success">{content.location.line}</span>&nbsp;行定义-->
+                                                                <!--</div>-->
+                                                                <!--<TypeInfoSection title = "公有类型文档" types = {content.publicTypes}/>-->
+                                                                    <!--<TypeInfoSection title = "保护类型文档" types = {content.protectedTypes}/>-->
+                                                                        <!--<MethodInfoSection title = "构造与析构函数文档" methods = {constructorAndDestructors} showConstructorAndDestructor = {true}/>-->
+                                                                            <!--<MethodInfoSection title = "公有方法文档" methods = {content.publicFuncs}/>-->
+                                                                                <!--<MethodInfoSection title = "静态公有方法文档" methods = {content.publicStaticFuncs}/>-->
+                                                                                    <!--<MethodInfoSection title = "保护方法文档" methods = {content.protectedFuncs}/>-->
+                                                                                        <!--<MethodInfoSection title = "静态保护方法文档" methods = {content.protectedStaticFuncs}/>-->
+                                                                                            <!--<AttributeInfoSection title = "公有字段文档" attributes = {content.publicAttributes}/>-->
+                                                                                                <!--<AttributeInfoSection title = "公有静态字段文档" attributes = {content.publicStaticAttributes}/>-->
+                                                                                                    <!--<AttributeInfoSection title = "保护字段文档" attributes = {content.protectedAttributes}/>-->
+                                                                                                        <!--<AttributeInfoSection title = "保护静态字段文档" attributes = {content.protectedStaticAttributes}/>-->
+                                                                                                            <!--<FriendInfoSection friends = {content.friends}/>-->
+                                                                                                                <!--<DoxygenInfo version = {API_DOXYGEN_VERSION}/>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+
+<script>
+   $(function ()
+   {
+      $(document).ready(function ()
+      {
+         if (location.hash.trim().length > 0) {
+            var target = $(location.hash);
+            if (target.length > 0) {
+               $('html,body')
+               .stop()
+               .animate({scrollTop: Math.round($(location.hash).offset().top)}, 0);
+            }
+         }
+         $(".page-scroll-trigger").each(function(){
+            var targetUrl = $(this).attr('href');
+            var parts = targetUrl.split('#');
+            if (parts) {
+               targetUrl = parts[0];
+            }
+            if (targetUrl == location.pathname) {
+               Uikit.scroll(this);
+               $(this).on('scrolled', function () {
+                  location.hash = parts[1];
+               });
+            }
+         });
+         $(".detail-description table").each(function ()
+         {
+            $(this).addClass("uk-table uk-table-divider uk-table-small uk-table-striped");
+         });
+      });
+   });
+</script>
