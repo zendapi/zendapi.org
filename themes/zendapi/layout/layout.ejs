@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%- partial('_partial/head') %>
+    <%- partial('_partial/head') %>
 </head>
 <body>
 <script type="application/javascript">
@@ -28,29 +28,11 @@
     } else if (page._isBlogList) {
         layout = "blog";
     }
-    if (layout == "post") { %>
-    <%
-    } else if (layout == "manual") { %>
-   
-    <%
-    } else if (layout == "blog") { %>
-    <%} else if (layout == "index") { %>
-    <%} else if (layout == "apiindex") { %>
-    <%} else if (layout == "apimodules") {%>
-    <%} else if (layout == "apinamespaces") {%>
-    <%} else if (layout == "apiglobals") {%>
-    <% } else if (layout == "apifiles") {%>
-    <% } else if (layout == "apimodulecontent") {%>
-    <% } else if (layout == "apinamespacecontent") {%>
-    <% } else if (layout == "apifilecontent") {%>
-    <% } else if (layout == "apiclasscontent") {%>
-    <% } %>
-            <%
-            let apiCatalog = [];
-            if (_.indexOf(apilayouts, layout) != -1) {
-                apiCatalog = get_api_catalog(page, config, site);
-            %>
-    <%}%>
+    let apiCatalog = [];
+    if (_.indexOf(apilayouts, layout) != -1) {
+        apiCatalog = get_api_catalog(page, config, site);
+    }
+    %>
 </script>
 <div class="uk-offcanvas-content">
     <%- partial("_partial/header") %>

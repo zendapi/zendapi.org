@@ -80,7 +80,7 @@
                targetUrl = parts[0];
             }
             if (targetUrl == location.pathname) {
-               Uikit.scroll(this);
+               UIkit.scroll(this);
                $(this).on('scrolled', function () {
                   location.hash = parts[1];
                });
