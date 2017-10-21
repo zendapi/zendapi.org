@@ -43,11 +43,14 @@ if (layout == "post") {
 } else if (layout == "apifiles") {
  title = "所有文件文档索引页-zendAPI";
  cssfilename = "api.css";
-} else if (layout == "apimodulecontent"  || layout == "apiclasscontent" || layout == "apifilecontent") {
+} else if (layout == "apiclasscontent" || layout == "apifilecontent") {
  title = page.cls.name + " 类详细文档";
  cssfilename = "api.css";
 } else if (layout == "apinamespacecontent") {
  title = page.namespace.name + " 名称空间详细文档";
+ cssfilename = "api.css";
+} else if (layout == "apimodulecontent") {
+ title = page.module.name + " 模块详细文档";
  cssfilename = "api.css";
 }
 %>
