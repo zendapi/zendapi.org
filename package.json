@@ -37,17 +37,9 @@
     "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
     "nodegit": "^0.18.3",
-    "perfect-scrollbar": "^0.7.1",
     "postcss-loader": "^2.0.6",
     "precss": "^1.4.0",
     "uikit": "^3.0.0-beta.25",
     "xml2js": "^0.4.19"
-  },
-  "scripts": {
-    "generate-theme": "node build-config/webpack.config.devel.js",
-    "generate-site": "node build-config/webpack.config.devel.js && hexo generate",
-    "generate-site-and-api": "node build-config/webpack.config.devel.js && hexo generate --with-apidoc",
-    "generate-site-production": "webpack --config build-config/webpack.config.dll.production.js && node build-config/webpack.config.production.js && hexo generate --with-apidoc",
-    "generate-dll": "webpack --config build-config/webpack.config.dll.js"
   }
 }
