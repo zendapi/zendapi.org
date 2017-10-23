@@ -1,5 +1,5 @@
 {
-  "name": "hexo-site",
+  "name": "zendapi_official_website",
   "version": "0.0.0",
   "private": true,
   "hexo": {
@@ -16,10 +16,7 @@
     "hexo-renderer-sass": "^0.3.2",
     "hexo-server": "^0.2.0",
     "hexo-toc": "^1.0.8",
-    "highlight.js": "^9.12.0",
-    "jquery.fakeloader": "^1.0.0",
     "markdown-it": "^8.3.1",
-    "please-wait": "0.0.5",
     "sax": "^1.2.4"
   },
   "devDependencies": {
@@ -31,15 +28,12 @@
     "babel-preset-stage-0": "^6.24.1",
     "clone": "^2.1.1",
     "css-loader": "^0.28.4",
-    "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "hexo-pagination": "^0.1.0",
-    "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
     "nodegit": "^0.18.3",
     "postcss-loader": "^2.0.6",
     "precss": "^1.4.0",
-    "uikit": "^3.0.0-beta.25",
     "xml2js": "^0.4.19"
   }
 }
