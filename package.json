@@ -6,6 +6,7 @@
     "version": "3.3.7"
   },
   "dependencies": {
+    "clean-css": "^4.1.9",
     "hexo": "^3.2.0",
     "hexo-deployer-git": "^0.3.0",
     "hexo-excerpt": "^1.1.2",
@@ -16,8 +17,10 @@
     "hexo-renderer-sass": "^0.3.2",
     "hexo-server": "^0.2.0",
     "hexo-toc": "^1.0.8",
+    "html-minifier": "^3.5.6",
     "markdown-it": "^8.3.1",
-    "sax": "^1.2.4"
+    "sax": "^1.2.4",
+    "uglify-es": "^3.1.5"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
