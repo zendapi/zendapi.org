@@ -157,6 +157,13 @@ a:hover {
   }
   ul {
     padding-left: 0;
+    margin-bottom: 0px;
+  }
+  li.uk-parent {
+    height: auto;
+  }
+  ul.uk-nav-sub {
+    padding-left: 15px;
   }
   li {
     list-style-type: none;
@@ -256,6 +263,15 @@ li {
       -webkit-transition-property: border-bottom-color;
       transition-property: border-bottom-color;
     }
+  }
+  .uk-navbar-dropdown {
+    a {
+      line-height: 14px;
+      &:hover {
+        color: $zapi-base-color;
+      }
+    }
+    padding: 8px;
   }
   .nav-menu {
     color: #dddddd!important;

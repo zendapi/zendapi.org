@@ -10,6 +10,7 @@ let menuItems = site.data.category;
         </div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav uk-visible@m">
+
                 <%
                 for(let index in menuItems) {
                 %>
@@ -17,6 +18,15 @@ let menuItems = site.data.category;
                 <%
                 }
                 %>
+                <li>
+                    <a href="#">多语言<span class="uk-margin-small-right" uk-icon="icon: triangle-down"></span></a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a href="http://www.zendapi.org/">中文</a></li>
+                            <li><a href="http://en.zendapi.org/">English</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
             <ul class="uk-navbar-nav uk-hidden@m">
                 <li><button class="nav-menu" data-uk-icon="icon: menu" uk-toggle="target: #offcanvas-push"></button></li>
