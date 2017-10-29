@@ -33,7 +33,7 @@ if (layout == "post") {
  title = "欢迎访问 zendAPI 开发博客";
 } else if (layout == "index") {
  cssfilename = "index.css";
- title = "zendAPI - The C++ layer for Zend Engine";
+ title = __("index.page_title");
 } else if (layout == "apiindex") {
  title = "欢迎访问 zendAPI 接口文档栏目";
  cssfilename = "api.css";
@@ -69,7 +69,8 @@ if (layout == "post") {
 <link rel="icon" href="/zendapi.ico" type="image/ico"/>
 <link rel="stylesheet" href="/statics/js/uikit/css/uikit.min.css" />
 <link rel="stylesheet" href="/statics/css/base.css" />
-<% if (cssfilename)  {%>
+<% if (cssfilename)  {
+%>
 <link rel="stylesheet" href="/statics/css/<%- cssfilename %>" />
 <%}%>
 <script type="text/javascript" src = "/statics/js/jquery/jquery-3.2.1.min.js"></script>
