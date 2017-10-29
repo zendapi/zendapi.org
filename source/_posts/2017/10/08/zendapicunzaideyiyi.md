@@ -4,7 +4,7 @@ date: 2017-10-08 14:08:50
 tags:
 ---
 <img style="width:400px; height: 100px; margin-bottom:30px;" src="/statics/images/zendapi-normal.svg" />
-zendAPI 是对 Zend Engine 的 C 接口使用 C++ 的最新标准 C++11 进行而面向对象的封装，从而屏蔽了底层 Zend Engine API 的接口复杂性，加快开发 PHP 扩展的效率。从而让 PHP 的扩展开发成为一种享受，不用在考虑不同 PHP 版本带来的差异性，彻底将开发者从 Zend Engine 底层接口的细节中解放出来，让开发者专注于自身的业务逻辑。
+zendAPI 是对 Zend Engine 的 C 接口使用 C++ 的最新标准 C++11 进行而面向对象的封装，从而屏蔽了底层 Zend Engine API 的接口复杂性，加快开发 PHP 扩展的效率。从而让 PHP 的扩展开发成为一种享受，不用再考虑不同 PHP 版本带来的差异性，彻底将开发者从 Zend Engine 底层接口的细节中解放出来，让开发者专注于自身的业务逻辑。
 
 #### 项目的使命：
 **让 PHP 扩展开发成为一种享受**

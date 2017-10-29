@@ -20,20 +20,10 @@
     "sax": "^1.2.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.5.2",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "clone": "^2.1.1",
-    "css-loader": "^0.28.4",
-    "file-loader": "^0.11.2",
     "hexo-pagination": "^0.1.0",
     "node-sass": "^4.5.3",
     "nodegit": "^0.18.3",
-    "postcss-loader": "^2.0.6",
-    "precss": "^1.4.0",
     "xml2js": "^0.4.19"
   }
 }
