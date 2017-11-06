@@ -80,12 +80,20 @@ theme: zendapi
 
 ## zendAPI项目当前的版本号
 zapi_version: 0.0.1
-  
+
 cpp_generator:
   repo_url: "https://github.com/qcoreteam/zendapi.git"
   project_name: "zendapi"
   publish_dir: "apidocs/cpp"
-  
+## 七牛配置
+qiniu:
+  cdnUrlPrefix: http://oyp0xh70t.bkt.clouddn.com/
+  bucket: zendapi
+  access_key: NWS5w6THL5HaA6P2mZrp1-D6lOYZw4hhYGB3Dgf4
+  secret_key: i7z_ZvOU3RKTrxQO-_y4_icc09I3OTs0lyatl1ou
+  up_host: http://upload.qiniu.com
+  update_exist: true
+staticDir: /
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 #deploy:

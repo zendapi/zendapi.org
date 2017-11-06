@@ -73,10 +73,10 @@ if (layout == "post") {
 %>
 <link rel="stylesheet" href="/statics/css/<%- cssfilename %>" />
 <%}%>
-<script type="text/javascript" src = "/statics/js/jquery/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src = "/statics/js/uikit/js/uikit.min.js"></script>
-<script type="text/javascript" src = "/statics/js/uikit/js/uikit-icons.min.js"></script>
+<%- qiniujs('statics/js/jquery/jquery-3.2.1.min.js') %>
+<%- qiniujs('statics/js/uikit/js/uikit.min.js') %>
+<%- qiniujs('statics/js/uikit/js/uikit-icons.min.js') %>
 <% if (layout == "manual" || layout == "post") { %>
-<script type="text/javascript" src = "/statics/js/highlight/highlight.pack.js"></script>
-<link rel="stylesheet" href="/statics/js/highlight/styles/railscasts.css" />
+<%- qiniujs('statics/js/highlight/highlight.pack.js') %>
+<%- qiniucss('statics/js/highlight/styles/railscasts.css') %>
 <% } %>
