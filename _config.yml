@@ -87,7 +87,7 @@ cpp_generator:
   publish_dir: "apidocs/cpp"
 ## 七牛配置
 qiniu:
-  cdnUrlPrefix: http://oyp0xh70t.bkt.clouddn.com/
+  cdnUrlPrefix: http://cdn.zendapi.org/
   bucket: zendapi
   access_key: NWS5w6THL5HaA6P2mZrp1-D6lOYZw4hhYGB3Dgf4
   secret_key: i7z_ZvOU3RKTrxQO-_y4_icc09I3OTs0lyatl1ou

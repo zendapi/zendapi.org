@@ -4,7 +4,6 @@
  */
 hexo.extend.console.register('qndeploy', 'deploy project use qiniu', function (args) {
     hexo.on('deployAfter', function(){
-        console.log('aaaaaaaaaaaaaa啊啊发生地方阿斯顿发');
         hexo.call('qiniu',{});
     });
     hexo.config.staticDir = hexo.config.qiniu.cdnUrlPrefix;
