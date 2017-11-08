@@ -26,9 +26,11 @@
   },
   "devDependencies": {
     "clone": "^2.1.1",
+    "colors": "^1.1.2",
     "hexo-pagination": "^0.1.0",
     "node-sass": "^4.5.3",
     "nodegit": "^0.18.3",
+    "qiniu": "^6.1.13",
     "xml2js": "^0.4.19"
   }
 }

@@ -50,12 +50,12 @@ let manuallist = site.data.recommendmanuallist;
                     <img class="title-icon" src="statics/images/index/infolist/news.svg" />最新博文</div>
                 <ul class="info-list uk-text-left uk-margin-small-top uk-list uk-list-divider">
                     <% if (newslist.length > 0) {
-                       for(let i in newslist) {
-                           let item = newslist[i];
+                            for(let i in newslist) {
+                        let item = newslist[i];
                     %>
-                        <li><a href="<%- item.url %>"><%- item.title %></a></li>
+                    <li><a href="<%- item.url %>"><%- item.title %></a></li>
                     <% }
-                       } else { %>
+                    } else { %>
                     <li>暂无数据</li>
                     <% } %>
                 </ul>
