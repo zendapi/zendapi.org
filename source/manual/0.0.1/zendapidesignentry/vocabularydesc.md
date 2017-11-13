@@ -8,8 +8,8 @@ title: zendAPI 相关术语解释文档
 ### 通用术语解释
 #### PHP
 如果单纯的说`PHP`我个人认为`PHP`应该由以下部分组成：
-1.`PHP`语言规范
-2.`Zend Engine`虚拟机
+1. `PHP`语言规范
+2. `Zend Engine`虚拟机
 3. 为`PHP`提供特定功能的各种扩展
 
 #### PHP 语言规范

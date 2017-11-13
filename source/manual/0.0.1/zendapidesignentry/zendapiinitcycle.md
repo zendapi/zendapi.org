@@ -77,7 +77,7 @@ title: zendAPI 初始化流程详解
 开始加载扩展的时候会调用这个函数指针所指的回调函数。
 2. `int (*module_shutdown_func)(SHUTDOWN_FUNC_ARGS);`
 扩展被卸载的时候会调用这个函数指针所指的回调函数。
-3. `int (*request_shutdown_func)(SHUTDOWN_FUNC_ARGS);`
+3. `int (*request_startup_func)(INIT_FUNC_ARGS);`
 每次请求开始的时候会调用这个函数指针所指的回调函数。
 4. `int (*request_shutdown_func)(SHUTDOWN_FUNC_ARGS);`
 每次请求结束的时候会调用这个函数指针所指的回调函数。
@@ -90,7 +90,7 @@ std::map<int, Extension *> mid2extension; // line number 58
 ```
 `name2extension`提供按照模块的名称查找对应的扩展对象指针的功能
 `mid2extension`提供按照模块的编号查找对应的扩展对象指针的功能
-我们为什么需要这两个全局变量呢？应为在`PHP`的生命周期回调函数里面传递的参数中之后模块的标号，为了方便我们在项目中查找对应的模块，所以引入了这两个全局变量。
+我们为什么需要这两个全局变量呢？应为在`PHP`的生命周期回调函数里面传递的参数中包含模块的标号，为了方便我们在项目中查找对应的模块，所以引入了这两个全局变量。
 *特别说明：这种全局标量的方式可能不是线程安全的，在多线程环境下对其进行操作可能会有问题，我们会在以后的版本中进行优化。*
 ```cpp
 ﻿Extension::Extension(const char *name, const char *version, int apiVersion)
